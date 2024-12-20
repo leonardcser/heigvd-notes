@@ -1,0 +1,602 @@
+{
+  "algorithm": {
+    "url": "https://cplusplus.com/reference/algorithm/",
+    "functions": [
+      {
+        "method": "all_of",
+        "prototype": "template <class InputIterator, class UnaryPredicate>  bool all_of (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "any_of",
+        "prototype": "template <class InputIterator, class UnaryPredicate>  bool any_of (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "none_of",
+        "prototype": "template <class InputIterator, class UnaryPredicate>  bool none_of (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "for_each",
+        "prototype": "template <class InputIterator, class Function>   Function for_each (InputIterator first, InputIterator last, Function fn);",
+        "complexity": "Linear in the distance between first and last: Applies fn to each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "find",
+        "prototype": "template <class InputIterator, class T>   InputIterator find (InputIterator first, InputIterator last, const T& val);",
+        "complexity": "Up to linear in the distance between first and last: Compares elements until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "find_if",
+        "prototype": "template <class InputIterator, class UnaryPredicate>   InputIterator find_if (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "find_if_not",
+        "prototype": "template <class InputIterator, class UnaryPredicate>   InputIterator find_if_not (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "find_end",
+        "prototype": "template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>   ForwardIterator1 find_end (ForwardIterator1 first1, ForwardIterator1 last1,                              ForwardIterator2 first2, ForwardIterator2 last2,                              BinaryPredicate pred);",
+        "complexity": "Up to linear in count2*(1+count1-count2), where countX is the distance between firstX and lastX: Compares elements until the last matching subsequence is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "find_first_of",
+        "prototype": "template <class InputIterator, class ForwardIterator, class BinaryPredicate>   InputIterator find_first_of (InputIterator first1, InputIterator last1,                                   ForwardIterator first2, ForwardIterator last2,                                   BinaryPredicate pred);",
+        "complexity": "Up to linear in count1*count2 (where countX is the distance between firstX and lastX): Compares elements until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "adjacent_find",
+        "prototype": "template <class ForwardIterator, class BinaryPredicate>   ForwardIterator adjacent_find (ForwardIterator first, ForwardIterator last,                                  BinaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Compares elements until a match is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "count",
+        "prototype": "template <class InputIterator, class T>  typename iterator_traits<InputIterator>::difference_type    count (InputIterator first, InputIterator last, const T& val);",
+        "complexity": "Linear in the distance between first and last: Compares once each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "count_if",
+        "prototype": "template <class InputIterator, class UnaryPredicate>  typename iterator_traits<InputIterator>::difference_type    count_if (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Calls pred once for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "mismatch",
+        "prototype": "template <class InputIterator1, class InputIterator2, class BinaryPredicate>  pair<InputIterator1, InputIterator2>    mismatch (InputIterator1 first1, InputIterator1 last1,              InputIterator2 first2, BinaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first1 and last1: Compares elements until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "equal",
+        "prototype": "template <class InputIterator1, class InputIterator2, class BinaryPredicate>  bool equal (InputIterator1 first1, InputIterator1 last1,              InputIterator2 first2, BinaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first1 and last1: Compares elements until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "is_permutation",
+        "prototype": "template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>   bool is_permutation (ForwardIterator1 first1, ForwardIterator1 last1,                        ForwardIterator2 first2, BinaryPredicate pred);",
+        "complexity": "If both sequence are equal (with the elements in the same order), linear in the distance between first1 and last1.Otherwise, up to quadratic: Performs at most N2 element comparisons until the result is determined (where N is the distance between first1 and last1).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "search",
+        "prototype": "template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>   ForwardIterator1 search (ForwardIterator1 first1, ForwardIterator1 last1,                            ForwardIterator2 first2, ForwardIterator2 last2,                            BinaryPredicate pred);",
+        "complexity": "Up to linear in count1*count2 (where countX is the distance between firstX and lastX): Compares elements until a matching subsequence is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "search_n",
+        "prototype": "template <class ForwardIterator, class Size, class T, class BinaryPredicate>   ForwardIterator search_n ( ForwardIterator first, ForwardIterator last,                              Size count, const T& val, BinaryPredicate pred );",
+        "complexity": "Up to linear in the distance between first and last: Compares elements until a matching subsequence is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "copy",
+        "prototype": "template <class InputIterator, class OutputIterator>  OutputIterator copy (InputIterator first, InputIterator last, OutputIterator result);",
+        "complexity": "Linear in the distance between first and last: Performs an assignment operation for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "copy_n",
+        "prototype": "template <class InputIterator, class Size, class OutputIterator>  OutputIterator copy_n (InputIterator first, Size n, OutputIterator result);",
+        "complexity": "Linear in the distance between first and last: Performs an assignment operation for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "copy_if",
+        "prototype": "template <class InputIterator, class OutputIterator, class UnaryPredicate>  OutputIterator copy_if (InputIterator first, InputIterator last,                          OutputIterator result, UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Applies pred to each element in the range and performs at most that many assignments.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "copy_backward",
+        "prototype": "template <class BidirectionalIterator1, class BidirectionalIterator2>  BidirectionalIterator2 copy_backward (BidirectionalIterator1 first,                                        BidirectionalIterator1 last,                                        BidirectionalIterator2 result);",
+        "complexity": "Linear in the distance between first and last: Performs an assignment operation for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "move",
+        "prototype": "template <class InputIterator, class OutputIterator>  OutputIterator move (InputIterator first, InputIterator last, OutputIterator result);",
+        "complexity": "Linear in the distance between first and last: Performs a move-assignment for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "move_backward",
+        "prototype": "template <class BidirectionalIterator1, class BidirectionalIterator2>  BidirectionalIterator2 move_backward (BidirectionalIterator1 first,                                        BidirectionalIterator1 last,                                        BidirectionalIterator2 result);",
+        "complexity": "Linear in the distance between first and last: Performs a move-assignment for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "swap",
+        "prototype": "template <class T, size_t N> void swap(T (&a)[N], T (&b)[N])  noexcept (noexcept(swap(*a,*b)));",
+        "complexity": "Non-array: Constant: Performs exactly one construction and two assignments (although notice that each of these operations works on its own complexity).Array: Linear in N: performs a swap operation per element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "swap_ranges",
+        "prototype": "template <class ForwardIterator1, class ForwardIterator2>  ForwardIterator2 swap_ranges (ForwardIterator1 first1, ForwardIterator1 last1,                                ForwardIterator2 first2);",
+        "complexity": "Linear in the distance between first and last: Performs a swap operation for each element in the range.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "iter_swap",
+        "prototype": "template <class ForwardIterator1, class ForwardIterator2>  void iter_swap (ForwardIterator1 a, ForwardIterator2 b);",
+        "complexity": "Constant: Calls swap once.",
+        "c": "$O(1)$",
+        "color": "cgreen"
+      },
+      {
+        "method": "transform",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class BinaryOperation>  OutputIterator transform (InputIterator1 first1, InputIterator1 last1,                            InputIterator2 first2, OutputIterator result,                            BinaryOperation binary_op);",
+        "complexity": "Linear in the distance between first1 and last1: Performs one assignment and one application of op (or binary_op) per element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "replace",
+        "prototype": "template <class ForwardIterator, class T>  void replace (ForwardIterator first, ForwardIterator last,                const T& old_value, const T& new_value);",
+        "complexity": "Linear in the distance between first and last: Compares each element and assigns to those matching.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "replace_if",
+        "prototype": "template <class ForwardIterator, class UnaryPredicate, class T>  void replace_if (ForwardIterator first, ForwardIterator last,                   UnaryPredicate pred, const T& new_value );",
+        "complexity": "Linear in the distance between first and last: Applies pred to each element and assigns to those matching.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "replace_copy",
+        "prototype": "template <class InputIterator, class OutputIterator, class T>  OutputIterator replace_copy (InputIterator first, InputIterator last,                               OutputIterator result,                               const T& old_value, const T& new_value);",
+        "complexity": "Linear in the distance between first and last: Performs a comparison and an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "replace_copy_if",
+        "prototype": "template <class InputIterator, class OutputIterator, class UnaryPredicate, class T>  OutputIterator replace_copy_if (InputIterator first, InputIterator last,                                  OutputIterator result, UnaryPredicate pred,                                  const T& new_value);",
+        "complexity": "Linear in the distance between first and last: Applies pred and performs an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "fill",
+        "prototype": "template <class ForwardIterator, class T>  void fill (ForwardIterator first, ForwardIterator last, const T& val);",
+        "complexity": "Linear in the distance between first and last: Assigns a value to each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "fill_n",
+        "prototype": "template <class OutputIterator, class Size, class T>  OutputIterator fill_n (OutputIterator first, Size n, const T& val);",
+        "complexity": "Linear in n: Assigns a value to each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "generate",
+        "prototype": "template <class ForwardIterator, class Generator>  void generate (ForwardIterator first, ForwardIterator last, Generator gen);",
+        "complexity": "Linear in the distance between first and last: Calls gen and performs an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "generate_n",
+        "prototype": "template <class OutputIterator, class Size, class Generator>  OutputIterator generate_n (OutputIterator first, Size n, Generator gen);",
+        "complexity": "Linear in n: Calls gen and performs an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "remove",
+        "prototype": "template <class ForwardIterator, class T>  ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& val);",
+        "complexity": "Linear in the distance between first and last: Compares each element, and possibly performs assignments on some of them.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "remove_if",
+        "prototype": "template <class ForwardIterator, class UnaryPredicate>  ForwardIterator remove_if (ForwardIterator first, ForwardIterator last,                             UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Applies pred to each element, and possibly performs assignments on some of them.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "remove_copy",
+        "prototype": "template <class InputIterator, class OutputIterator, class T>  OutputIterator remove_copy (InputIterator first, InputIterator last,                              OutputIterator result, const T& val);",
+        "complexity": "Linear in the distance between first and last: Compares each element, and performs an assignment operation for those not removed.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "remove_copy_if",
+        "prototype": "template <class InputIterator, class OutputIterator, class UnaryPredicate>  OutputIterator remove_copy_if (InputIterator first, InputIterator last,                                 OutputIterator result, UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Applies pred to each element, and performs an assignment operation for those not removed.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "unique",
+        "prototype": "template <class ForwardIterator, class BinaryPredicate>  ForwardIterator unique (ForwardIterator first, ForwardIterator last,                          BinaryPredicate pred);",
+        "complexity": "For non-empty ranges, linear in one less than the distance between first and last: Compares each pair of consecutive elements, and possibly performs assignments on some of them.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "unique_copy",
+        "prototype": "template <class InputIterator, class OutputIterator, class BinaryPredicate>  OutputIterator unique_copy (InputIterator first, InputIterator last,                              OutputIterator result, BinaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Compares each pair of elements, and performs an assignment operation for those elements not matching.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "reverse",
+        "prototype": "template <class BidirectionalIterator>  void reverse (BidirectionalIterator first, BidirectionalIterator last);",
+        "complexity": "Linear in half the distance between first and last: Swaps elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "reverse_copy",
+        "prototype": "template <class BidirectionalIterator, class OutputIterator>  OutputIterator reverse_copy (BidirectionalIterator first,                               BidirectionalIterator last, OutputIterator result);",
+        "complexity": "Linear in the distance between first and last: Performs an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "rotate",
+        "prototype": "template <class ForwardIterator>  ForwardIterator rotate (ForwardIterator first, ForwardIterator middle,                          ForwardIterator last);",
+        "complexity": "Up to linear in the distance between first and last: Swaps (or moves) elements until all elements have been relocated.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "rotate_copy",
+        "prototype": "template <class ForwardIterator, class OutputIterator>  OutputIterator rotate_copy (ForwardIterator first, ForwardIterator middle,                              ForwardIterator last, OutputIterator result);",
+        "complexity": "Linear in the distance between first and last: Performs an assignment for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "random_shuffle",
+        "prototype": "template <class RandomAccessIterator, class RandomNumberGenerator>  void random_shuffle (RandomAccessIterator first, RandomAccessIterator last,                       RandomNumberGenerator&& gen);",
+        "complexity": "Linear in the distance between first and last minus one: Obtains random values and swaps elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "shuffle",
+        "prototype": "template <class RandomAccessIterator, class URNG>  void shuffle (RandomAccessIterator first, RandomAccessIterator last, URNG&& g);",
+        "complexity": "Linear in the distance between first and last minus one: Obtains random values and swaps elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "is_partitioned",
+        "prototype": "template <class InputIterator, class UnaryPredicate>  bool is_partitioned (InputIterator first, InputIterator last, UnaryPredicate pred);",
+        "complexity": "Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "partition",
+        "prototype": "template <class ForwardIterator, class UnaryPredicate>  ForwardIterator partition (ForwardIterator first,                             ForwardIterator last, UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Applies  pred to each element, and possibly swaps some of them (if the iterator type is a bidirectional, at most half that many swaps, otherwise at most that many).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "stable_partition",
+        "prototype": "template <class BidirectionalIterator, class UnaryPredicate>  BidirectionalIterator stable_partition (BidirectionalIterator first,                                          BidirectionalIterator last,                                          UnaryPredicate pred);",
+        "complexity": "If enough extra memory is available, linear in the distance between first and last: Applies pred exactly once to each element, and performs up to that many element moves.Otherwise, up to linearithmic: Performs up to N*log(N) element swaps (where N is the distance above). It also applies pred exactly once to each element.",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "partition_copy",
+        "prototype": "template <class InputIterator, class OutputIterator1,          class OutputIterator2, class UnaryPredicate pred>  pair<OutputIterator1,OutputIterator2>    partition_copy (InputIterator first, InputIterator last,                    OutputIterator1 result_true, OutputIterator2 result_false,                    UnaryPredicate pred);",
+        "complexity": "Linear in the distance between first and last: Calls pred and performs an assignment once for each element.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "partition_point",
+        "prototype": "template <class ForwardIterator, class UnaryPredicate>  ForwardIterator partition_point (ForwardIterator first, ForwardIterator last,                                   UnaryPredicate pred);",
+        "complexity": "On average, logarithmic in the distance between first and last: Performs approximately log2(N)+2 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "sort",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);",
+        "complexity": "On average, linearithmic in the distance between first and last: Performs approximately N*log2(N) (where N is this distance) comparisons of elements, and up to that many element swaps (or moves).",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "stable_sort",
+        "prototype": "template <class RandomAccessIterator>  void stable_sort ( RandomAccessIterator first, RandomAccessIterator last );template <class RandomAccessIterator, class Compare>  void stable_sort ( RandomAccessIterator first, RandomAccessIterator last,                     Compare comp );",
+        "complexity": "If enough extra memory is available, linearithmic in the distance between first and last: Performs up to N*log2(N) element comparisons (where N is this distance), and up to that many element moves.Otherwise, polyloglinear in that distance: Performs up to N*log22(N) element comparisons, and up to that many element swaps.",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "partial_sort",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void partial_sort (RandomAccessIterator first, RandomAccessIterator middle,                     RandomAccessIterator last, Compare comp);",
+        "complexity": "On average, less than linearithmic in the distance between first and last: Performs approximately N*log(M) comparisons of elements (where N is this distance, and M is the distance between first and middle). It also performs up to that many element swaps (or moves).",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "partial_sort_copy",
+        "prototype": "template <class InputIterator, class RandomAccessIterator, class Compare>  RandomAccessIterator    partial_sort_copy (InputIterator first,InputIterator last,                       RandomAccessIterator result_first,                       RandomAccessIterator result_last, Compare comp);",
+        "complexity": "On average, less than linearithmic in the distance between first and last: Performs approximately N*log(min(N,M)) comparisons of elements (where N is this distance, and M is the distance between result_first and result_last). It also performs up to that many element swaps (or moves) and min(N,M) assignments between ranges.",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "is_sorted",
+        "prototype": "template <class ForwardIterator, class Compare>  bool is_sorted (ForwardIterator first, ForwardIterator last, Compare comp);",
+        "complexity": "Up to linear in one less than the distance between first and last: Compares pairs of elements until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "is_sorted_until",
+        "prototype": "template <class ForwardIterator, class Compare>  ForwardIterator is_sorted_until (ForwardIterator first, ForwardIterator last,                                   Compare comp);",
+        "complexity": "Up to linear in the distance between first and last: Calls comp for each element until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "nth_element",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void nth_element (RandomAccessIterator first, RandomAccessIterator nth,                    RandomAccessIterator last, Compare comp);",
+        "complexity": "On average, linear in the distance between first and last: Compares elements, and possibly swaps (or moves) them, until the elements are properly rearranged.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "lower_bound",
+        "prototype": "template <class ForwardIterator, class T, class Compare>  ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last,                               const T& val, Compare comp);",
+        "complexity": "On average, logarithmic in the distance between first and last: Performs approximately log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "upper_bound",
+        "prototype": "template <class ForwardIterator, class T, class Compare>  ForwardIterator upper_bound (ForwardIterator first, ForwardIterator last,                               const T& val, Compare comp);",
+        "complexity": "On average, logarithmic in the distance between first and last: Performs approximately log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "equal_range",
+        "prototype": "template <class ForwardIterator, class T, class Compare>  pair<ForwardIterator,ForwardIterator>    equal_range (ForwardIterator first, ForwardIterator last, const T& val,                  Compare comp);",
+        "complexity": "On average, up to twice logarithmic in the distance between first and last: Performs approximately 2*log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional up to twice linear complexity in N on average.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "binary_search",
+        "prototype": "template <class ForwardIterator, class T, class Compare>  bool binary_search (ForwardIterator first, ForwardIterator last,                      const T& val, Compare comp);",
+        "complexity": "On average, logarithmic in the distance between first and last: Performs approximately log2(N)+2 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "merge",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class Compare>  OutputIterator merge (InputIterator1 first1, InputIterator1 last1,                        InputIterator2 first2, InputIterator2 last2,                        OutputIterator result, Compare comp);",
+        "complexity": "Up to linear in (1+count1-count2), where countX is the distance between firstX and lastX: Compares and assigns all elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "inplace_merge",
+        "prototype": "template <class BidirectionalIterator, class Compare>  void inplace_merge (BidirectionalIterator first, BidirectionalIterator middle,                      BidirectionalIterator last, Compare comp);",
+        "complexity": "If enough extra memory is available, linear in the distance between first and last: Performs N-1 comparisons and up to twice that many element moves.Otherwise, up to linearithmic: Performs up to N*log(N) element comparisons (where N is the distance above), and up to that many element swaps.",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "includes",
+        "prototype": "template <class InputIterator1, class InputIterator2>  bool includes ( InputIterator1 first1, InputIterator1 last1,                  InputIterator2 first2, InputIterator2 last2 );template <class InputIterator1, class InputIterator2, class Compare>  bool includes ( InputIterator1 first1, InputIterator1 last1,                  InputIterator2 first2, InputIterator2 last2, Compare comp );",
+        "complexity": "Up to linear in twice the distances in both ranges: Performs up to 2*(count1+count2)-1 comparisons (where countX is the distance between firstX and lastX).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "set_union",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class Compare>  OutputIterator set_union (InputIterator1 first1, InputIterator1 last1,                            InputIterator2 first2, InputIterator2 last2,                            OutputIterator result, Compare comp);",
+        "complexity": "Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "set_intersection",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class Compare>  OutputIterator set_intersection (InputIterator1 first1, InputIterator1 last1,                                   InputIterator2 first2, InputIterator2 last2,                                   OutputIterator result, Compare comp);",
+        "complexity": "Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "set_difference",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class Compare>  OutputIterator set_difference (InputIterator1 first1, InputIterator1 last1,                                 InputIterator2 first2, InputIterator2 last2,                                 OutputIterator result, Compare comp);",
+        "complexity": "Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "set_symmetric_difference",
+        "prototype": "template <class InputIterator1, class InputIterator2,          class OutputIterator, class Compare>  OutputIterator set_symmetric_difference (InputIterator1 first1, InputIterator1 last1,                                           InputIterator2 first2, InputIterator2 last2,                                           OutputIterator result, Compare comp);",
+        "complexity": "Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "push_heap",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void push_heap (RandomAccessIterator first, RandomAccessIterator last,                   Compare comp);",
+        "complexity": "Up to logarithmic in the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a longer heap.",
+        "c": "$O(\\log(n))$",
+        "color": "clime"
+      },
+      {
+        "method": "pop_heap",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void pop_heap (RandomAccessIterator first, RandomAccessIterator last,                 Compare comp);",
+        "complexity": "Up to twice logarithmic in the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a shorter heap.",
+        "c": "$O(\\log(n))$",
+        "color": "clime"
+      },
+      {
+        "method": "make_heap",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void make_heap (RandomAccessIterator first, RandomAccessIterator last,                  Compare comp );",
+        "complexity": "Up to linear in three times the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a heap.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "sort_heap",
+        "prototype": "template <class RandomAccessIterator, class Compare>  void sort_heap (RandomAccessIterator first, RandomAccessIterator last,                  Compare comp);",
+        "complexity": "Up to linearithmic in the distance between first and last: Performs at most N*log(N) (where N is this distance) comparisons of elements, and up to that many element swaps (or moves).",
+        "c": "$O(n\\log(n))$",
+        "color": "cred"
+      },
+      {
+        "method": "is_heap",
+        "prototype": "template <class RandomAccessIterator, class Compare>  bool is_heap (RandomAccessIterator first, RandomAccessIterator last,                Compare comp);",
+        "complexity": "Up to linear in one less than the distance between first and last: Compares pairs of elements until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "is_heap_until",
+        "prototype": "template <class RandomAccessIterator, class Compare>  RandomAccessIterator is_heap_until (RandomAccessIterator first,                                      RandomAccessIterator last                                      Compare comp);",
+        "complexity": "Up to linear in the distance between first and last: Compares elements until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "min",
+        "prototype": "template <class T> constexpr T min (initializer_list<T> il);template <class T, class Compare>  constexpr T min (initializer_list<T> il, Compare comp);",
+        "complexity": "Linear in one less than the number of elements compared (constant for (1) and (2)).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "max",
+        "prototype": "template <class T> constexpr T max (initializer_list<T> il);template <class T, class Compare>  constexpr T max (initializer_list<T> il, Compare comp);",
+        "complexity": "Linear in one less than the number of elements compared (constant for (1) and (2)).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "minmax",
+        "prototype": "template <class T>  constexpr pair<T,T> minmax (initializer_list<T> il);template <class T, class Compare>  constexpr pair<T,T> minmax (initializer_list<T> il, Compare comp);",
+        "complexity": "Up to linear in one and half times the number of elements compared (constant for (1) and (2)).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "min_element",
+        "prototype": "template <class ForwardIterator, class Compare>  ForwardIterator min_element (ForwardIterator first, ForwardIterator last,                               Compare comp);",
+        "complexity": "Linear in one less than the number of elements compared.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "max_element",
+        "prototype": "template <class ForwardIterator, class Compare>  ForwardIterator max_element (ForwardIterator first, ForwardIterator last,                               Compare comp);",
+        "complexity": "Linear in one less than the number of elements compared.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "minmax_element",
+        "prototype": "template <class ForwardIterator, class Compare>  pair<ForwardIterator,ForwardIterator>    minmax_element (ForwardIterator first, ForwardIterator last, Compare comp);",
+        "complexity": "Up to linear in 1.5 times one less than the number of elements compared.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "lexicographical_compare",
+        "prototype": "template <class InputIterator1, class InputIterator2, class Compare>  bool lexicographical_compare (InputIterator1 first1, InputIterator1 last1,                                InputIterator2 first2, InputIterator2 last2,                                Compare comp);",
+        "complexity": "Up to linear in 2*min(count1,count2) (where countX is the distance between firstX and lastX): Compares elements symmetrically until a mismatch is found.",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "next_permutation",
+        "prototype": "template <class BidirectionalIterator, class Compare>  bool next_permutation (BidirectionalIterator first,                         BidirectionalIterator last, Compare comp);",
+        "complexity": "Up to linear in half the distance between first and last (in terms of actual swaps).",
+        "c": "$O(n)$",
+        "color": "corange"
+      },
+      {
+        "method": "prev_permutation",
+        "prototype": "template <class BidirectionalIterator, class Compare>  bool prev_permutation (BidirectionalIterator first,                         BidirectionalIterator last, Compare comp);",
+        "complexity": "Up to linear in half the distance between first and last (in terms of actual swaps).",
+        "c": "$O(n)$",
+        "color": "corange"
+      }
+    ]
+  }
+}

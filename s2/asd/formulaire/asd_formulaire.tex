@@ -1,0 +1,1113 @@
+\documentclass[landscape]{article}
+\usepackage[a4paper,margin=1.1cm,footskip=0.6cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+
+% Define new colors
+\definecolor{cgreen}{RGB}{0, 100, 0}
+\definecolor{clime}{RGB}{120, 210, 0}
+\definecolor{corange}{RGB}{255, 165, 0}
+\definecolor{cred}{RGB}{215, 20, 20}
+\definecolor{cpurple}{RGB}{160, 32, 240}
+\definecolor{sky}{RGB}{90, 120, 190}
+
+% Define a new list of methods
+\newlistof{methods}{mtd}{Reference}
+
+\lstset{
+    language=C++,
+    keywordstyle=\bfseries,
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    aboveskip=0em,
+    belowskip=0.5em,
+    breaklines=true,
+    breakindent=2.5em
+}
+
+
+% blue for \Function name
+\let\oldFunction\Function
+\renewcommand{\Function}[2]{\oldFunction{\textcolor{sky}{#1}}{#2}}
+\let\oldComment\Comment
+\renewcommand{\Comment}[1]{\oldComment{\textcolor{gray}{#1}}}
+
+\definecolor{algkw}{RGB}{20, 60, 130}
+
+\newcommand{\True}{\textbf{True}}
+\newcommand{\False}{\textbf{False}}
+\newcommand{\Break}{\State \textbf{\textcolor{algkw}{break}}}
+\newcommand{\algkw}[1]{\textbf{\textcolor{algkw}{#1}}}
+\algrenewcommand\algorithmicfunction{\textbf{\color{algkw}function}}
+\algrenewcommand\algorithmicend{\textbf{\color{algkw}end}}
+\algrenewcommand\algorithmicif{\textbf{\color{algkw}if}}
+\algrenewcommand\algorithmicthen{\textbf{\color{algkw}then}}
+\algrenewcommand\algorithmicelse{\textbf{\color{algkw}else}}
+\algrenewcommand\algorithmicfor{\textbf{\color{algkw}for}}
+\algrenewcommand\algorithmicwhile{\textbf{\color{algkw}while}}
+\algrenewcommand\algorithmicdo{\textbf{\color{algkw}do}}
+\algrenewcommand\algorithmicrepeat{\textbf{\color{algkw}repeat}}
+\algrenewcommand\algorithmicuntil{\textbf{\color{algkw}until}}
+\algrenewcommand\algorithmicreturn{\textbf{\color{algkw}return}}
+
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\setlength{\columnsep}{1cm}
+\renewcommand{\columnseprulecolor}{\normalcolor}
+% set \paragraph vertical spacing
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+                                    {1.5ex}%
+                                    {-0.75em}%
+                                    {\normalfont\normalsize\bfseries}}
+\makeatother
+% reduce space before \subparagraph
+\makeatletter
+\renewcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
+                                       {1ex}%
+                                       {-0.75em}%
+                                       {\normalfont\small\bfseries\hspace{1.25em}}}% Add \hspace{1.25em} for 1 level of indent
+\makeatother
+% add vertical space before \minipage and rename environment to \minipage
+\let\oldminipage\minipage
+\let\endoldminipage\endminipage
+\renewenvironment{minipage}{\vspace{0.5em}\begin{oldminipage}{\linewidth}}{\end{oldminipage}}
+
+% Custom command for horizontal separator
+\newcommand{\sep}{\noindent\rule{\linewidth}{0.4pt}}
+
+\newcommand{\sepdotted}{\noindent\makebox[\linewidth]{\dotfill}}
+
+% Custom command for highlighting text
+\newcommand{\highlight}[2][sky!30]{\setlength{\fboxsep}{0pt}\colorbox{#1}{#2}}
+
+% \pagenumbering{gobble}
+
+\begin{document}
+\begin{multicols*}{3}
+    \footnotesize % Change the font size here if needed
+    \section*{ASD - Algorithmes et Structures de Données \\ \small{Leonard Cseres | Juin 2024}}
+    \paragraph{Complexité}\mbox{}\\
+    \scalebox{0.8}{
+    \highlight[cgreen!30]{$\mathcal{O}(1)$} $<$ \highlight[clime!30]{$\mathcal{O}(\log(n))$} $<$ \highlight[corange!30]{$\mathcal{O}(n)$} $<$ \highlight[cred!30]{$\mathcal{O}(n\cdot\log(n))$} $<$ \highlight[cpurple!30]{$\mathcal{O}(n^c)$} $<$ \highlight[cpurple!30]{$\mathcal{O}(2^n)$} $<$ \highlight[cpurple!30]{$\mathcal{O}(n!)$} $<$ \highlight[cpurple!30]{$\mathcal{O}(n^n)$}
+        }
+        \sepdotted
+        \begin{algorithmic}
+            \For{$i = 1$ \algkw{to} $n$ \algkw{step} \highlight{$i \times \alpha$}} \Comment{$\mathcal{O}(\log_\alpha(n))$}
+                \State $k \gets k + 1$
+            \EndFor
+        \end{algorithmic}
+        \sepdotted
+        \begin{algorithmic}
+            \For{$i = 1$ \algkw{to} $n$ \algkw{step} \highlight{$i \times i$}} \Comment{$\mathcal{O}(\sqrt{n})$}
+            \State $k \gets k + 1$
+            \EndFor
+        \end{algorithmic}
+        \sepdotted
+        \begin{algorithmic}
+            \For{$i = 0$ \algkw{to} $n$} \Comment{$\mathcal{O}(n\cdot\frac{(n-1)}{2})$}
+            \For{$j = 0$ \highlight{\algkw{to} $i$}}
+            \State $k \gets k + 1$
+            \EndFor
+            \EndFor
+        \end{algorithmic}
+        \sepdotted
+        \begin{algorithmic}
+            \For{$i = 0$ \highlight{\algkw{to} $n$ \algkw{and} $m$}} \Comment{$\mathcal{O}(min(n, m))$}
+                \State $k \gets k + 1$
+            \EndFor
+        \end{algorithmic}
+        \sepdotted
+        \begin{algorithmic}
+            \For{$i = 0$ \highlight{\algkw{to} $n$ \algkw{or} $m$}} \Comment{$\mathcal{O}(max(n, m))$}
+                \State $k \gets k + 1$
+            \EndFor
+        \end{algorithmic}\mbox{}\\
+
+        \paragraph{Cas spéciaux}\mbox{}\vspace*{0.5em}
+        \par\noindent\begin{minipage}
+            \centering
+            \begin{tabular}[h]{l|l}
+                \textbf{Operation}                                               & \textbf{Complexité}                     \\
+                \hline
+                \texttt{rand()} \% $n == 0$                                      & \cellcolor{corange!30}$P = \frac{1}{n}$ \\
+                (\texttt{rand()} \% $n$) $\cdot$ (\texttt{rand()} \% $n$) $== n$ & \cellcolor{corange!30}$P = \sqrt{n}$    \\
+            \end{tabular}
+        \end{minipage}
+
+        \paragraph{Récursivité} $C = \text{nb\_appels\_rec}^\text{profondeur}$\vspace*{0.5em}
+        
+        \noindent\begin{minipage}
+            \centering
+            \begin{tabular}{l|l}
+                \textbf{Algorithmes}    & \textbf{Complexités}                                                      \\
+                \hline
+                Factorielle récursif    & \cellcolor{corange!30}$\mathcal{O}(n)$                                    \\
+                Factorielle itératif    & \cellcolor{corange!30}$\mathcal{O}(n)$                                    \\
+                Fibonacci récursif      & \cellcolor{cpurple!30}$\mathcal{O}(\phi^n),\ \phi = \frac{\sqrt{5}+1}{2}$ \\
+                Fibonacci itératif      & \cellcolor{corange!30}$\mathcal{O}(n)$                                    \\
+                PGCD (Euclide)          & \cellcolor{clime!30}$\mathcal{O}(\log(n))$                                \\
+                Tours de Hanoï récursif & \cellcolor{cpurple!30}$\mathcal{O}(2^n)$                                  \\
+                Tours de Hanoï itératif & \cellcolor{cpurple!30}$\mathcal{O}(2^n)$                                  \\
+                Permutations            & \cellcolor{cpurple!30}$\mathcal{O}(n!)$                                   \\
+                Tic Tac Toe             & \cellcolor{cgreen!30}$9!$                                                 \\
+                \makecell[l]{Puissance 4                                                                            \\(Profondeur d’exploration de $d$ tours)}                             & \cellcolor{cpurple!30}$\mathcal{O}(7^d)$             \\
+                \makecell[l]{Minimax (negamax)                                                                      \\(M mouvements possibles par tour,\\profondeur de $d$ tours)}                       & \cellcolor{cpurple!30}$\mathcal{O}(m \cdot d)$       \\
+            \end{tabular}
+        \end{minipage}\\
+
+        \columnbreak
+
+        \paragraph{Algorithmes de Tri}\mbox{}\vspace{0.5em}\\
+        \scalebox{0.705}{
+            \begin{tabular}[h]{l|l|l|l|l|l}
+                \textbf{Algorithme} & \textbf{Pire cas}                              & \textbf{Moyen}                           & \textbf{Meilleur}                        & \textbf{Stable} & \textbf{En place} \\
+                \hline
+                Tri à bulles        & \cellcolor{cpurple!30}$\mathcal{O}(n^2)$       & \cellcolor{cpurple!30}$\Theta(n^2)$      & \cellcolor{corange!30}$\Omega(n)$        & Oui ($\leq$)    & Oui               \\
+                Tri par sélection   & \cellcolor{cpurple!30}$\mathcal{O}(n^2)$       & \cellcolor{cpurple!30}$\Theta(n^2)$      & \cellcolor{cpurple!30}$\Omega(n^2)$      & Non             & Oui               \\
+                Tri par insertion   & \cellcolor{cpurple!30}$\mathcal{O}(n^2)$       & \cellcolor{cpurple!30}$\Theta(n^2)$      & \cellcolor{corange!30}$\Omega(n)$        & Oui             & Oui               \\
+                Tri fusion          & \cellcolor{cred!30}$\mathcal{O}(n\log(n))$     & \cellcolor{cred!30}$\Theta(n\log(n))$    & \cellcolor{cred!30}$\Omega(n\log(n))$    & Oui             & Non               \\
+                Tri rapide          & \cellcolor{cpurple!30}$\mathcal{O}(n^2)$       & \cellcolor{cred!30}$\Theta(n\log(n))$    & \cellcolor{cred!30}$\Omega(n\log(n))$    & Non             & Oui               \\
+                Tri comptage        & \cellcolor{corange!30}$\mathcal{O}(n+k)$       & \cellcolor{corange!30}$\Theta(n+k)$      & \cellcolor{corange!30}$\Omega(n+k)$      & Oui             & Non               \\
+                Tri par base        & \cellcolor{corange!30}$\mathcal{O}(n\cdot  k)$ & \cellcolor{corange!30}$\Theta(n\cdot k)$ & \cellcolor{corange!30}$\Omega(n\cdot k)$ & Oui             & Non               \\
+                Selection rapide    & \cellcolor{cpurple!30}$\mathcal{O}(n^2)$       & \cellcolor{corange!30}$\Theta(n)$        & \cellcolor{corange!30}$\Omega(n)$        & Non             & Oui               \\
+            \end{tabular}
+        }\\
+
+        \noindent\lstinline[basicstyle=\ttfamily\color{cred}]{void qsort(start, count, size, cmp)}\\
+    $\Theta(n\log(n))$, $\mathcal{O}(n^2)$, pas stable (\texttt{<cstdlib>})\\
+
+        \noindent\lstinline[basicstyle=\ttfamily\color{cred}]{void sort(first, last, cmp)}\\
+    $\Theta(n\log(n))$, \texttt{swap} à implémenter\\
+
+        \noindent\lstinline[basicstyle=\ttfamily\color{cred}]{void stable_sort(first, last, cmp)}\\
+    $\mathcal{O}(n\log(n))$, $\mathcal{O}(n\log^2(n))$ si fait en place et doit utiliser $< >$ pour la stabilité (tri fusion)\\
+
+        \noindent\lstinline[basicstyle=\ttfamily\color{corange}]{void nth_element(first, nth, last)}\\
+    $\mathcal{O}(n)$, où $n = \texttt{last} - \texttt{first}$\\
+
+        \noindent\lstinline[basicstyle=\ttfamily\color{cred}]{void partial_sort(first, middle, last)}\\
+    $\mathcal{O}(n\log(m))$, où $n = \texttt{last} - \texttt{first}$ et $m = \texttt{middle} - \texttt{first}$
+
+        \sep
+        \paragraph{Structures linéaires}\mbox{}\vspace{0.5em}\\
+        \scalebox{0.9}{
+            \begin{tabular}{l|l}
+                \hline
+                \textit{Sequence}              &                                                 \\
+                \hline
+                \texttt{array, vector}         &                                                 \\
+                \texttt{deque}                 & Double-ended queue                              \\
+                \texttt{forward\_list}         & Liste chaînée simple                            \\
+                \texttt{list}                  & Liste chaînée double                            \\
+                \hline
+                \textit{Adaptative}            &                                                 \\
+                \hline
+                \texttt{stack}                 & Pile (LIFO)                                     \\
+                \texttt{queue}                 & File (FIFO)                                     \\
+                \texttt{priority\_queue}       & File de priorité                                \\
+                \hline
+                \textit{Associative}           & \textcolor{gray}{\textit{Balanced Binary Tree}} \\
+                \hline
+                \texttt{set}                   & Ensemble trié                                   \\
+                \texttt{multiset}              & Ensemble trié avec doublons                     \\
+                \texttt{map}                   & Table de hachage                                \\
+                \texttt{multimap}              & Table de hachage avec doublons                  \\
+                \hline
+                \textit{Unordered associative} & \textcolor{gray}{\textit{Hash Table}}           \\
+                \hline
+                \texttt{unordered\_set}        & Ensemble non trié                               \\
+                \texttt{unordered\_multiset}   & Ensemble non trié avec doublons                 \\
+                \texttt{unordered\_map}        & Table de hachage non triée                      \\
+                \texttt{unordered\_multimap}   & Table de hachage non triée avec doublons
+            \end{tabular}
+        }
+
+        \paragraph{Buffer Circulaire} {\tiny ($+$)} $\mathcal{O}(1)$ pour ajouter, supprimer et accéder, {\tiny ($-$)} $\mathcal{O}(\min(i, N - i))$ pour insérer ou supprimer à l'index $i$, {\tiny ($-$)} capacité fixe
+        
+        \paragraph{Deque}\mbox{}
+        \par\noindent\begin{minipage}
+            \centering
+            \begin{tabular}{l|l}
+                \textbf{Opération}           & \textbf{Complexité}                                 \\
+                \hline
+                Allouer un nouveau block             & \cellcolor{cgreen!30}$\mathcal{O}(B)$               \\
+                Ré-allouer la map                    & \cellcolor{corange!30}$\mathcal{O}(n/B)$            \\
+                Insertion                            & \cellcolor{corange!30}$\mathcal{O}(B + n/B)$        \\
+                Insertion/suppression à l'indice $i$ & \cellcolor{corange!30}$\mathcal{O}(\min(i, n - i))$ \\
+            \end{tabular}
+        \end{minipage}\vspace{0.5em}\\
+
+        \noindent\scalebox{0.675}{
+            \begin{tabular}{l|c|c|c|c|c}
+                                    & \texttt{array}                         & \texttt{vector}                                    & \texttt{forward\_list}                   & \texttt{list}                            & \texttt{deque}                                             \\
+                \hline
+                Mémoire extra       & \cellcolor{cgreen!30} 0                & \cellcolor{gray!30} $3p + \mathcal{O}(n) \cdot t$  & \cellcolor{gray!30} $p(n+1)$             & \cellcolor{gray!30} $p(2n + 3)$          & \cellcolor{gray!30} \makecell{$\mathcal{O}(n/B) \cdot p +$ \\$\mathcal{O}(B) \cdot t + 6p$} \\
+                operator[]          & \cellcolor{cgreen!30} $\mathcal{O}(1)$ & \cellcolor{cgreen!30} $\mathcal{O}(1)$             & \cellcolor{cred!30} N/A                  & \cellcolor{cred!30} N/A                  & \cellcolor{cgreen!30} $\mathcal{O}(1)^2$                   \\
+                push/pop front      & \cellcolor{cred!30} N/A                & \cellcolor{corange!30} $\mathcal{O}(n)$            & \cellcolor{cgreen!30} $\mathcal{O}(1)$   & \cellcolor{cgreen!30} $\mathcal{O}(1)$   & \cellcolor{cgreen!30} $\mathcal{O}(1)$                     \\
+                insert/erase milieu & \cellcolor{cred!30} N/A                & \cellcolor{corange!30} $\mathcal{O}(n)$            & \cellcolor{cgreen!30} $\mathcal{O}(1)^1$ & \cellcolor{cgreen!30} $\mathcal{O}(1)^1$ & \cellcolor{corange!30} $\mathcal{O}(n)$                    \\
+                push/pop back       & \cellcolor{cred!30} N/A                & \cellcolor{cgreen!30} $\Omega(1)$ $\mathcal{O}(n)$ & \cellcolor{cred!30} N/A                  & \cellcolor{cgreen!30} $\mathcal{O}(1)$   & \cellcolor{cgreen!30} $\mathcal{O}(1)$                     \\
+            \end{tabular}
+        }\vspace*{0.25em}\\
+        
+        \noindent$t$ = \texttt{sizeof(T)}, $p$ = \texttt{sizeof(T*)}, $B$ = \texttt{block size}\\
+        \textsuperscript{1}si l'élément est connu\hspace{0.5em} \textsuperscript{2}un peu plus lent\vspace*{0.5em}
+
+        \paragraph{Tas} $\forall i > 0, T[\text{parent}(i)] \geq T[i]$
+        \subparagraph{Insertion}
+        \begin{enumerate}
+            \item Insérer à la fin
+            \item Remonter l'élément
+        \end{enumerate}
+        \subparagraph{Suppression}
+        \begin{enumerate}
+            \item Permuter premier et dernier élément
+            \item Supprimer le dernier
+            \item Descendre l'élément permuté
+        \end{enumerate}
+
+        \paragraph{Notation polonaise inversée (RPN)} Placer opérateurs après les opérandes et évaluer avec une pile de gauche à droite
+
+        \sep
+        \paragraph{Arbres}
+        \subparagraph{Hauteur} $H(n) = 1 + \max(H(n_g), H(n_d))$
+        \subparagraph{Degrés} $d = \max(n_g, n_d)$ (nbr. d'enfants pour un noeud donné)
+        \subparagraph{Plein} (1) les noeuds de niveau $< h - 1$ sont de degré $d$, (2) les noeuds de niveau $h - 1$ sont de degré quelconque, (3) les feuilles sont de niveau $h$
+        \subparagraph{Complet} Dernier niveau rempli par la gauche
+        \subparagraph{Binaire} Arbre de degré $\leq 2$
+
+        \paragraph{Parcours}
+        \subparagraph{Pré-ordre} $A, B, D, E, C, F, G$\mbox{}\\
+        \begin{minipage}
+            \centering
+            \begin{tikzpicture}[level distance=0.75cm, level/.style={sibling distance=2.5cm/#1}]
+                \node {A\textsuperscript{1}}
+                child {node {B\textsuperscript{2}}
+                        child {node {D\textsuperscript{3}}}
+                        child {node {E\textsuperscript{4}}}
+                    }
+                child {node {C\textsuperscript{5}}
+                        child {node {F\textsuperscript{6}}}
+                        child {node {G\textsuperscript{7}}}
+                    };
+            \end{tikzpicture}\vspace{1em}
+        \end{minipage}
+
+        \subparagraph{Post-ordre} $D, E, B, F, G, C, A$\mbox{}\\
+        \begin{minipage}
+            \centering
+            \begin{tikzpicture}[level distance=0.75cm, level/.style={sibling distance=2.5cm/#1}]
+                \node {A\textsuperscript{7}}
+                child {node {B\textsuperscript{3}}
+                        child {node {D\textsuperscript{1}}}
+                        child {node {E\textsuperscript{2}}}
+                    }
+                child {node {C\textsuperscript{6}}
+                        child {node {F\textsuperscript{4}}}
+                        child {node {G\textsuperscript{5}}}
+                    };
+            \end{tikzpicture}\vspace{1em}
+        \end{minipage}
+
+        \vfill\null
+        \columnbreak
+
+        \subparagraph{Largeur} $A, B, C, D, E, F, G$\mbox{}\\
+        \begin{minipage}
+            \centering
+            \begin{tikzpicture}[level distance=0.75cm, level/.style={sibling distance=2.5cm/#1}]
+                \node {A\textsuperscript{1}}
+                child {node {B\textsuperscript{2}}
+                        child {node {D\textsuperscript{4}}}
+                        child {node {E\textsuperscript{5}}}
+                    }
+                child {node {C\textsuperscript{3}}
+                        child {node {F\textsuperscript{6}}}
+                        child {node {G\textsuperscript{7}}}
+                    };
+            \end{tikzpicture}\vspace{1em}
+        \end{minipage}
+
+        \subparagraph{Symétrique (Arbres Binaires)} $D, B, E, A, F, C, G$\mbox{}\\
+        \begin{minipage}
+            \centering
+            \begin{tikzpicture}[level distance=0.75cm, level/.style={sibling distance=2.5cm/#1}]
+                \node {A\textsuperscript{4}}
+                child {node {B\textsuperscript{2}}
+                        child {node {D\textsuperscript{1}}}
+                        child {node {E\textsuperscript{3}}}
+                    }
+                child {node {C\textsuperscript{6}}
+                        child {node {F\textsuperscript{5}}}
+                        child {node {G\textsuperscript{7}}}
+                    };
+            \end{tikzpicture}\vspace{1em}
+        \end{minipage}
+
+        \sep
+        \paragraph{Arbres binaires de recherche} $n_g \leq n < n_d$, de complexité $\mathcal{O}(\log_2(n))$ si équilibré
+        \subparagraph{Suppression}
+        \begin{itemize}
+            \item Feuille: supprimer
+            \item Degré 1: remplacer par enfant
+            \item Degré 2: choisir un des noeuds descendant comme racine du sous-arbre à raccrocher (1) Minimum du sous-arbre droit, (2) Maximum du sous-arbre gauche
+        \end{itemize}
+        \subparagraph{Taille} Nombre de noeuds dans l'arbre
+        \subparagraph{Rang d'une clé} Nombre de clés plus petites que la clé donnée
+        \subparagraph{Équilibre} $-1 \leq \text{hauteur}(n_g) - \text{hauteur}(n_d) \leq 1$
+        % (TODO: Add STL tree data structures)
+
+        \sep
+        \paragraph{Tables de hachage}
+        \subparagraph{Fonction de hachage} $h(k) = k \mod M$ avec $M$ premier et éloigné de puissances de 2
+        \subparagraph{Adressage MAD} $h(k) = (a \cdot k + b) \mod M$ avec $a, b \in \mathbb{N}$ et non multiples de $M$
+        % (TODO: Add more algorithms)
+
+        \paragraph{Résolution de collisions}
+        \subparagraph{Chainage} Liste chaînée à chaque case $M \approx \frac{N}{4}$ avec $M$ listes chainées et $N$ paires clé-valeur (\highlight{$M < N$})
+        \begin{itemize}
+            \item Doubler $M$ quand $\frac{N}{M} \geq 8$
+            \item Diviser $M$ par 2 quand $\frac{N}{M} \leq 2$
+        \end{itemize}
+        \subparagraph{Insertion} Insertion \highlight{au début} de la liste chaînée
+        \paragraph{Adressage ouvert} $M \approx 2N$ (\highlight{$M > N$})
+        \subparagraph{Sondage Linéaire} Chercher la clé $k$. Si occupé, placer à la case $h(k) + i \mod M$ avec $i = 1, 2, 3, \ldots$
+        \begin{itemize}
+            \item Doubler $M$ quand $\frac{N}{M} \geq \frac{1}{2}$
+            \item Diviser $M$ par 2 quand $\frac{N}{M} \leq \frac{1}{8}$
+        \end{itemize}
+        \subparagraph{Suppression} Ré-insérer les éléments suivants à la case $h(k)$
+
+        \paragraph{Comparaisons}\mbox{}\\
+        \begin{tabular}{l|c|c|c}
+                             & \textbf{Insérer}                           & \textbf{Rechercher}                        & \textbf{Supprimer}                         \\
+            \hline
+            Tableau trié     & \cellcolor{corange!30}$\mathcal{O}(n)$     & \cellcolor{clime!30}$\mathcal{O}(\log(n))$ & \cellcolor{corange!30}$\mathcal{O}(n)$     \\
+            Tableau non trié & \cellcolor{cgreen!30}$\mathcal{O}(1)$      & \cellcolor{corange!30}$\mathcal{O}(n)$     & \cellcolor{corange!30}$\mathcal{O}(n)$     \\
+            Liste triée      & \cellcolor{corange!30}$\mathcal{O}(n)$     & \cellcolor{corange!30}$\mathcal{O}(n)$     & \cellcolor{corange!30}$\mathcal{O}(n)$     \\
+            Liste non triée  & \cellcolor{cgreen!30}$\mathcal{O}(1)$      & \cellcolor{corange!30}$\mathcal{O}(n)$     & \cellcolor{corange!30}$\mathcal{O}(n)$     \\
+            Arbre            & \cellcolor{clime!30}$\mathcal{O}(\log(n))$ & \cellcolor{clime!30}$\mathcal{O}(\log(n))$ & \cellcolor{clime!30}$\mathcal{O}(\log(n))$ \\
+            Table de hachage & \cellcolor{cgreen!30}$\mathcal{O}(1)$      & \cellcolor{cgreen!30}$\mathcal{O}(1)$      & \cellcolor{cgreen!30}$\mathcal{O}(1)$      \\
+        \end{tabular}\\\\
+        \sep
+        \paragraph{Graphes}\mbox{}\vspace*{0.25em}
+        \par\textbf{Simple} Pas de boucles, pas de multi-arêtes
+        \par\textbf{Degré} Nombre de sommets adjacents
+        \par\textbf{Circuit} Chemin fermé
+
+        \paragraph{Matrice d'adjacence} $M_{ij} = \deg(v_i, v_j)$
+        \subparagraph{Complexité} $\mathcal{O}(n^2)$ coût mémoire, $\mathcal{O}(1)$ pour accéder à une arête, $\mathcal{O}(n)$ pour parcourir les voisins, $\mathcal{O}(n^2)$ pour parcourir tous les arêtes
+
+        \paragraph{Liste d'adjacence} Liste des voisins
+        \begin{itemize}
+            \item \textbf{Non orienté} $\text{Adj}[u] = \{v \mid (u, v) \in E\}$
+            \item \textbf{Orienté} $\text{Succ}[u] = \{v \mid (u, v) \in E\}$
+            \item \textbf{Pondéré} $\text{Adj}[u] = \{(v, w) \mid (u, v, w) \in E\}$
+        \end{itemize}
+        \subparagraph{Complexité} $\mathcal{O}(n + m)$ coût mémoire, $\mathcal{O}(\deg(u))$ pour accéder à une arête, $\mathcal{O}(\deg(u))$ pour parcourir les voisins, $\mathcal{O}(n + m)$ pour parcourir tous les arêtes ($\mathcal{O}(\deg(u)) \approx \mathcal{O}(\frac{m}{n})$)
+
+        \subparagraph{DFS (pré)} En profondeur, récursif
+        \subparagraph{BFS (post)} En largeur, file FIFO
+        \subparagraph{Complexité parcours} $\mathcal{O}(n^2)$ pour matrice, $\mathcal{O}(n + m)$ pour liste
+        \paragraph{Tri topologique} Inverse du post-ordre d'un DAG (ne fonctionne pas sur un graphe cyclique)
+        \paragraph{CC} (Composantes Connexes) Est-ce que $u$ et $v$ sont connectés?
+        \paragraph{CFC} (Composantes Fortement Connexes) Est-ce que $u$ et $v$ sont connectés dans les deux sens?
+        \begin{enumerate}
+            \item Calculer post-ordre inverse de \highlight{l'inverse de $G$}
+            \item Calculer les CFC par DFS sur $G$ dans cet ordre
+        \end{enumerate}
+
+        \vfill\null
+        \columnbreak
+
+        \section*{Usage Reference}
+
+        \paragraph{Containers}\mbox{}
+        \par\noindent\lstinline{<>.insert} Inserts an element \highlight{before} the specified position
+        \par\noindent\lstinline{<>.splice} Transfers element(s) from one list to another
+        \par\noindent\lstinline{<>.splice_after} Transfers element(s) \highlight{after} the specified position
+        \\\sep
+
+        \paragraph{Algorithms}\mbox{}
+        \par\noindent\textcolor{clime}{\texttt{lower\_bound}} (Sorted input) Returns an iterator pointing to \highlight{first element \textbf{not} < value}. Return \texttt{end()} if no such element
+        \par\noindent\textcolor{clime}{\texttt{upper\_bound}} (Sorted input) Returns an iterator pointing to \highlight{first element > value}. Return \texttt{end()} if no such element
+        \par\noindent\textcolor{corange}{\texttt{nth\_element}} Rearranges the elements in the range \highlight{[first, last)} such that the element at the \texttt{nth} position is the element that would be in that position in a sorted sequence
+        \\\sepdotted
+        \par\noindent\textcolor{corange}{\texttt{partition}} Rearranges the elements in the range \highlight{[first, last)} such that \texttt{pred} is \True{} for elements before the partition and \False{} for elements after. Returns an iterator to the first element of the second group
+        \par\noindent\textcolor{corange}{\texttt{partition\_point}} Returns an iterator to the first element in the range \highlight{[first, last)} for which \texttt{pred} is \False{}
+        \\\sepdotted
+        \par\noindent\textcolor{cred}{\texttt{partial\_sort}} Sort until \texttt{middle} in the range \highlight{[first, last)}
+        \par\noindent\textcolor{corange}{\texttt{adjacent\_find}} Returns an iterator to the first element in the range \highlight{[first, last)} that is equal to the next element
+        \\\sepdotted
+        \par\noindent\textcolor{clime}{\texttt{push\_heap}} (Is already heap) \highlight{Inserts \texttt{last$-1$}} element into the correct position of the heap
+        \par\noindent\textcolor{clime}{\texttt{pop\_heap}} (Is already heap) \highlight{Swaps the \texttt{first} and \texttt{last$-1$}} element and rearranges the heap
+        \\\sep
+
+        \paragraph{Iterators}\mbox{}\\
+        \par\noindent\begin{minipage}
+            \centering
+            \begin{tabular}{|l|l|l|l||l|}
+                \hline
+                \multicolumn{4}{|l||}{\textbf{All}} & \makecell[l]{incrementation                                                                                                          \\copy-constructible/assignable\\destructible}                                                                                                                       \\ \hline
+                \multirow{5}{*}{\texttt{RA}}        & \multirow{4}{*}{\texttt{Bi}} & \multirow{3}{*}{\texttt{Fw}}                    & \texttt{In}    & \makecell[l]{\texttt{==, !=}       \\dereferenced as an \textit{rvalue}}\\ \cline{4-5}
+                                                    &                              &                                                 & \texttt{Out}   & dereferenced as an \textit{lvalue} \\ \cline{4-5}
+                                                    &                              &                                                 &                & \makecell[l]{default-constructible \\multi-pass\textsuperscript{1}} \\ \cline{3-5}
+                                                    &                              & \multicolumn{2}{l||}{}                          & decrementation                                      \\ \cline{2-5}
+                                                    & \multicolumn{3}{l||}{}       & \texttt{+, -, +=, -=, <, >, $\leq$, $\geq$, []}                                                       \\ \hline
+            \end{tabular}\vspace*{0.1em}
+            \textsuperscript{1}neither dereferencing nor incrementing affects dereferenceability
+        \end{minipage}
+        \par\noindent\textcolor{corange}{\texttt{advance}, \texttt{distance}, \texttt{next}, \texttt{prev}} \textsc{complexity} $\mathcal{O}(1)$ for \texttt{RA}, otherwise $\mathcal{O}(n)$
+\end{multicols*}
+
+\pagebreak
+
+\begin{multicols*}{4}
+    \footnotesize
+
+    \paragraph{Permuter les $n$ premiers caractères}
+    \sep
+    \begin{algorithmic}
+        \Function{Permuter}{$S$, $n$} \Comment{$e = n \cdot n!$}
+        \If{$n = 1$}
+        \State $\Call{traiter}{S}$
+        \Else
+        \For{$i = 1$ to $n$}
+        \State $\Call{Permuter}{S, n - 1}$
+        \State $\Call{swap}{S[i], S[n]}$
+        \EndFor
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Permuter}{$S$, $n$} \Comment{$e = 3.43 \cdot n!$}
+        \If{$n = 1$}
+        \State $\Call{traiter}{S}$
+        \Else
+        \For{$i = 1$ to $n$}
+        \State $\Call{swap}{S[i], S[n]}$
+        \State $\Call{Permuter}{S, n - 1}$
+        \State \highlight{\Call{swap}{$S[i]$, $S[n]$}}
+        \EndFor
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Permuter}{$S$, $n$} \Comment{$e = 2(n! - 1)$}
+        \If{$n = 1$}
+        \State $\Call{traiter}{S}$
+        \Else
+        \For{$i = 1$ to \highlight{$n-1$}}
+        \State $\Call{swap}{S[i], S[n]}$
+        \State $\Call{Permuter}{S, n - 1}$
+        \State $\Call{swap}{S[i], S[n]}$
+        \EndFor
+        \State \highlight{\Call{Permuter}{$S$, $n - 1$}}
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Permuter}{$S$, $n$} \Comment{$e = n! - 1$}
+        \If{$n = 1$}
+        \State $\Call{traiter}{S}$
+        \Else
+        \State $\Call{Permuter}{S, n - 1}$
+        \For{$i = 1$ to $n-1$}
+        \If{\highlight{$n$ is even}}
+        \State \highlight{\Call{swap}{$S[i]$, $S[n]}$}
+        \Else
+        \State \highlight{\Call{swap}{$S[1]$, $S[n]}$}
+        \EndIf
+        \State $\Call{Permuter}{S, n - 1}$
+        \EndFor
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+
+    \paragraph{Tris}\mbox{}\\
+    \sep
+    \begin{algorithmic}
+        \Function{BubbleSort}{$A$, $n$}
+        \For{$i = 1$ to $n - 1$}
+        \For{$j = 1$ to $n - i$}
+        \If{$A[j + 1] < A[j]$}
+        \State $\Call{swap}{A[j], A[j + 1]}$
+        \EndIf
+        \EndFor
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{SelectionSort}{$A$, $n$}
+        \For{$i = 1$ to $n-1$}
+        \State $imin \gets i$
+        \For{$j = i + 1$ to $n$}
+        \If{$A[j] < A[imin]$}
+        \State $imin \gets j$
+        \EndIf
+        \EndFor
+        \State $\Call{swap}{A[i], A[imin]}$
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{InsertionSort}{$A$, $n$}
+        \For{$i = 2$ to $n$}
+        \State $tmp \gets A[i]$
+        \State $j \gets i$
+        \While{$j - 1 \geq 1$ \algkw{and} $A[j - 1] > tmp$}
+        \State $A[j] \gets A[j - 1]$
+        \State $j \gets j - 1$
+        \EndWhile
+        \State $A[j] \gets tmp$
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Fusionner}{$A$, $p$, $q$, $r$}
+        \State $L \gets$ copy of subarray $A[p \ldots q]$
+        \State $R \gets$ copy of subarray $A[q + 1 \ldots r]$
+        \State insert a sentinel value $\infty$ at the end of $L$ and $R$
+        \State $i \gets 1$, $j \gets 1$
+        \For{$k = p$ to $r$}
+        \If{$L[i] \leq R[j]$}
+        \State $A[k] \gets L[i]$
+        \State $i \gets i + 1$
+        \Else
+        \State $A[k] \gets R[j]$
+        \State $j \gets j + 1$
+        \EndIf
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \columnbreak
+
+    \begin{algorithmic}
+        \Function{TriFusion}{$A$, $lo$, $hi$}
+        \If{$hi \leq lo$}
+        \State \Return
+        \EndIf
+        \State $mid \gets lo + (hi - lo)/2$\\
+        \State $\Call{TriFusion}{A, lo, mid}$
+        \State $\Call{TriFusion}{A, mid + 1, hi}$
+        \State $\Call{Fusionner}{A, lo, mid, hi}$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Partition}{$A$, $lo$, $hi$}
+        \State $i \gets lo-1$, $j \gets hi$
+        \While{\True}
+        \Repeat
+        \State $i \gets i + 1$
+        \Until{$A[i] \geq A[hi]$}
+        \Repeat
+        \State $j \gets j - 1$
+        \Until{$j \leq lo$ \algkw{or} $A[hi] \geq A[j]$}
+        \If{$i \geq j$}
+        \Break
+        \EndIf
+        \State $\Call{swap}{A[i], A[j]}$
+        \EndWhile
+        \State $\Call{swap}{A[i], A[hi]}$
+        \State \Return $i$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{TriRapide}{$A$, $lo$, $hi$}
+        \If{$lo < hi$}
+        \State $p \gets$ choose pivot element
+        \State $\Call{swap}{A[hi], A[p]}$
+        \State $i \gets$ \Call{Partition}{$A$, $lo$, $hi$}\\
+        \State $\Call{QuickSort}{A, lo, i - 1}$
+        \State $\Call{QuickSort}{A, i + 1, hi}$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{QuickSort}{$A$, $lo$, $hi$}
+        \While{$lo < hi$}
+        \State $p \gets$ choose pivot element
+        \State $\Call{swap}{A[hi], A[p]}$
+        \State $i \gets$ \Call{Partition}{$A$, $lo$, $hi$}\\
+        \If{$i - lo < hi - i$}
+        \State $\Call{QuickSort}{A, lo, i - 1}$
+        \State $lo \gets i + 1$
+        \Else
+        \State $\Call{QuickSort}{A, i + 1, hi}$
+        \State $hi \gets i - 1$
+        \EndIf
+        \EndWhile
+        \EndFunction
+    \end{algorithmic}
+    \begin{algorithmic}
+        \Function{SelectionRapide}{$A$, $n$, $k$}
+        \State $lo \gets 1$
+        \State $hi \gets n$\\
+        \While{$hi > lo$}
+        \State $i \gets \Call{Partition}{A, lo, hi}$
+        \If{$i < k$}
+        \State $lo \gets i + 1$
+        \ElsIf{$i > k$}
+        \State $hi \gets i - 1$
+        \Else \Comment{$i = k$}
+        \State \Return $A[k]$
+        \EndIf
+        \EndWhile\\
+        \State \Return $A[k]$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{TriComptage}{$A$, $n$, $b$, $key$}
+        \State $C \gets$ array of $b$ counters initialized to zero
+        \For{each $e$ in $A$}
+        \State $C[key(e)] \gets C[key(e)] + 1$
+        \EndFor\\
+
+        \State $idx \gets 1$
+        \For{$i = 1$ to $b$}
+        \State $tmp \gets C[i]$
+        \State $C[i] \gets idx$
+        \State $idx \gets idx + tmp$
+        \EndFor\\
+
+        \State $B \gets$ array of the same size as $A$
+        \For{each $e$ in $A$}
+        \State $B[C[key(e)]] \gets \textbf{move } e$
+        \State $C[key(e)] \gets C[key(e)] + 1$
+        \EndFor
+
+        \State \Return $B$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{TriParBase}{$T$, $d$}
+        \For{$i = d$ to $1$}
+        \State Sort $T$ with a stable sort according to
+        \State the $i$-th digit
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \vfill\null
+\end{multicols*}
+
+\pagebreak
+
+\begin{multicols*}{3}
+    \footnotesize
+
+    \paragraph{Tas (Heap)}\mbox{}\\
+    \sep
+    \begin{algorithmic}
+        \Function{Parent}{$i$}
+        \Return $(i - 1)/2$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{E1}{$i$}
+        \Return $2 \cdot i + 1$ \Comment{Enfant gauche}
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{E2}{$i$}
+        \Return $2 \cdot i + 2$ \Comment{Enfant droit}
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Remonter}{$T$, $i$}
+        \While{$i > 0$ \algkw{and} $T[\Call{Parent}{i}] < T[i]$}
+        \State $\Call{swap}{T[i], T[\textsc{Parent}(i)]}$
+        \State $i \gets \Call{Parent}{i}$
+        \EndWhile
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{PGE}{$T$, $i$, $k = \textsc{taille}(T)$} \Comment{Plus grand enfant}
+        \If {$\Call{E2}{i} < k$ \algkw{and} $T[\textsc{E2}(i)] > T[\textsc{E1}(i)]$}
+        \State \Return $\Call{E2}{i}$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Descendre}{$T$, $i$, $k = \textsc{taille}(T)$}
+        \While{$\Call{E1}{i} < k$ \algkw{and} $T[\Call{PGE}{T, i, k}] > T[i]$}
+        \State $\Call {swap}{T[\textsc{PGE}(T, i, k)], T[i]}$
+        \State $i \gets \Call{PGE}{T, i, k}$
+        \EndWhile
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{CreerTas}{$T$} \Comment{$\mathcal{O}(n\log(n))$}
+            \For{$i = 1$ to $\Call{taille}{T} - 1$}
+            \State $\Call{Remonter}{T, i}$
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{CreerTas}{$T$} \Comment{$\mathcal{O}(n)$}
+        \State $p \gets \Call{Parent}{\textsc{taille}(T) - 1}$
+        \For{$i = p$ to $0$}
+        \State $\Call{Descendre}{T, i}$
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{TriParTas}{$T$} \Comment{$\mathcal{O}(n\log(n))$}
+            \State $N \gets \Call{taille}{T}$
+            \State $\Call{CreerTas}{T}$
+            \For{$k = N - 1$ to $1$}
+            \State $\Call{swap}{T[k], T[0]}$
+            \State $\Call{Descendre}{T, 0, k}$
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \columnbreak
+
+    \paragraph{Arbres Binaires}\mbox{}\\
+    \sep
+    \begin{algorithmic}
+        \Function{Hauteur}{$r$}
+        \If{$r = \varnothing$} \Return $0$
+        \Else
+        \State \Return $1 + \max(\Call{Hauteur}{r.gauche}, \Call{Hauteur}{r.droit})$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Equilibre}{$r$}
+        \If{$r = \varnothing$} \Return $0$
+        \Else
+        \State \Return $\Call{Hauteur}{r.gauche} - \Call{Hauteur}{r.droit}$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Lineariser}{$r$, ref $out$, ref $n$} \Comment{$n$ compteur noeuds}
+        \If{$r \neq \varnothing$}
+        \State $\Call{Lineariser}{r.droit, out, n}$
+        \State $r.droit \gets out$, $out \gets r$, $n \gets n + 1$
+        \State $\Call{Lineariser}{r.gauche, out, n}$
+        \State $r.gauche \gets \varnothing $
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Arboriser}{ref $out$, $n$}
+        \If{$n \neq 0$}
+        \State $rg \gets \Call{Arboriser}{out, (n - 1)/2}$
+        \State $r \gets out$, $out.gauche \gets rg$, $out \gets out.droit$
+        \State $r.droit \gets \Call{Arboriser}{out, n/2}$
+        \State \Return $r$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Equilibrer}{$r$} \Comment{$\mathcal{O}(n)$}
+        \State $out \gets \varnothing$, $n \gets 0$
+        \State $\Call{Lineariser}{r, out, n}$
+        \State \Return $\Call{Arboriser}{out, n}$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{RotGauche}{ref $r$}
+        \State $tmp \gets r.droit$
+        \State $r.droit \gets tmp.gauche$
+        \State $tmp.gauche \gets r$
+        \State $r \gets tmp$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{RotDroite}{ref $r$}
+        \State $tmp \gets r.gauche$
+        \State $r.gauche \gets tmp.droit$
+        \State $tmp.droit \gets r$
+        \State $r \gets tmp$
+        \EndFunction
+    \end{algorithmic}
+    \columnbreak
+
+    \begin{algorithmic}
+        \Function{RetablirEquilibre}{ref $r$}
+        \If{$r = \varnothing$} \Return
+        \EndIf
+        \If{$\Call{Equilibre}{r} < -1$}
+        \If{$\Call{Equilibre}{r.droit} > 0$}
+        \State $\Call{RotDroite}{r.droit}$
+        \EndIf
+        \State $\Call{RotGauche}{r}$
+        \ElsIf{$\Call{Equilibre}{r} > 1$}
+        \If{$\Call{Equilibre}{r.gauche} < 0$}
+        \State $\Call{RotGauche}{r.gauche}$
+        \EndIf
+        \State $\Call{RotDroite}{r}$
+        \Else
+        \State $\Call{CalculerHauteur}{r}$ \Comment{Mettre à jour attrib. hauteur}
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Inserer}{ref $r$, $k$}
+        \If{$r = \varnothing$}
+        \State $r \gets \algkw{new } Noeud(k)$
+        \ElsIf{$k = r.cle$}
+        \State \Return \Comment{Déjà présent}
+        \Else
+        \If{$k < r.cle$}
+        \State $\Call{Inserer}{r.gauche, k}$
+        \Else
+        \State $\Call{Inserer}{r.droit, k}$
+        \EndIf
+        \State $\Call{RetablirEquilibre}{r}$
+        \EndIf
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Supprimer}{ref $r$, $k$}
+        \If{$r = \varnothing$}
+        \State \Return
+        \EndIf
+        \If{$k = r.cle$}
+        \State Suppression de $r$ avec 3 cas
+        \Else
+        \If{$k < r.cle$}
+        \State $\Call{Supprimer}{r.gauche, k}$
+        \Else
+        \State $\Call{Supprimer}{r.droit, k}$
+        \EndIf
+        \EndIf
+        \State $\Call{RetablirEquilibre}{r}$
+        \EndFunction
+    \end{algorithmic}
+    \vfill\null
+    \columnbreak
+
+    \paragraph{Graphes}\mbox{}\\
+    \sep
+
+    \begin{algorithmic}
+        \Require Les sommets sont marqués comme non visités
+        \Function{Profondeur}{sommet $v$, Fn $pre$, (opt.) Fn $post$}
+        \State pre($v$) \Comment{en pré-ordre}
+        \State $v \gets$ visité
+        \For{tout $w$ adjacent à $v$}
+        \If{$w$ n'est pas visité}
+        \State \Call{Profondeur}{$w$, $pre$, $post$}
+        \EndIf
+        \EndFor
+        \State post($v$) \Comment{en post-ordre}
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{ProfondeurG}{Graphe $G$, Fn $action$}
+        \State Marquer tous les sommets comme non visités
+        \For{tout sommet $v$ de $G$}
+        \If{$v$ n'est pas visité}
+        \State \Call{Profondeur}{$v$, $action$}
+        \EndIf
+        \EndFor
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Largeur}{sommet $v$, Fn $action$}
+        \State Initialiser une file $Q$ vide
+        \State $Q$.push($v$)
+        \State $v \gets$ visité
+        \While{$Q$ n'est pas vide}
+        \State $v \gets$ $Q$.pop()
+        \State $action$($v$)
+        \For{tout $w$ adjacent à $v$}
+        \If{$w$ n'est pas visité}
+        \State $Q$.push($w$)
+        \State $w \gets$ visité
+        \EndIf
+        \EndFor
+        \EndWhile
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{ParentsEnLargeur}{sommet $v$}
+        \State Initialiser un tableau $Parents$ à $-1$
+        \State Initialiser une file $Q$ vide
+        \State $Q$.push($v$)
+        \State $Parents$[$v$] $\gets$ v \Comment{sommet d'origine}
+        \While{$Q$ n'est pas vide}
+        \State $v \gets$ Q.pop()
+        \For{tout $w$ adjacent à $v$}
+        \If{$Parents$[$w$] $ = -1$} \Comment{$w$ non marqué}
+        \State $Q$.push($w$)
+        \State $Parents$[$w$] $\gets v$
+        \EndIf
+        \EndFor
+        \EndWhile
+        \State \Return $Parents$
+        \EndFunction
+    \end{algorithmic}
+    \begin{algorithmic}
+        \Function{Chaine}{Parents $P$, sommet $w$}
+        \State Initialiser $chaine$ vide
+        \If{$P[w] = -1$}
+        \State \Return $chaine$ vide
+        \Else
+        \While{$P[w] \neq w$}
+        \State ajouter $w$ à la $chaine$
+        \State $w \gets P[w]$
+        \EndWhile
+        \EndIf
+        \State \Return $chaine$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{ParentsEnLargeur}{Sommets $S$}
+        \State Initialiser tableau $Parents$ à $-1$
+        \State Initialiser file $Q$ vide
+        \For{tout sommet $v$ de $S$}
+        \State $Q$.push($v$)
+        \State $Parents[v] \gets v$
+        \EndFor
+        \While{$Q$ n'est pas vide}
+        \State $v \gets Q$.pop()
+        \For{tout $w$ adjacent à $v$}
+        \If{$Parents[w] = -1$}
+        \State $Q$.push($w$)
+        \State $Parents[w] \gets v$
+        \EndIf
+        \EndFor
+        \EndWhile
+        \State \Return $Parents$
+        \EndFunction
+    \end{algorithmic}
+    \sepdotted
+    \begin{algorithmic}
+        \Function{Dijkstra}{graphe $G(V, E)$, sommet $v_0$}
+        \State $Q \gets \text{PriorityQueue}()$
+        \State $distTo[|V|], edgeTo[|V|]$
+        \State $distTo[v_0] \gets 0$, $Q.\text{push}(v_0, 0)$\\
+        \For{$v \in G$}
+        \If{$v \neq v_0$}
+        \State $distTo[v] \gets \infty, edgeTo[v] \gets \text{NULL}$
+        \EndIf
+        \EndFor
+        \While {$Q$ n'est pas vide}
+        \State $v \gets Q.\text{top}(), Q.\text{pop}()$
+        \For{$e:v \rightarrow w \in \text{adj}(v)$}
+        \State $d \gets distTo[v] + \text{weight}(e)$
+        \If{$d < distTo[w]$}
+        \State $distTo[w] \gets d, edgeTo[w] \gets e$
+        \State $Q.\text{add\_or\_modify}(w, -distTo[w])$
+        \EndIf
+        \EndFor
+        \EndWhile
+        \State \Return $distTo[ ], edgeTo[ ]$
+        \EndFunction
+        \vfill\null
+        \columnbreak
+
+        \begin{algorithmic}
+            \Function{ComposantesConnexes}{Graphe $G$}
+            \State $id \gets 0$
+            \State Initialiser tableau $CC$ à $-1$
+            \For{tout sommet $v$ de $G$}
+            \If{$CC[v] = -1$}
+            \State \Call{Profondeur}{$v$, \algkw{fn}($v$) \{ $CC[v] \gets id$; \}}
+            \State $id \gets id + 1$
+            \EndIf
+            \EndFor
+            \State \Return $CC[ ]$
+            \EndFunction
+        \end{algorithmic}
+        \sepdotted
+        \begin{algorithmic}
+            \Function{DetectionCycle}{sommet $v$}
+            \State \algkw{static} $foundCycle \gets$ \False
+            \State Initialiser tableau $visited$ à \True
+            \State Initialiser tableau $parents$ à \True\\
+            \For{tout sommet $w \in \text{adj}(v)$}
+            \If{$foundCycle$}
+            \State \Return
+            \ElsIf{$\algkw{not } visited[w]$}
+            \State \Call{DetectionCycle}{$w$}
+            \ElsIf{$parents[w]$}
+            \State $foundCycle \gets$ \True
+            \EndIf
+            \EndFor
+            \State $parents[v] \gets$ \False
+            \EndFunction
+        \end{algorithmic}
+    \end{algorithmic}
+\end{multicols*}
+
+\pagebreak
+
+\setlength{\columnsep}{6.5pt}
+\begin{multicols*}{6}
+    \scriptsize
+    \raggedright
+    \listofmethods
+    \vspace*{1.5em}
+    \begin{tabular}{ll}
+        \vspace{0.25em}
+        \cellcolor{cgreen}  & $\mathcal{O}(1)$        \\
+        \vspace{0.25em}
+        \cellcolor{clime}   & $\mathcal{O}(\log(n))$  \\
+        \vspace{0.25em}
+        \cellcolor{corange} & $\mathcal{O}(n)$        \\
+        \vspace{0.25em}
+        \cellcolor{cred}    & $\mathcal{O}(n\log(n))$
+    \end{tabular}
+
+    \vfill\null
+    \pagebreak
+\end{multicols*}
+\setlength{\columnsep}{15pt}
+\begin{multicols*}{4}
+    \scriptsize
+    \include{include/reference}
+\end{multicols*}
+
+\end{document}

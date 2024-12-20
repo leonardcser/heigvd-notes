@@ -1,0 +1,1677 @@
+{
+  "array": {
+    "url": "https://cplusplus.com/reference/array/array",
+    "functions": [
+      {
+        "method": "at",
+        "prototype": "reference at ( size_type n );const_reference at ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "back",
+        "prototype": "reference back();const_reference back() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "data",
+        "prototype": "value_type* data() noexcept;const value_type* data() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "empty",
+        "prototype": "constexpr bool empty() noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "fill",
+        "prototype": "void fill (const value_type& val);",
+        "complexity": "Linear: Performs as many assignment operations as the size of the array object.",
+        "validity": "No changes."
+      },
+      {
+        "method": "front",
+        "prototype": "reference front();const_reference front() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_size",
+        "prototype": "constexpr size_type max_size() noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator[]",
+        "prototype": "reference operator[] (size_type n);const_reference operator[] (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() noexcept;const_reverse_iterator rend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "size",
+        "prototype": "constexpr size_type size() noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (array& x) noexcept(noexcept(swap(declval<value_type&>(),declval<value_type&>())));",
+        "complexity": "Linear: Performs as many individual swap operations as the size of the arrays.",
+        "validity": "The validity of all iterators, references and pointers is not changed: They remain associated with the same positions in the same container they were associated before the call, but the elements they still refer to have the swapped values."
+      }
+    ]
+  },
+  "vector": {
+    "url": "https://cplusplus.com/reference/vector/vector",
+    "functions": [
+      {
+        "method": "assign",
+        "prototype": "void assign (initializer_list<value_type> il);",
+        "complexity": "Linear on initial and final sizes (destructions, constructions).Additionally, in the range version (1), if InputIterator is not at least of a forward iterator category (i.e., it is just an input iterator) the new capacity cannot be determined beforehand and the operation incurs in additional logarithmic complexity in the new size (reallocations while growing).",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "at",
+        "prototype": "reference at (size_type n);const_reference at (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "back",
+        "prototype": "reference back();const_reference back() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "capacity",
+        "prototype": "size_type capacity() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in size (destructions).This may be optimized to constant complexity for trivially-destructible types (such as scalar or PODs), where elements need not be destroyed.",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "data",
+        "prototype": "value_type* data() noexcept;const value_type* data() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>iterator emplace (const_iterator position, Args&&... args);",
+        "complexity": "Linear on the number of elements after position (moving).If a reallocation happens, the reallocation is itself up to linear in the entire size.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to this container are invalidated.Otherwise, only those pointing to position and beyond are invalidated, with all iterators, pointers and references to elements before position guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "emplace_back",
+        "prototype": "template <class... Args>  void emplace_back (Args&&... args);",
+        "complexity": "Constant (amortized time, reallocation may happen).If a reallocation happens, the reallocation is itself up to linear in the entire size.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to this container are invalidated.Otherwise, only the end iterator is invalidated, and all other iterators, pointers and references to elements are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator erase (const_iterator position);iterator erase (const_iterator first, const_iterator last);",
+        "complexity": "Linear on the number of elements erased (destructions) plus the number of elements after the last element deleted (moving).",
+        "validity": "Iterators, pointers and references pointing to position (or first) and beyond are invalidated, with all iterators, pointers and references to elements before position (or first) are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "front",
+        "prototype": "reference front();const_reference front() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "iterator insert (const_iterator position, initializer_list<value_type> il);",
+        "complexity": "Linear on the number of elements inserted (copy/move construction) plus the number of elements after position (moving).Additionally, if InputIterator in the range insert (3) is not at least of a forward iterator category (i.e., just an input iterator) the new capacity cannot be determined beforehand and the insertion incurs in additional logarithmic complexity in size (reallocations).If a reallocation happens, the reallocation is itself up to linear in the entire size at the moment of the reallocation.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, only those pointing to position and beyond are invalidated, with all iterators, pointers and references to elements before position guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator[]",
+        "prototype": "reference operator[] (size_type n);const_reference operator[] (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator=",
+        "prototype": "vector& operator= (initializer_list<value_type> il);",
+        "complexity": "Linear in size.",
+        "validity": "All iterators, references and pointers related to this container before the call are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "pop_back",
+        "prototype": "void pop_back();",
+        "complexity": "Constant.",
+        "validity": "The end iterator and any iterator, pointer and reference referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "push_back",
+        "prototype": "void push_back (const value_type& val);void push_back (value_type&& val);",
+        "complexity": "Constant (amortized time, reallocation may happen).If a reallocation happens, the reallocation is itself up to linear in the entire size.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, only the end iterator is invalidated, and all iterators, pointers and references to elements are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() noexcept;const_reverse_iterator rend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "reserve",
+        "prototype": "void reserve (size_type n);",
+        "complexity": "If a reallocation happens, linear in vector size at most.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, they all keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "resize",
+        "prototype": "void resize (size_type n);void resize (size_type n, const value_type& val);",
+        "complexity": "Linear on the number of elements inserted/erased (constructions/destructions).If a reallocation happens, the reallocation is itself up to linear in the entire vector size.",
+        "validity": "In case the container shrinks, all iterators, pointers and references to elements that have not been removed remain valid after the resize and refer to the same elements they were referring to before the call.If the container expands, the end iterator is invalidated and, if it has to reallocate storage, all iterators, pointers and references related to this container are also invalidated."
+      },
+      {
+        "method": "shrink_to_fit",
+        "prototype": "void shrink_to_fit();",
+        "complexity": "At most, linear in container size.",
+        "validity": "If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, no changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (vector& x);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, and are now referring to the same elements they referred to before the call, but in the other container, where they now iterate.Note that the end iterators do not refer to elements and may be invalidated."
+      }
+    ]
+  },
+  "list": {
+    "url": "https://cplusplus.com/reference/list/list",
+    "functions": [
+      {
+        "method": "assign",
+        "prototype": "void assign (initializer_list<value_type> il);",
+        "complexity": "Linear in initial and final sizes (destructions, constructions).",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators."
+      },
+      {
+        "method": "back",
+        "prototype": "reference back();const_reference back() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in list::size (destructions).",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>  iterator emplace (const_iterator position, Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace_back",
+        "prototype": "template <class... Args>  void emplace_back (Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace_front",
+        "prototype": "template <class... Args>  void emplace_front (Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "No changes.Member begin returns a different iterator value."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator erase (const_iterator position);iterator erase (const_iterator first, const_iterator last);",
+        "complexity": "Linear in the number of elements erased (destructions).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "front",
+        "prototype": "reference front();const_reference front() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "iterator insert (const_iterator position, initializer_list<value_type> il);",
+        "complexity": "Linear in the number of elements inserted (copy/move construction).",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Up to linear.Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "merge",
+        "prototype": "template <class Compare>  void merge (list& x, Compare comp);template <class Compare>  void merge (list&& x, Compare comp);",
+        "complexity": "At most, linear in the sum of both container sizes minus one (comparisons).",
+        "validity": "No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to."
+      },
+      {
+        "method": "operator=",
+        "prototype": "list& operator= (initializer_list<value_type> il);",
+        "complexity": "Linear in size.",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "pop_back",
+        "prototype": "void pop_back();",
+        "complexity": "Constant.",
+        "validity": "Iterators, pointers and references referring to element removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "pop_front",
+        "prototype": "void pop_front();",
+        "complexity": "Constant.",
+        "validity": "Iterators, pointers and references referring to the element removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "push_back",
+        "prototype": "void push_back (const value_type& val);void push_back (value_type&& val);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "push_front",
+        "prototype": "void push_front (const value_type& val);void push_front (value_type&& val);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "remove",
+        "prototype": "void remove (const value_type& val);",
+        "complexity": "Linear in container size (comparisons).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "remove_if",
+        "prototype": "template <class Predicate>  void remove_if (Predicate pred);",
+        "complexity": "Linear in list size (applications of pred).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() nothrow;const_reverse_iterator rend() const nothrow;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "resize",
+        "prototype": "void resize (size_type n);void resize (size_type n, const value_type& val);",
+        "complexity": "If the container grows, linear in the number number of elements inserted (constructor).If the container shrinks, linear in the number of elements erased (destructions), plus up to linear in the size (iterator advance).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "reverse",
+        "prototype": "void reverse() noexcept;",
+        "complexity": "Linear in list size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Up to linear.Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "sort",
+        "prototype": "template <class Compare>  void sort (Compare comp);",
+        "complexity": "Approximately NlogN where N is the container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "splice",
+        "prototype": "void splice (const_iterator position, list& x,             const_iterator first, const_iterator last);void splice (const_iterator position, list&& x,             const_iterator first, const_iterator last);",
+        "complexity": "Constant for (1) and (2).Up to linear in the number of elements transferred for (3).",
+        "validity": "No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (list& x);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated."
+      },
+      {
+        "method": "unique",
+        "prototype": "template <class BinaryPredicate>  void unique (BinaryPredicate binary_pred);",
+        "complexity": "Linear in container size minus one.",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      }
+    ]
+  },
+  "forward_list": {
+    "url": "https://cplusplus.com/reference/forward_list/forward_list",
+    "functions": [
+      {
+        "method": "assign",
+        "prototype": "void assign (initializer_list<value_type> il);",
+        "complexity": "Linear in initial and final container sizes (destructions, constructions).",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators."
+      },
+      {
+        "method": "before_begin",
+        "prototype": "iterator before_begin() noexcept;const_iterator before_begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbefore_begin",
+        "prototype": "const_iterator cbefore_begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend () const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in size (destructions).",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators."
+      },
+      {
+        "method": "emplace_after",
+        "prototype": "template <class... Args>  iterator emplace_after (const_iterator position, Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace_front",
+        "prototype": "template <class... Args>  void emplace_front (Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "No changes.Member begin returns a different iterator value."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase_after",
+        "prototype": "iterator erase_after (const_iterator position);iterator erase_after (const_iterator position, const_iterator last);",
+        "complexity": "Linear in the number of elements erased (destructions).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "front",
+        "prototype": "reference front();const_reference front() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert_after",
+        "prototype": "iterator insert_after ( const_iterator position, initializer_list<value_type> il );",
+        "complexity": "Linear on the number of elements inserted (copy/move construction).",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size () const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "merge",
+        "prototype": "template <class Compare>  void merge (forward_list& fwdlst, Compare comp);template <class Compare>  void merge (forward_list&& fwdlst, Compare comp);",
+        "complexity": "At most, linear in the sum of both container sizes minus one (comparisons).",
+        "validity": "No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to."
+      },
+      {
+        "method": "operator=",
+        "prototype": "forward_list& operator= (initializer_list<value_type> il);",
+        "complexity": "Linear in the number of elements.",
+        "validity": "All iterators, references and pointers related to this container are invalidated, except the end iterators.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "pop_front",
+        "prototype": "void pop_front();",
+        "complexity": "Constant.",
+        "validity": "Iterators, pointers and references referring to element removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "push_front",
+        "prototype": "void push_front (const value_type& val);void push_front (value_type&& val);",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "remove",
+        "prototype": "void remove (const value_type& val);",
+        "complexity": "Linear in container size (comparisons).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "remove_if",
+        "prototype": "template <class Predicate>  void remove_if (Predicate pred);",
+        "complexity": "Linear in container size (applications of pred).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity."
+      },
+      {
+        "method": "resize",
+        "prototype": "void resize (size_type n);void resize (size_type n, const value_type& val);",
+        "complexity": "Linear in the number number of elements inserted/erased (constructor/destructor), plus up to linear in the size (iterator advance).",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "reverse",
+        "prototype": "void reverse() noexcept;",
+        "complexity": "Linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "sort",
+        "prototype": "template <class Compare>  void sort (Compare comp);",
+        "complexity": "Approximately NlogN where N is the container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "splice_after",
+        "prototype": "void splice_after (const_iterator position, forward_list& fwdlst,                   const_iterator first, const_iterator last);void splice_after (const_iterator position, forward_list&& fwdlst,                   const_iterator first, const_iterator last);",
+        "complexity": "Up to linear in the number of elements transferred.",
+        "validity": "No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (forward_list& fwdlst);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators (including before_begin) do not refer to elements and may be invalidated."
+      },
+      {
+        "method": "unique",
+        "prototype": "template <class BinaryPredicate>  void unique (BinaryPredicate binary_pred);",
+        "complexity": "Linear in container size minus one.",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      }
+    ]
+  },
+  "queue": {
+    "url": "https://cplusplus.com/reference/queue/queue",
+    "functions": [
+      {
+        "method": "back",
+        "prototype": "reference& back();const_reference& back() const;",
+        "complexity": "Constant (calling back on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args> void emplace (Args&&... args);",
+        "complexity": "One call to emplace_back on the underlying container.",
+        "validity": ""
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const;",
+        "complexity": "Constant (calling empty on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "front",
+        "prototype": "reference& front();const_reference& front() const;",
+        "complexity": "Constant (calling front on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "pop",
+        "prototype": "void pop();",
+        "complexity": "Constant (calling pop_front on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "push",
+        "prototype": "void push (const value_type& val);void push (value_type&& val);",
+        "complexity": "One call to push_back on the underlying container.",
+        "validity": ""
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const;",
+        "complexity": "Constant (calling size on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (queue& x) noexcept(/*see below*/);",
+        "complexity": "Constant.",
+        "validity": ""
+      }
+    ]
+  },
+  "stack": {
+    "url": "https://cplusplus.com/reference/stack/stack",
+    "functions": [
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args> void emplace (Args&&... args);",
+        "complexity": "One call to emplace_back on the underlying container.",
+        "validity": ""
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const;",
+        "complexity": "Constant (calling empty on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "pop",
+        "prototype": "void pop();",
+        "complexity": "Constant (calling pop_back on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "push",
+        "prototype": "void push (const value_type& val);void push (value_type&& val);",
+        "complexity": "One call to push_back on the underlying container.",
+        "validity": ""
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const;",
+        "complexity": "Constant (calling size on the underlying container).",
+        "validity": ""
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (stack& x) noexcept(/*see below*/);",
+        "complexity": "Constant.",
+        "validity": ""
+      },
+      {
+        "method": "top",
+        "prototype": "reference top();const_reference top() const;",
+        "complexity": "Constant (calling back on the underlying container).",
+        "validity": ""
+      }
+    ]
+  },
+  "deque": {
+    "url": "https://cplusplus.com/reference/deque/deque",
+    "functions": [
+      {
+        "method": "assign",
+        "prototype": "void assign (initializer_list<value_type> il);",
+        "complexity": "Linear in initial and final sizes (destructions, constructions).",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "at",
+        "prototype": "reference at (size_type n);const_reference at (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "back",
+        "prototype": "reference back();const_reference back() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in size (destructions).",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>  iterator emplace (const_iterator position, Args&&... args);",
+        "complexity": "Depending on the particular library implemention, up to linear in the number of elements between position and one of the ends of the deque.",
+        "validity": "If the insertion happens at the beginning or the end of the sequence, all iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.If the insertion happens anywhere else in the deque, all iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "emplace_back",
+        "prototype": "template <class... Args>  void emplace_back (Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "All iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "emplace_front",
+        "prototype": "template <class... Args>  void emplace_front (Args&&... args);",
+        "complexity": "Constant.",
+        "validity": "All iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator erase (const_iterator position );iterator erase (const_iterator first, const_iterator last );",
+        "complexity": "Linear on the number of elements erased (destructions). Plus, depending on the particular library implemention, up to an additional linear time on the number of elements between position and one of the ends of the deque.",
+        "validity": "If the erasure operation includes the last element in the sequence, the end iterator and the iterators, pointers and references referring to the erased elements are invalidated.If the erasure includes the first element but not the last, only those referring to the erased elements are invalidated.If it happens anywhere else in the deque, all iterators, pointers and references related to the container are invalidated."
+      },
+      {
+        "method": "front",
+        "prototype": "reference front();const_reference front() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "iterator insert (const_iterator position, initializer_list<value_type> il);",
+        "complexity": "Linear on the number of elements inserted (copy/move construction). Plus, depending on the particular library implemention, up to an additional linear in the number of elements between position and one of the ends of the deque.",
+        "validity": "If the insertion happens at the beginning or the end of the sequence, all iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.If the insertion happens anywhere else in the deque, all iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator[]",
+        "prototype": "reference operator[] (size_type n);const_reference operator[] (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator=",
+        "prototype": "deque& operator= (initializer_list<value_type> il);",
+        "complexity": "Linear in size.",
+        "validity": "All iterators, references and pointers related to this container before the call are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "pop_back",
+        "prototype": "void pop_back();",
+        "complexity": "Constant.",
+        "validity": "The end iterator and any iterator, pointer and reference referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "pop_front",
+        "prototype": "void pop_front();",
+        "complexity": "Constant.",
+        "validity": "The iterators, pointers and references referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "push_back",
+        "prototype": "void push_back (const value_type& val);void push_back (value_type&& val);",
+        "complexity": "Constant.",
+        "validity": "All iterators related to this container are invalidated. Pointers and references to elements in the container remain valid, referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "push_front",
+        "prototype": "void push_front (const value_type& val);void push_front (value_type&& val);",
+        "complexity": "Constant.",
+        "validity": "All iterators related to this container are invalidated. Pointers and references to elements in the container remain valid, referring to the same elements they were referring to before the call."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() noexcept;const_reverse_iterator rend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "resize",
+        "prototype": "void resize (size_type n);void resize (size_type n, const value_type& val);",
+        "complexity": "Linear on the number of elements inserted/erased (constructions/destructions).",
+        "validity": "In case the container shrinks, all iterators, pointers and references to elements that have not been removed remain valid after the resize and refer to the same elements they were referring to before the call.If the container expands, all iterators are invalidated, but existing pointers and references remain valid, referring to the same elements they were referring to before."
+      },
+      {
+        "method": "shrink_to_fit",
+        "prototype": "void shrink_to_fit();",
+        "complexity": "At most, linear in the container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (deque& x);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, and are now referring to the same elements they referred to before the call, but in the other container, where they now iterate.Note that the end iterators do not refer to elements and may be invalidated."
+      }
+    ]
+  },
+  "map": {
+    "url": "https://cplusplus.com/reference/map/map",
+    "functions": [
+      {
+        "method": "at",
+        "prototype": "mapped_type& at (const key_type& k);const mapped_type& at (const key_type& k) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in size (destructions).",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "count",
+        "prototype": "size_type count (const key_type& k) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>  pair<iterator,bool> emplace (Args&&... args);",
+        "complexity": "Logarithmic in the container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace_hint",
+        "prototype": "template <class... Args>  iterator emplace_hint (const_iterator position, Args&&... args);",
+        "complexity": "Generally, logarithmic in the container size.Amortized constant if the insertion point for the element is position.",
+        "validity": "No changes."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "equal_range",
+        "prototype": "pair<const_iterator,const_iterator> equal_range (const key_type& k) const;pair<iterator,iterator>             equal_range (const key_type& k);",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator  erase (const_iterator first, const_iterator last);",
+        "complexity": "For the first version (erase(position)), amortized constant.For the second version (erase(val)), logarithmic in container size.For the last version (erase(first,last)), linear in the distance between first and last.",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "find",
+        "prototype": "iterator find (const key_type& k);const_iterator find (const key_type& k) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "void insert (initializer_list<value_type> il);",
+        "complexity": "If a single element is inserted, logarithmic in size in general, but amortized constant if a hint is given and the position given is the optimal.If N elements are inserted, Nlog(size+N) in general, but linear in size+N if the elements are already sorted according to the same ordering criterion used by the container.If N elements are inserted, Nlog(size+N).Implementations may optimize if the range is already sorted.",
+        "validity": "No changes."
+      },
+      {
+        "method": "key_comp",
+        "prototype": "key_compare key_comp() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "lower_bound",
+        "prototype": "iterator lower_bound (const key_type& k);const_iterator lower_bound (const key_type& k) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator[]",
+        "prototype": "mapped_type& operator[] (const key_type& k);mapped_type& operator[] (key_type&& k);",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator=",
+        "prototype": "map& operator= (initializer_list<value_type> il);",
+        "complexity": "For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): Up to logarithmic in sizes (destructions, move-assignments) -- linear if il is already sorted.* Additional complexity for assignments if allocators do not propagate.",
+        "validity": "All iterators, references and pointers related to this container are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() noexcept;const_reverse_iterator rend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (map& x);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated."
+      },
+      {
+        "method": "upper_bound",
+        "prototype": "iterator upper_bound (const key_type& k);const_iterator upper_bound (const key_type& k) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "value_comp",
+        "prototype": "value_compare value_comp() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      }
+    ]
+  },
+  "set": {
+    "url": "https://cplusplus.com/reference/set/set",
+    "functions": [
+      {
+        "method": "begin",
+        "prototype": "iterator begin() noexcept;const_iterator begin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_iterator cbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_iterator cend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear in size (destructions).",
+        "validity": "All iterators, pointers and references related to this container are invalidated."
+      },
+      {
+        "method": "count",
+        "prototype": "size_type count (const value_type& val) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crbegin",
+        "prototype": "const_reverse_iterator crbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "crend",
+        "prototype": "const_reverse_iterator crend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>  pair<iterator,bool> emplace (Args&&... args);",
+        "complexity": "Logarithmic in the container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace_hint",
+        "prototype": "template <class... Args>  iterator emplace_hint (const_iterator position, Args&&... args);",
+        "complexity": "Generally, logarithmic in the container size.Amortized constant if the insertion point for the element is position.",
+        "validity": "No changes."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "iterator end() noexcept;const_iterator end() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "equal_range",
+        "prototype": "pair<const_iterator,const_iterator> equal_range (const value_type& val) const;pair<iterator,iterator>             equal_range (const value_type& val);",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator  erase (const_iterator first, const_iterator last);",
+        "complexity": "For the first version (erase(position)), amortized constant.For the second version (erase(val)), logarithmic in container size.For the last version (erase(first,last)), linear in the distance between first and last.",
+        "validity": "Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity."
+      },
+      {
+        "method": "find",
+        "prototype": "const_iterator find (const value_type& val) const;iterator       find (const value_type& val);",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "void insert (initializer_list<value_type> il);",
+        "complexity": "If a single element is inserted, logarithmic in size in general, but amortized constant if a hint is given and the position given is the optimal.If N elements are inserted, Nlog(size+N) in general, but linear in size+N if the elements are already sorted according to the same ordering criterion used by the container.If N elements are inserted, Nlog(size+N).Implementations may optimize if the range is already sorted.",
+        "validity": "No changes."
+      },
+      {
+        "method": "key_comp",
+        "prototype": "key_compare key_comp() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "lower_bound",
+        "prototype": "iterator lower_bound (const value_type& val);const_iterator lower_bound (const value_type& val) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator=",
+        "prototype": "set& operator= (initializer_list<value_type> il);",
+        "complexity": "For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): Up to logarithmic in sizes (destructions, move-assignments) -- linear if il is already sorted.* Additional complexity for assignments if allocators do not propagate.",
+        "validity": "All iterators, references and pointers related to this container are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated."
+      },
+      {
+        "method": "rbegin",
+        "prototype": "reverse_iterator rbegin() noexcept;const_reverse_iterator rbegin() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "rend",
+        "prototype": "reverse_iterator rend() noexcept;const_reverse_iterator rend() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap (set& x);",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated."
+      },
+      {
+        "method": "upper_bound",
+        "prototype": "iterator upper_bound (const value_type& val);const_iterator upper_bound (const value_type& val) const;",
+        "complexity": "Logarithmic in size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "value_comp",
+        "prototype": "value_compare value_comp() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      }
+    ]
+  },
+  "unordered_map": {
+    "url": "https://cplusplus.com/reference/unordered_map/unordered_map",
+    "functions": [
+      {
+        "method": "at",
+        "prototype": "mapped_type& at ( const key_type& k );const mapped_type& at ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "begin",
+        "prototype": "local_iterator begin ( size_type n );const_local_iterator begin ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket",
+        "prototype": "size_type bucket ( const key_type& k ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket_count",
+        "prototype": "size_type bucket_count() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket_size",
+        "prototype": "size_type bucket_size ( size_type n ) const;",
+        "complexity": "Linear in the bucket size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_local_iterator cbegin ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_local_iterator cend ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear on size (destructors).",
+        "validity": "All iterators, pointers and references are invalidated."
+      },
+      {
+        "method": "count",
+        "prototype": "size_type count ( const key_type& k ) const;",
+        "complexity": "Average case: linear in the number of elements counted.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>pair<iterator, bool> emplace ( Args&&... args );",
+        "complexity": "Average case: constant.Worst case: linear in container size.May trigger a rehash (not included).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References to elements in the unordered_map container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "emplace_hint",
+        "prototype": "template <class... Args>iterator emplace_hint ( const_iterator position, Args&&... args );",
+        "complexity": "Average case: constant.Worst case: linear in container size.May trigger a rehash (not included).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "local_iterator end (size_type n);const_local_iterator end (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "equal_range",
+        "prototype": "pair<iterator,iterator>   equal_range ( const key_type& k );pair<const_iterator,const_iterator>   equal_range ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator erase ( const_iterator first, const_iterator last );",
+        "complexity": "Average case: Linear in the number of elements removed (which is constant for versions (1) and (2)).Worst case: Linear in the container size.",
+        "validity": "Only the iterators and references to the elements removed are invalidated.The rest are unaffected.Only the iterators and references to the elements removed are invalidated.The rest are unaffected.The relative order of iteration of the elements not removed by the operation is preserved."
+      },
+      {
+        "method": "find",
+        "prototype": "iterator find ( const key_type& k );const_iterator find ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "hash_function",
+        "prototype": "hasher hash_function() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "void insert ( initializer_list<value_type> il );",
+        "complexity": "Single element insertions:Average case: constant.Worst case: linear in container size.Multiple elements insertion:Average case: linear in the number of elements inserted.Worst case: N*(size+1): number of elements inserted times the container size plus one.May trigger a rehash (not included in the complexity above).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References to elements in the unordered_map container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "key_eq",
+        "prototype": "key_equal key_eq() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "load_factor",
+        "prototype": "float load_factor() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_bucket_count",
+        "prototype": "size_type max_bucket_count() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_load_factor",
+        "prototype": "void max_load_factor ( float z );",
+        "complexity": "Constant.May trigger a rehash (not included).",
+        "validity": "No changes, unless a change in this value forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container max_load_factor is set below the current load_factor.References to elements in the unordered_map container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator[]",
+        "prototype": "mapped_type& operator[] ( const key_type& k );mapped_type& operator[] ( key_type&& k );",
+        "complexity": "Average case: constant.Worst case: linear in container size.May trigger a rehash if an element is inserted (not included in the complexity above).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when this function inserts a new element and this forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References to elements in the unordered_map container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "operator=",
+        "prototype": "unordered_map& operator= ( intitializer_list<value_type> il );",
+        "complexity": "For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): On average, linear in sizes (destructions, move-assignments) -- worst case: quadratic.* Additional complexity for assignments if allocators do not propagate.",
+        "validity": "All iterators, references and pointers to elements that were in the container before the call are invalidated."
+      },
+      {
+        "method": "rehash",
+        "prototype": "void rehash( size_type n );",
+        "complexity": "In case of rehash,Average case: linear in container size.Worst case: quadratic in container size.",
+        "validity": "If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes."
+      },
+      {
+        "method": "reserve",
+        "prototype": "void reserve ( size_type n );",
+        "complexity": "In case of rehash,Average case: linear in container size.Worst case: quadratic in container size.",
+        "validity": "If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap ( unordered_map& ump );",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references remain valid, but now are referring to elements in the other container, and iterate in it."
+      }
+    ]
+  },
+  "unordered_set": {
+    "url": "https://cplusplus.com/reference/unordered_set/unordered_set",
+    "functions": [
+      {
+        "method": "begin",
+        "prototype": "local_iterator begin ( size_type n );const_local_iterator begin ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket",
+        "prototype": "size_type bucket ( const key_type& k ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket_count",
+        "prototype": "size_type bucket_count() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "bucket_size",
+        "prototype": "size_type bucket_size ( size_type n ) const;",
+        "complexity": "Linear in the bucket size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cbegin",
+        "prototype": "const_local_iterator cbegin ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "cend",
+        "prototype": "const_local_iterator cend ( size_type n ) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "clear",
+        "prototype": "void clear() noexcept;",
+        "complexity": "Linear on size (destructors).",
+        "validity": "All iterators, pointers and references are invalidated."
+      },
+      {
+        "method": "count",
+        "prototype": "size_type count ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "emplace",
+        "prototype": "template <class... Args>pair <iterator,bool> emplace ( Args&&... args );",
+        "complexity": "Average case: constant.Worst case: linear in container size.May trigger a rehash (not included).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References to elements in the unordered_set container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "emplace_hint",
+        "prototype": "template <class... Args>iterator emplace_hint ( const_iterator position, Args&&... args );",
+        "complexity": "Average case: constant.Worst case: linear in container size.May trigger a rehash (not included).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "empty",
+        "prototype": "bool empty() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "end",
+        "prototype": "local_iterator end (size_type n);const_local_iterator end (size_type n) const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "equal_range",
+        "prototype": "pair<iterator,iterator>   equal_range ( const key_type& k );pair<const_iterator,const_iterator>   equal_range ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "erase",
+        "prototype": "iterator erase ( const_iterator first, const_iterator last );",
+        "complexity": "Average case: Linear in the number of elements removed (which is constant for versions (1) and (2)).Worst case: Linear in the container size.",
+        "validity": "Only the iterators and references to the elements removed are invalidated.The rest are unaffected.Only the iterators and references to the elements removed are invalidated.The rest are unaffected.The relative order of iteration of the elements not removed by the operation is preserved."
+      },
+      {
+        "method": "find",
+        "prototype": "iterator find ( const key_type& k );const_iterator find ( const key_type& k ) const;",
+        "complexity": "Average case: constant.Worst case: linear in container size.",
+        "validity": "No changes."
+      },
+      {
+        "method": "get_allocator",
+        "prototype": "allocator_type get_allocator() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "hash_function",
+        "prototype": "hasher hash_function() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "insert",
+        "prototype": "void insert ( initializer_list<value_type> il );",
+        "complexity": "Single element insertions:Average case: constant.Worst case: linear in container size.Multiple elements insertion:Average case: linear in the number of elements inserted.Worst case: N*(size+1): number of elements inserted times the container size plus one.May trigger a rehash (not included).",
+        "validity": "On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket_count multiplied by its max_load_factor).References to elements in the unordered_set container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "key_eq",
+        "prototype": "key_equal key_eq() const;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "load_factor",
+        "prototype": "float load_factor() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_bucket_count",
+        "prototype": "size_type max_bucket_count() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "max_load_factor",
+        "prototype": "void max_load_factor ( float z );",
+        "complexity": "Constant.May trigger a rehash (not included).",
+        "validity": "No changes, unless a change in this value forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container max_load_factor is set below the current load_factor.References to elements in the unordered_set container remain valid in all cases, even after a rehash."
+      },
+      {
+        "method": "max_size",
+        "prototype": "size_type max_size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "operator=",
+        "prototype": "unordered_set& operator= ( intitializer_list<value_type> il );",
+        "complexity": "For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): On average, linear in sizes (destructions, move-assignments) -- worst case: quadratic.* Additional complexity for assignments if allocators do not propagate.",
+        "validity": "All iterators, references and pointers to elements that were in the container before the call are invalidated."
+      },
+      {
+        "method": "rehash",
+        "prototype": "void rehash ( size_type n );",
+        "complexity": "In case of rehash,Average case: linear in container size.Worst case: quadratic in container size.",
+        "validity": "If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes."
+      },
+      {
+        "method": "reserve",
+        "prototype": "void reserve ( size_type n );",
+        "complexity": "In case of rehash,Average case: linear in container size.Worst case: quadratic in container size.",
+        "validity": "If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes."
+      },
+      {
+        "method": "size",
+        "prototype": "size_type size() const noexcept;",
+        "complexity": "Constant.",
+        "validity": "No changes."
+      },
+      {
+        "method": "swap",
+        "prototype": "void swap ( unordered_set& ust );",
+        "complexity": "Constant.",
+        "validity": "All iterators, pointers and references remain valid, but now are referring to elements in the other container, and iterate in it."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1113 @@
+
+\sep
+\addcontentsline{mtd}{section}{1 Array}
+\paragraph{1 Array}\mbox{}\\
+\addcontentsline{mtd}{subsection}{1.01 \textcolor{cgreen}{\texttt{at}}}
+\noindent\textcolor{cgreen}{1.01 \texttt{at}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.02 \textcolor{cgreen}{\texttt{back}}}
+\noindent\textcolor{cgreen}{1.02 \texttt{back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.03 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{1.03 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.04 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{1.04 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.05 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{1.05 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.06 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{1.06 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.07 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{1.07 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.08 \textcolor{cgreen}{\texttt{data}}}
+\noindent\textcolor{cgreen}{1.08 \texttt{data}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.09 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{1.09 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.10 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{1.10 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.11 \textcolor{corange}{\texttt{fill}}}
+\noindent\textcolor{corange}{1.11 \texttt{fill}} \textsc{Complexity} Linear: Performs as many assignment operations as the size of the array object. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.12 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{1.12 \texttt{front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.13 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{1.13 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.14 \textcolor{cgreen}{\texttt{operator[]}}}
+\noindent\textcolor{cgreen}{1.14 \texttt{operator[]}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.15 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{1.15 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.16 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{1.16 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.17 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{1.17 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{1.18 \textcolor{corange}{\texttt{swap}}}
+\noindent\textcolor{corange}{1.18 \texttt{swap}} \textsc{Complexity} Linear: Performs as many individual swap operations as the size of the arrays. \textsc{Validity} The validity of all iterators, references and pointers is not changed: They remain associated with the same positions in the same container they were associated before the call, but the elements they still refer to have the swapped values.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{2 Vector}
+\paragraph{2 Vector}\mbox{}\\
+\addcontentsline{mtd}{subsection}{2.01 \textcolor{corange}{\texttt{assign}}}
+\noindent\textcolor{corange}{2.01 \texttt{assign}} \textsc{Complexity} Linear on initial and final sizes (destructions, constructions).Additionally, in the range version (1), if InputIterator is not at least of a forward iterator category (i.e., it is just an input iterator) the new capacity cannot be determined beforehand and the operation incurs in additional logarithmic complexity in the new size (reallocations while growing). \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.02 \textcolor{cgreen}{\texttt{at}}}
+\noindent\textcolor{cgreen}{2.02 \texttt{at}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.03 \textcolor{cgreen}{\texttt{back}}}
+\noindent\textcolor{cgreen}{2.03 \texttt{back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.04 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{2.04 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.05 \textcolor{cgreen}{\texttt{capacity}}}
+\noindent\textcolor{cgreen}{2.05 \texttt{capacity}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.06 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{2.06 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.07 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{2.07 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.08 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{2.08 \texttt{clear}} \textsc{Complexity} Linear in size (destructions).This may be optimized to constant complexity for trivially-destructible types (such as scalar or PODs), where elements need not be destroyed. \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.09 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{2.09 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.10 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{2.10 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.11 \textcolor{cgreen}{\texttt{data}}}
+\noindent\textcolor{cgreen}{2.11 \texttt{data}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.12 \textcolor{corange}{\texttt{emplace}}}
+\noindent\textcolor{corange}{2.12 \texttt{emplace}} \textsc{Complexity} Linear on the number of elements after position (moving).If a reallocation happens, the reallocation is itself up to linear in the entire size. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to this container are invalidated.Otherwise, only those pointing to position and beyond are invalidated, with all iterators, pointers and references to elements before position guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.13 \textcolor{corange}{\texttt{emplace\_back}}}
+\noindent\textcolor{corange}{2.13 \texttt{emplace\_back}} \textsc{Complexity} Constant (amortized time, reallocation may happen).If a reallocation happens, the reallocation is itself up to linear in the entire size. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to this container are invalidated.Otherwise, only the end iterator is invalidated, and all other iterators, pointers and references to elements are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.14 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{2.14 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.15 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{2.15 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.16 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{2.16 \texttt{erase}} \textsc{Complexity} Linear on the number of elements erased (destructions) plus the number of elements after the last element deleted (moving). \textsc{Validity} Iterators, pointers and references pointing to position (or first) and beyond are invalidated, with all iterators, pointers and references to elements before position (or first) are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.17 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{2.17 \texttt{front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.18 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{2.18 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.19 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{2.19 \texttt{insert}} \textsc{Complexity} Linear on the number of elements inserted (copy/move construction) plus the number of elements after position (moving).Additionally, if InputIterator in the range insert (3) is not at least of a forward iterator category (i.e., just an input iterator) the new capacity cannot be determined beforehand and the insertion incurs in additional logarithmic complexity in size (reallocations).If a reallocation happens, the reallocation is itself up to linear in the entire size at the moment of the reallocation. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, only those pointing to position and beyond are invalidated, with all iterators, pointers and references to elements before position guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.20 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{2.20 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.21 \textcolor{cgreen}{\texttt{operator[]}}}
+\noindent\textcolor{cgreen}{2.21 \texttt{operator[]}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.22 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{2.22 \texttt{operator=}} \textsc{Complexity} Linear in size. \textsc{Validity} All iterators, references and pointers related to this container before the call are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.23 \textcolor{cgreen}{\texttt{pop\_back}}}
+\noindent\textcolor{cgreen}{2.23 \texttt{pop\_back}} \textsc{Complexity} Constant. \textsc{Validity} The end iterator and any iterator, pointer and reference referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.24 \textcolor{corange}{\texttt{push\_back}}}
+\noindent\textcolor{corange}{2.24 \texttt{push\_back}} \textsc{Complexity} Constant (amortized time, reallocation may happen).If a reallocation happens, the reallocation is itself up to linear in the entire size. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, only the end iterator is invalidated, and all iterators, pointers and references to elements are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.25 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{2.25 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.26 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{2.26 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.27 \textcolor{corange}{\texttt{reserve}}}
+\noindent\textcolor{corange}{2.27 \texttt{reserve}} \textsc{Complexity} If a reallocation happens, linear in vector size at most. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, they all keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.28 \textcolor{corange}{\texttt{resize}}}
+\noindent\textcolor{corange}{2.28 \texttt{resize}} \textsc{Complexity} Linear on the number of elements inserted/erased (constructions/destructions).If a reallocation happens, the reallocation is itself up to linear in the entire vector size. \textsc{Validity} In case the container shrinks, all iterators, pointers and references to elements that have not been removed remain valid after the resize and refer to the same elements they were referring to before the call.If the container expands, the end iterator is invalidated and, if it has to reallocate storage, all iterators, pointers and references related to this container are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.29 \textcolor{corange}{\texttt{shrink\_to\_fit}}}
+\noindent\textcolor{corange}{2.29 \texttt{shrink\_to\_fit}} \textsc{Complexity} At most, linear in container size. \textsc{Validity} If a reallocation happens, all iterators, pointers and references related to the container are invalidated.Otherwise, no changes.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.30 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{2.30 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{2.31 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{2.31 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, and are now referring to the same elements they referred to before the call, but in the other container, where they now iterate.Note that the end iterators do not refer to elements and may be invalidated.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{3 List}
+\paragraph{3 List}\mbox{}\\
+\addcontentsline{mtd}{subsection}{3.01 \textcolor{corange}{\texttt{assign}}}
+\noindent\textcolor{corange}{3.01 \texttt{assign}} \textsc{Complexity} Linear in initial and final sizes (destructions, constructions). \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.02 \textcolor{cgreen}{\texttt{back}}}
+\noindent\textcolor{cgreen}{3.02 \texttt{back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.03 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{3.03 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.04 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{3.04 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.05 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{3.05 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.06 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{3.06 \texttt{clear}} \textsc{Complexity} Linear in list::size (destructions). \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.07 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{3.07 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.08 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{3.08 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.09 \textcolor{cgreen}{\texttt{emplace}}}
+\noindent\textcolor{cgreen}{3.09 \texttt{emplace}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.10 \textcolor{cgreen}{\texttt{emplace\_back}}}
+\noindent\textcolor{cgreen}{3.10 \texttt{emplace\_back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.11 \textcolor{cgreen}{\texttt{emplace\_front}}}
+\noindent\textcolor{cgreen}{3.11 \texttt{emplace\_front}} \textsc{Complexity} Constant. \textsc{Validity} No changes.Member begin returns a different iterator value.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.12 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{3.12 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.13 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{3.13 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.14 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{3.14 \texttt{erase}} \textsc{Complexity} Linear in the number of elements erased (destructions). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.15 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{3.15 \texttt{front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.16 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{3.16 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.17 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{3.17 \texttt{insert}} \textsc{Complexity} Linear in the number of elements inserted (copy/move construction). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.18 \textcolor{corange}{\texttt{max\_size}}}
+\noindent\textcolor{corange}{3.18 \texttt{max\_size}} \textsc{Complexity} Up to linear.Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.19 \textcolor{corange}{\texttt{merge}}}
+\noindent\textcolor{corange}{3.19 \texttt{merge}} \textsc{Complexity} At most, linear in the sum of both container sizes minus one (comparisons). \textsc{Validity} No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.20 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{3.20 \texttt{operator=}} \textsc{Complexity} Linear in size. \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.21 \textcolor{cgreen}{\texttt{pop\_back}}}
+\noindent\textcolor{cgreen}{3.21 \texttt{pop\_back}} \textsc{Complexity} Constant. \textsc{Validity} Iterators, pointers and references referring to element removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.22 \textcolor{cgreen}{\texttt{pop\_front}}}
+\noindent\textcolor{cgreen}{3.22 \texttt{pop\_front}} \textsc{Complexity} Constant. \textsc{Validity} Iterators, pointers and references referring to the element removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.23 \textcolor{cgreen}{\texttt{push\_back}}}
+\noindent\textcolor{cgreen}{3.23 \texttt{push\_back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.24 \textcolor{cgreen}{\texttt{push\_front}}}
+\noindent\textcolor{cgreen}{3.24 \texttt{push\_front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.25 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{3.25 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.26 \textcolor{corange}{\texttt{remove}}}
+\noindent\textcolor{corange}{3.26 \texttt{remove}} \textsc{Complexity} Linear in container size (comparisons). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.27 \textcolor{corange}{\texttt{remove\_if}}}
+\noindent\textcolor{corange}{3.27 \texttt{remove\_if}} \textsc{Complexity} Linear in list size (applications of pred). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.28 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{3.28 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.29 \textcolor{corange}{\texttt{resize}}}
+\noindent\textcolor{corange}{3.29 \texttt{resize}} \textsc{Complexity} If the container grows, linear in the number number of elements inserted (constructor).If the container shrinks, linear in the number of elements erased (destructions), plus up to linear in the size (iterator advance). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.30 \textcolor{corange}{\texttt{reverse}}}
+\noindent\textcolor{corange}{3.30 \texttt{reverse}} \textsc{Complexity} Linear in list size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.31 \textcolor{corange}{\texttt{size}}}
+\noindent\textcolor{corange}{3.31 \texttt{size}} \textsc{Complexity} Up to linear.Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.32 \textcolor{cred}{\texttt{sort}}}
+\noindent\textcolor{cred}{3.32 \texttt{sort}} \textsc{Complexity} Approximately NlogN where N is the container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.33 \textcolor{corange}{\texttt{splice}}}
+\noindent\textcolor{corange}{3.33 \texttt{splice}} \textsc{Complexity} Constant for (1) and (2).Up to linear in the number of elements transferred for (3). \textsc{Validity} No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.34 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{3.34 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{3.35 \textcolor{corange}{\texttt{unique}}}
+\noindent\textcolor{corange}{3.35 \texttt{unique}} \textsc{Complexity} Linear in container size minus one. \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{4 Forward List}
+\paragraph{4 Forward List}\mbox{}\\
+\addcontentsline{mtd}{subsection}{4.01 \textcolor{corange}{\texttt{assign}}}
+\noindent\textcolor{corange}{4.01 \texttt{assign}} \textsc{Complexity} Linear in initial and final container sizes (destructions, constructions). \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.02 \textcolor{cgreen}{\texttt{before\_begin}}}
+\noindent\textcolor{cgreen}{4.02 \texttt{before\_begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.03 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{4.03 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.04 \textcolor{cgreen}{\texttt{cbefore\_begin}}}
+\noindent\textcolor{cgreen}{4.04 \texttt{cbefore\_begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.05 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{4.05 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.06 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{4.06 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.07 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{4.07 \texttt{clear}} \textsc{Complexity} Linear in size (destructions). \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.08 \textcolor{cgreen}{\texttt{emplace\_after}}}
+\noindent\textcolor{cgreen}{4.08 \texttt{emplace\_after}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.09 \textcolor{cgreen}{\texttt{emplace\_front}}}
+\noindent\textcolor{cgreen}{4.09 \texttt{emplace\_front}} \textsc{Complexity} Constant. \textsc{Validity} No changes.Member begin returns a different iterator value.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.10 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{4.10 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.11 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{4.11 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.12 \textcolor{corange}{\texttt{erase\_after}}}
+\noindent\textcolor{corange}{4.12 \texttt{erase\_after}} \textsc{Complexity} Linear in the number of elements erased (destructions). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.13 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{4.13 \texttt{front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.14 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{4.14 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.15 \textcolor{corange}{\texttt{insert\_after}}}
+\noindent\textcolor{corange}{4.15 \texttt{insert\_after}} \textsc{Complexity} Linear on the number of elements inserted (copy/move construction). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.16 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{4.16 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.17 \textcolor{corange}{\texttt{merge}}}
+\noindent\textcolor{corange}{4.17 \texttt{merge}} \textsc{Complexity} At most, linear in the sum of both container sizes minus one (comparisons). \textsc{Validity} No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.18 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{4.18 \texttt{operator=}} \textsc{Complexity} Linear in the number of elements. \textsc{Validity} All iterators, references and pointers related to this container are invalidated, except the end iterators.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.19 \textcolor{cgreen}{\texttt{pop\_front}}}
+\noindent\textcolor{cgreen}{4.19 \texttt{pop\_front}} \textsc{Complexity} Constant. \textsc{Validity} Iterators, pointers and references referring to element removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.20 \textcolor{cgreen}{\texttt{push\_front}}}
+\noindent\textcolor{cgreen}{4.20 \texttt{push\_front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.21 \textcolor{corange}{\texttt{remove}}}
+\noindent\textcolor{corange}{4.21 \texttt{remove}} \textsc{Complexity} Linear in container size (comparisons). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.22 \textcolor{corange}{\texttt{remove\_if}}}
+\noindent\textcolor{corange}{4.22 \texttt{remove\_if}} \textsc{Complexity} Linear in container size (applications of pred). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and reference keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.23 \textcolor{corange}{\texttt{resize}}}
+\noindent\textcolor{corange}{4.23 \texttt{resize}} \textsc{Complexity} Linear in the number number of elements inserted/erased (constructor/destructor), plus up to linear in the size (iterator advance). \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.24 \textcolor{corange}{\texttt{reverse}}}
+\noindent\textcolor{corange}{4.24 \texttt{reverse}} \textsc{Complexity} Linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.25 \textcolor{cred}{\texttt{sort}}}
+\noindent\textcolor{cred}{4.25 \texttt{sort}} \textsc{Complexity} Approximately NlogN where N is the container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.26 \textcolor{corange}{\texttt{splice\_after}}}
+\noindent\textcolor{corange}{4.26 \texttt{splice\_after}} \textsc{Complexity} Up to linear in the number of elements transferred. \textsc{Validity} No changes on the iterators, pointers and references related to the container before the call.The iterators, pointers and references that referred to transferred elements keep referring to those same elements, but iterators now iterate into the container the elements have been transferred to.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.27 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{4.27 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators (including before\_begin) do not refer to elements and may be invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{4.28 \textcolor{corange}{\texttt{unique}}}
+\noindent\textcolor{corange}{4.28 \texttt{unique}} \textsc{Complexity} Linear in container size minus one. \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{5 Queue}
+\paragraph{5 Queue}\mbox{}\\
+\addcontentsline{mtd}{subsection}{5.01 \textcolor{cgreen}{\texttt{back}}}
+\noindent\textcolor{cgreen}{5.01 \texttt{back}} \textsc{Complexity} Constant (calling back on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.02 \texttt{emplace}}
+\noindent 5.02 \texttt{emplace} \textsc{Complexity} One call to emplace\_back on the underlying container. \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.03 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{5.03 \texttt{empty}} \textsc{Complexity} Constant (calling empty on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.04 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{5.04 \texttt{front}} \textsc{Complexity} Constant (calling front on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.05 \textcolor{cgreen}{\texttt{pop}}}
+\noindent\textcolor{cgreen}{5.05 \texttt{pop}} \textsc{Complexity} Constant (calling pop\_front on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.06 \texttt{push}}
+\noindent 5.06 \texttt{push} \textsc{Complexity} One call to push\_back on the underlying container. \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.07 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{5.07 \texttt{size}} \textsc{Complexity} Constant (calling size on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{5.08 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{5.08 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} \vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{6 Stack}
+\paragraph{6 Stack}\mbox{}\\
+\addcontentsline{mtd}{subsection}{6.01 \texttt{emplace}}
+\noindent 6.01 \texttt{emplace} \textsc{Complexity} One call to emplace\_back on the underlying container. \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.02 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{6.02 \texttt{empty}} \textsc{Complexity} Constant (calling empty on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.03 \textcolor{cgreen}{\texttt{pop}}}
+\noindent\textcolor{cgreen}{6.03 \texttt{pop}} \textsc{Complexity} Constant (calling pop\_back on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.04 \texttt{push}}
+\noindent 6.04 \texttt{push} \textsc{Complexity} One call to push\_back on the underlying container. \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.05 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{6.05 \texttt{size}} \textsc{Complexity} Constant (calling size on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.06 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{6.06 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{6.07 \textcolor{cgreen}{\texttt{top}}}
+\noindent\textcolor{cgreen}{6.07 \texttt{top}} \textsc{Complexity} Constant (calling back on the underlying container). \textsc{Validity} \vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{7 Deque}
+\paragraph{7 Deque}\mbox{}\\
+\addcontentsline{mtd}{subsection}{7.01 \textcolor{corange}{\texttt{assign}}}
+\noindent\textcolor{corange}{7.01 \texttt{assign}} \textsc{Complexity} Linear in initial and final sizes (destructions, constructions). \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.02 \textcolor{cgreen}{\texttt{at}}}
+\noindent\textcolor{cgreen}{7.02 \texttt{at}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.03 \textcolor{cgreen}{\texttt{back}}}
+\noindent\textcolor{cgreen}{7.03 \texttt{back}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.04 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{7.04 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.05 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{7.05 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.06 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{7.06 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.07 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{7.07 \texttt{clear}} \textsc{Complexity} Linear in size (destructions). \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.08 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{7.08 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.09 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{7.09 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.10 \textcolor{corange}{\texttt{emplace}}}
+\noindent\textcolor{corange}{7.10 \texttt{emplace}} \textsc{Complexity} Depending on the particular library implemention, up to linear in the number of elements between position and one of the ends of the deque. \textsc{Validity} If the insertion happens at the beginning or the end of the sequence, all iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.If the insertion happens anywhere else in the deque, all iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.11 \textcolor{cgreen}{\texttt{emplace\_back}}}
+\noindent\textcolor{cgreen}{7.11 \texttt{emplace\_back}} \textsc{Complexity} Constant. \textsc{Validity} All iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.12 \textcolor{cgreen}{\texttt{emplace\_front}}}
+\noindent\textcolor{cgreen}{7.12 \texttt{emplace\_front}} \textsc{Complexity} Constant. \textsc{Validity} All iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.13 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{7.13 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.14 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{7.14 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.15 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{7.15 \texttt{erase}} \textsc{Complexity} Linear on the number of elements erased (destructions). Plus, depending on the particular library implemention, up to an additional linear time on the number of elements between position and one of the ends of the deque. \textsc{Validity} If the erasure operation includes the last element in the sequence, the end iterator and the iterators, pointers and references referring to the erased elements are invalidated.If the erasure includes the first element but not the last, only those referring to the erased elements are invalidated.If it happens anywhere else in the deque, all iterators, pointers and references related to the container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.16 \textcolor{cgreen}{\texttt{front}}}
+\noindent\textcolor{cgreen}{7.16 \texttt{front}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.17 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{7.17 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.18 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{7.18 \texttt{insert}} \textsc{Complexity} Linear on the number of elements inserted (copy/move construction). Plus, depending on the particular library implemention, up to an additional linear in the number of elements between position and one of the ends of the deque. \textsc{Validity} If the insertion happens at the beginning or the end of the sequence, all iterators related to this container are invalidated, but pointers and references remain valid, referring to the same elements they were referring to before the call.If the insertion happens anywhere else in the deque, all iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.19 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{7.19 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.20 \textcolor{cgreen}{\texttt{operator[]}}}
+\noindent\textcolor{cgreen}{7.20 \texttt{operator[]}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.21 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{7.21 \texttt{operator=}} \textsc{Complexity} Linear in size. \textsc{Validity} All iterators, references and pointers related to this container before the call are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.22 \textcolor{cgreen}{\texttt{pop\_back}}}
+\noindent\textcolor{cgreen}{7.22 \texttt{pop\_back}} \textsc{Complexity} Constant. \textsc{Validity} The end iterator and any iterator, pointer and reference referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.23 \textcolor{cgreen}{\texttt{pop\_front}}}
+\noindent\textcolor{cgreen}{7.23 \texttt{pop\_front}} \textsc{Complexity} Constant. \textsc{Validity} The iterators, pointers and references referring to the removed element are invalidated.Iterators, pointers and references referring to other elements that have not been removed are guaranteed to keep referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.24 \textcolor{cgreen}{\texttt{push\_back}}}
+\noindent\textcolor{cgreen}{7.24 \texttt{push\_back}} \textsc{Complexity} Constant. \textsc{Validity} All iterators related to this container are invalidated. Pointers and references to elements in the container remain valid, referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.25 \textcolor{cgreen}{\texttt{push\_front}}}
+\noindent\textcolor{cgreen}{7.25 \texttt{push\_front}} \textsc{Complexity} Constant. \textsc{Validity} All iterators related to this container are invalidated. Pointers and references to elements in the container remain valid, referring to the same elements they were referring to before the call.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.26 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{7.26 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.27 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{7.27 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.28 \textcolor{corange}{\texttt{resize}}}
+\noindent\textcolor{corange}{7.28 \texttt{resize}} \textsc{Complexity} Linear on the number of elements inserted/erased (constructions/destructions). \textsc{Validity} In case the container shrinks, all iterators, pointers and references to elements that have not been removed remain valid after the resize and refer to the same elements they were referring to before the call.If the container expands, all iterators are invalidated, but existing pointers and references remain valid, referring to the same elements they were referring to before.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.29 \textcolor{corange}{\texttt{shrink\_to\_fit}}}
+\noindent\textcolor{corange}{7.29 \texttt{shrink\_to\_fit}} \textsc{Complexity} At most, linear in the container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.30 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{7.30 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{7.31 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{7.31 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, and are now referring to the same elements they referred to before the call, but in the other container, where they now iterate.Note that the end iterators do not refer to elements and may be invalidated.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{8 Map}
+\paragraph{8 Map}\mbox{}\\
+\addcontentsline{mtd}{subsection}{8.01 \textcolor{clime}{\texttt{at}}}
+\noindent\textcolor{clime}{8.01 \texttt{at}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.02 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{8.02 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.03 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{8.03 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.04 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{8.04 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.05 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{8.05 \texttt{clear}} \textsc{Complexity} Linear in size (destructions). \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.06 \textcolor{clime}{\texttt{count}}}
+\noindent\textcolor{clime}{8.06 \texttt{count}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.07 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{8.07 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.08 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{8.08 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.09 \textcolor{clime}{\texttt{emplace}}}
+\noindent\textcolor{clime}{8.09 \texttt{emplace}} \textsc{Complexity} Logarithmic in the container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.10 \textcolor{clime}{\texttt{emplace\_hint}}}
+\noindent\textcolor{clime}{8.10 \texttt{emplace\_hint}} \textsc{Complexity} Generally, logarithmic in the container size.Amortized constant if the insertion point for the element is position. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.11 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{8.11 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.12 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{8.12 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.13 \textcolor{clime}{\texttt{equal\_range}}}
+\noindent\textcolor{clime}{8.13 \texttt{equal\_range}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.14 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{8.14 \texttt{erase}} \textsc{Complexity} For the first version (erase(position)), amortized constant.For the second version (erase(val)), logarithmic in container size.For the last version (erase(first,last)), linear in the distance between first and last. \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.15 \textcolor{clime}{\texttt{find}}}
+\noindent\textcolor{clime}{8.15 \texttt{find}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.16 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{8.16 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.17 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{8.17 \texttt{insert}} \textsc{Complexity} If a single element is inserted, logarithmic in size in general, but amortized constant if a hint is given and the position given is the optimal.If N elements are inserted, Nlog(size+N) in general, but linear in size+N if the elements are already sorted according to the same ordering criterion used by the container.If N elements are inserted, Nlog(size+N).Implementations may optimize if the range is already sorted. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.18 \textcolor{cgreen}{\texttt{key\_comp}}}
+\noindent\textcolor{cgreen}{8.18 \texttt{key\_comp}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.19 \textcolor{clime}{\texttt{lower\_bound}}}
+\noindent\textcolor{clime}{8.19 \texttt{lower\_bound}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.20 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{8.20 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.21 \textcolor{clime}{\texttt{operator[]}}}
+\noindent\textcolor{clime}{8.21 \texttt{operator[]}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.22 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{8.22 \texttt{operator=}} \textsc{Complexity} For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): Up to logarithmic in sizes (destructions, move-assignments) -- linear if il is already sorted.* Additional complexity for assignments if allocators do not propagate. \textsc{Validity} All iterators, references and pointers related to this container are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.23 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{8.23 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.24 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{8.24 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.25 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{8.25 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.26 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{8.26 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.27 \textcolor{clime}{\texttt{upper\_bound}}}
+\noindent\textcolor{clime}{8.27 \texttt{upper\_bound}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{8.28 \textcolor{cgreen}{\texttt{value\_comp}}}
+\noindent\textcolor{cgreen}{8.28 \texttt{value\_comp}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{9 Set}
+\paragraph{9 Set}\mbox{}\\
+\addcontentsline{mtd}{subsection}{9.01 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{9.01 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.02 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{9.02 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.03 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{9.03 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.04 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{9.04 \texttt{clear}} \textsc{Complexity} Linear in size (destructions). \textsc{Validity} All iterators, pointers and references related to this container are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.05 \textcolor{clime}{\texttt{count}}}
+\noindent\textcolor{clime}{9.05 \texttt{count}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.06 \textcolor{cgreen}{\texttt{crbegin}}}
+\noindent\textcolor{cgreen}{9.06 \texttt{crbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.07 \textcolor{cgreen}{\texttt{crend}}}
+\noindent\textcolor{cgreen}{9.07 \texttt{crend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.08 \textcolor{clime}{\texttt{emplace}}}
+\noindent\textcolor{clime}{9.08 \texttt{emplace}} \textsc{Complexity} Logarithmic in the container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.09 \textcolor{clime}{\texttt{emplace\_hint}}}
+\noindent\textcolor{clime}{9.09 \texttt{emplace\_hint}} \textsc{Complexity} Generally, logarithmic in the container size.Amortized constant if the insertion point for the element is position. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.10 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{9.10 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.11 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{9.11 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.12 \textcolor{clime}{\texttt{equal\_range}}}
+\noindent\textcolor{clime}{9.12 \texttt{equal\_range}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.13 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{9.13 \texttt{erase}} \textsc{Complexity} For the first version (erase(position)), amortized constant.For the second version (erase(val)), logarithmic in container size.For the last version (erase(first,last)), linear in the distance between first and last. \textsc{Validity} Iterators, pointers and references referring to elements removed by the function are invalidated.All other iterators, pointers and references keep their validity.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.14 \textcolor{clime}{\texttt{find}}}
+\noindent\textcolor{clime}{9.14 \texttt{find}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.15 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{9.15 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.16 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{9.16 \texttt{insert}} \textsc{Complexity} If a single element is inserted, logarithmic in size in general, but amortized constant if a hint is given and the position given is the optimal.If N elements are inserted, Nlog(size+N) in general, but linear in size+N if the elements are already sorted according to the same ordering criterion used by the container.If N elements are inserted, Nlog(size+N).Implementations may optimize if the range is already sorted. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.17 \textcolor{cgreen}{\texttt{key\_comp}}}
+\noindent\textcolor{cgreen}{9.17 \texttt{key\_comp}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.18 \textcolor{clime}{\texttt{lower\_bound}}}
+\noindent\textcolor{clime}{9.18 \texttt{lower\_bound}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.19 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{9.19 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.20 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{9.20 \texttt{operator=}} \textsc{Complexity} For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): Up to logarithmic in sizes (destructions, move-assignments) -- linear if il is already sorted.* Additional complexity for assignments if allocators do not propagate. \textsc{Validity} All iterators, references and pointers related to this container are invalidated.In the move assignment, iterators, pointers and references referring to elements in x are also invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.21 \textcolor{cgreen}{\texttt{rbegin}}}
+\noindent\textcolor{cgreen}{9.21 \texttt{rbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.22 \textcolor{cgreen}{\texttt{rend}}}
+\noindent\textcolor{cgreen}{9.22 \texttt{rend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.23 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{9.23 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.24 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{9.24 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references referring to elements in both containers remain valid, but now are referring to elements in the other container, and iterate in it.Note that the end iterators do not refer to elements and may be invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.25 \textcolor{clime}{\texttt{upper\_bound}}}
+\noindent\textcolor{clime}{9.25 \texttt{upper\_bound}} \textsc{Complexity} Logarithmic in size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{9.26 \textcolor{cgreen}{\texttt{value\_comp}}}
+\noindent\textcolor{cgreen}{9.26 \texttt{value\_comp}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{10 Unordered Map}
+\paragraph{10 Unordered Map}\mbox{}\\
+\addcontentsline{mtd}{subsection}{10.01 \textcolor{corange}{\texttt{at}}}
+\noindent\textcolor{corange}{10.01 \texttt{at}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.02 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{10.02 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.03 \textcolor{cgreen}{\texttt{bucket}}}
+\noindent\textcolor{cgreen}{10.03 \texttt{bucket}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.04 \textcolor{cgreen}{\texttt{bucket\_count}}}
+\noindent\textcolor{cgreen}{10.04 \texttt{bucket\_count}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.05 \textcolor{corange}{\texttt{bucket\_size}}}
+\noindent\textcolor{corange}{10.05 \texttt{bucket\_size}} \textsc{Complexity} Linear in the bucket size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.06 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{10.06 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.07 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{10.07 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.08 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{10.08 \texttt{clear}} \textsc{Complexity} Linear on size (destructors). \textsc{Validity} All iterators, pointers and references are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.09 \textcolor{corange}{\texttt{count}}}
+\noindent\textcolor{corange}{10.09 \texttt{count}} \textsc{Complexity} Average case: linear in the number of elements counted.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.10 \textcolor{corange}{\texttt{emplace}}}
+\noindent\textcolor{corange}{10.10 \texttt{emplace}} \textsc{Complexity} Average case: constant.Worst case: linear in container size.May trigger a rehash (not included). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References to elements in the unordered\_map container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.11 \textcolor{corange}{\texttt{emplace\_hint}}}
+\noindent\textcolor{corange}{10.11 \texttt{emplace\_hint}} \textsc{Complexity} Average case: constant.Worst case: linear in container size.May trigger a rehash (not included). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.12 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{10.12 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.13 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{10.13 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.14 \textcolor{corange}{\texttt{equal\_range}}}
+\noindent\textcolor{corange}{10.14 \texttt{equal\_range}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.15 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{10.15 \texttt{erase}} \textsc{Complexity} Average case: Linear in the number of elements removed (which is constant for versions (1) and (2)).Worst case: Linear in the container size. \textsc{Validity} Only the iterators and references to the elements removed are invalidated.The rest are unaffected.Only the iterators and references to the elements removed are invalidated.The rest are unaffected.The relative order of iteration of the elements not removed by the operation is preserved.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.16 \textcolor{corange}{\texttt{find}}}
+\noindent\textcolor{corange}{10.16 \texttt{find}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.17 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{10.17 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.18 \textcolor{cgreen}{\texttt{hash\_function}}}
+\noindent\textcolor{cgreen}{10.18 \texttt{hash\_function}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.19 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{10.19 \texttt{insert}} \textsc{Complexity} Single element insertions:Average case: constant.Worst case: linear in container size.Multiple elements insertion:Average case: linear in the number of elements inserted.Worst case: N*(size+1): number of elements inserted times the container size plus one.May trigger a rehash (not included in the complexity above). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References to elements in the unordered\_map container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.20 \textcolor{cgreen}{\texttt{key\_eq}}}
+\noindent\textcolor{cgreen}{10.20 \texttt{key\_eq}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.21 \textcolor{cgreen}{\texttt{load\_factor}}}
+\noindent\textcolor{cgreen}{10.21 \texttt{load\_factor}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.22 \textcolor{cgreen}{\texttt{max\_bucket\_count}}}
+\noindent\textcolor{cgreen}{10.22 \texttt{max\_bucket\_count}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.23 \textcolor{cgreen}{\texttt{max\_load\_factor}}}
+\noindent\textcolor{cgreen}{10.23 \texttt{max\_load\_factor}} \textsc{Complexity} Constant.May trigger a rehash (not included). \textsc{Validity} No changes, unless a change in this value forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container max\_load\_factor is set below the current load\_factor.References to elements in the unordered\_map container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.24 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{10.24 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.25 \textcolor{corange}{\texttt{operator[]}}}
+\noindent\textcolor{corange}{10.25 \texttt{operator[]}} \textsc{Complexity} Average case: constant.Worst case: linear in container size.May trigger a rehash if an element is inserted (not included in the complexity above). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when this function inserts a new element and this forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References to elements in the unordered\_map container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.26 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{10.26 \texttt{operator=}} \textsc{Complexity} For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): On average, linear in sizes (destructions, move-assignments) -- worst case: quadratic.* Additional complexity for assignments if allocators do not propagate. \textsc{Validity} All iterators, references and pointers to elements that were in the container before the call are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.27 \textcolor{corange}{\texttt{rehash}}}
+\noindent\textcolor{corange}{10.27 \texttt{rehash}} \textsc{Complexity} In case of rehash,Average case: linear in container size.Worst case: quadratic in container size. \textsc{Validity} If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.28 \textcolor{corange}{\texttt{reserve}}}
+\noindent\textcolor{corange}{10.28 \texttt{reserve}} \textsc{Complexity} In case of rehash,Average case: linear in container size.Worst case: quadratic in container size. \textsc{Validity} If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.29 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{10.29 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{10.30 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{10.30 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references remain valid, but now are referring to elements in the other container, and iterate in it.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{11 Unordered Set}
+\paragraph{11 Unordered Set}\mbox{}\\
+\addcontentsline{mtd}{subsection}{11.01 \textcolor{cgreen}{\texttt{begin}}}
+\noindent\textcolor{cgreen}{11.01 \texttt{begin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.02 \textcolor{cgreen}{\texttt{bucket}}}
+\noindent\textcolor{cgreen}{11.02 \texttt{bucket}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.03 \textcolor{cgreen}{\texttt{bucket\_count}}}
+\noindent\textcolor{cgreen}{11.03 \texttt{bucket\_count}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.04 \textcolor{corange}{\texttt{bucket\_size}}}
+\noindent\textcolor{corange}{11.04 \texttt{bucket\_size}} \textsc{Complexity} Linear in the bucket size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.05 \textcolor{cgreen}{\texttt{cbegin}}}
+\noindent\textcolor{cgreen}{11.05 \texttt{cbegin}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.06 \textcolor{cgreen}{\texttt{cend}}}
+\noindent\textcolor{cgreen}{11.06 \texttt{cend}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.07 \textcolor{corange}{\texttt{clear}}}
+\noindent\textcolor{corange}{11.07 \texttt{clear}} \textsc{Complexity} Linear on size (destructors). \textsc{Validity} All iterators, pointers and references are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.08 \textcolor{corange}{\texttt{count}}}
+\noindent\textcolor{corange}{11.08 \texttt{count}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.09 \textcolor{corange}{\texttt{emplace}}}
+\noindent\textcolor{corange}{11.09 \texttt{emplace}} \textsc{Complexity} Average case: constant.Worst case: linear in container size.May trigger a rehash (not included). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References to elements in the unordered\_set container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.10 \textcolor{corange}{\texttt{emplace\_hint}}}
+\noindent\textcolor{corange}{11.10 \texttt{emplace\_hint}} \textsc{Complexity} Average case: constant.Worst case: linear in container size.May trigger a rehash (not included). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.11 \textcolor{cgreen}{\texttt{empty}}}
+\noindent\textcolor{cgreen}{11.11 \texttt{empty}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.12 \textcolor{cgreen}{\texttt{end}}}
+\noindent\textcolor{cgreen}{11.12 \texttt{end}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.13 \textcolor{corange}{\texttt{equal\_range}}}
+\noindent\textcolor{corange}{11.13 \texttt{equal\_range}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.14 \textcolor{corange}{\texttt{erase}}}
+\noindent\textcolor{corange}{11.14 \texttt{erase}} \textsc{Complexity} Average case: Linear in the number of elements removed (which is constant for versions (1) and (2)).Worst case: Linear in the container size. \textsc{Validity} Only the iterators and references to the elements removed are invalidated.The rest are unaffected.Only the iterators and references to the elements removed are invalidated.The rest are unaffected.The relative order of iteration of the elements not removed by the operation is preserved.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.15 \textcolor{corange}{\texttt{find}}}
+\noindent\textcolor{corange}{11.15 \texttt{find}} \textsc{Complexity} Average case: constant.Worst case: linear in container size. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.16 \textcolor{cgreen}{\texttt{get\_allocator}}}
+\noindent\textcolor{cgreen}{11.16 \texttt{get\_allocator}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.17 \textcolor{cgreen}{\texttt{hash\_function}}}
+\noindent\textcolor{cgreen}{11.17 \texttt{hash\_function}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.18 \textcolor{corange}{\texttt{insert}}}
+\noindent\textcolor{corange}{11.18 \texttt{insert}} \textsc{Complexity} Single element insertions:Average case: constant.Worst case: linear in container size.Multiple elements insertion:Average case: linear in the number of elements inserted.Worst case: N*(size+1): number of elements inserted times the container size plus one.May trigger a rehash (not included). \textsc{Validity} On most cases, all iterators in the container remain valid after the insertion. The only exception being when the growth of the container forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container size after the insertion operation would increase above its capacity threshold (calculated as the container's bucket\_count multiplied by its max\_load\_factor).References to elements in the unordered\_set container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.19 \textcolor{cgreen}{\texttt{key\_eq}}}
+\noindent\textcolor{cgreen}{11.19 \texttt{key\_eq}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.20 \textcolor{cgreen}{\texttt{load\_factor}}}
+\noindent\textcolor{cgreen}{11.20 \texttt{load\_factor}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.21 \textcolor{cgreen}{\texttt{max\_bucket\_count}}}
+\noindent\textcolor{cgreen}{11.21 \texttt{max\_bucket\_count}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.22 \textcolor{cgreen}{\texttt{max\_load\_factor}}}
+\noindent\textcolor{cgreen}{11.22 \texttt{max\_load\_factor}} \textsc{Complexity} Constant.May trigger a rehash (not included). \textsc{Validity} No changes, unless a change in this value forces a rehash. In this case, all iterators in the container are invalidated.A rehash is forced if the new container max\_load\_factor is set below the current load\_factor.References to elements in the unordered\_set container remain valid in all cases, even after a rehash.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.23 \textcolor{cgreen}{\texttt{max\_size}}}
+\noindent\textcolor{cgreen}{11.23 \texttt{max\_size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.24 \textcolor{corange}{\texttt{operator=}}}
+\noindent\textcolor{corange}{11.24 \texttt{operator=}} \textsc{Complexity} For the copy assignment (1): Linear in sizes (destructions, copies).For the move assignment (2): Linear in current container size (destructions).* For the initializer list assignment (3): On average, linear in sizes (destructions, move-assignments) -- worst case: quadratic.* Additional complexity for assignments if allocators do not propagate. \textsc{Validity} All iterators, references and pointers to elements that were in the container before the call are invalidated.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.25 \textcolor{corange}{\texttt{rehash}}}
+\noindent\textcolor{corange}{11.25 \texttt{rehash}} \textsc{Complexity} In case of rehash,Average case: linear in container size.Worst case: quadratic in container size. \textsc{Validity} If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.26 \textcolor{corange}{\texttt{reserve}}}
+\noindent\textcolor{corange}{11.26 \texttt{reserve}} \textsc{Complexity} In case of rehash,Average case: linear in container size.Worst case: quadratic in container size. \textsc{Validity} If a rehash happens, all iterators are invalidated, but references and pointers to individual elements remain valid.If no actual rehash happens, no changes.\vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.27 \textcolor{cgreen}{\texttt{size}}}
+\noindent\textcolor{cgreen}{11.27 \texttt{size}} \textsc{Complexity} Constant. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{11.28 \textcolor{cgreen}{\texttt{swap}}}
+\noindent\textcolor{cgreen}{11.28 \texttt{swap}} \textsc{Complexity} Constant. \textsc{Validity} All iterators, pointers and references remain valid, but now are referring to elements in the other container, and iterate in it.\vspace{0.5em}
+
+
+\sep
+\addcontentsline{mtd}{section}{12 Algorithm}
+\paragraph{12 Algorithm}\mbox{}\\
+\addcontentsline{mtd}{subsection}{12.01 \textcolor{corange}{\texttt{all\_of}}}
+\noindent\textcolor{corange}{12.01 \texttt{all\_of}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.02 \textcolor{corange}{\texttt{any\_of}}}
+\noindent\textcolor{corange}{12.02 \texttt{any\_of}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.03 \textcolor{corange}{\texttt{none\_of}}}
+\noindent\textcolor{corange}{12.03 \texttt{none\_of}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.04 \textcolor{corange}{\texttt{for\_each}}}
+\noindent\textcolor{corange}{12.04 \texttt{for\_each}} \textsc{Complexity} Linear in the distance between first and last: Applies fn to each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.05 \textcolor{corange}{\texttt{find}}}
+\noindent\textcolor{corange}{12.05 \texttt{find}} \textsc{Complexity} Up to linear in the distance between first and last: Compares elements until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.06 \textcolor{corange}{\texttt{find\_if}}}
+\noindent\textcolor{corange}{12.06 \texttt{find\_if}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.07 \textcolor{corange}{\texttt{find\_if\_not}}}
+\noindent\textcolor{corange}{12.07 \texttt{find\_if\_not}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.08 \textcolor{corange}{\texttt{find\_end}}}
+\noindent\textcolor{corange}{12.08 \texttt{find\_end}} \textsc{Complexity} Up to linear in count2*(1+count1-count2), where countX is the distance between firstX and lastX: Compares elements until the last matching subsequence is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.09 \textcolor{corange}{\texttt{find\_first\_of}}}
+\noindent\textcolor{corange}{12.09 \texttt{find\_first\_of}} \textsc{Complexity} Up to linear in count1*count2 (where countX is the distance between firstX and lastX): Compares elements until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.10 \textcolor{corange}{\texttt{adjacent\_find}}}
+\noindent\textcolor{corange}{12.10 \texttt{adjacent\_find}} \textsc{Complexity} Up to linear in the distance between first and last: Compares elements until a match is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.11 \textcolor{corange}{\texttt{count}}}
+\noindent\textcolor{corange}{12.11 \texttt{count}} \textsc{Complexity} Linear in the distance between first and last: Compares once each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.12 \textcolor{corange}{\texttt{count\_if}}}
+\noindent\textcolor{corange}{12.12 \texttt{count\_if}} \textsc{Complexity} Linear in the distance between first and last: Calls pred once for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.13 \textcolor{corange}{\texttt{mismatch}}}
+\noindent\textcolor{corange}{12.13 \texttt{mismatch}} \textsc{Complexity} Up to linear in the distance between first1 and last1: Compares elements until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.14 \textcolor{corange}{\texttt{equal}}}
+\noindent\textcolor{corange}{12.14 \texttt{equal}} \textsc{Complexity} Up to linear in the distance between first1 and last1: Compares elements until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.15 \textcolor{corange}{\texttt{is\_permutation}}}
+\noindent\textcolor{corange}{12.15 \texttt{is\_permutation}} \textsc{Complexity} If both sequence are equal (with the elements in the same order), linear in the distance between first1 and last1.Otherwise, up to quadratic: Performs at most N2 element comparisons until the result is determined (where N is the distance between first1 and last1). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.16 \textcolor{corange}{\texttt{search}}}
+\noindent\textcolor{corange}{12.16 \texttt{search}} \textsc{Complexity} Up to linear in count1*count2 (where countX is the distance between firstX and lastX): Compares elements until a matching subsequence is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.17 \textcolor{corange}{\texttt{search\_n}}}
+\noindent\textcolor{corange}{12.17 \texttt{search\_n}} \textsc{Complexity} Up to linear in the distance between first and last: Compares elements until a matching subsequence is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.18 \textcolor{corange}{\texttt{copy}}}
+\noindent\textcolor{corange}{12.18 \texttt{copy}} \textsc{Complexity} Linear in the distance between first and last: Performs an assignment operation for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.19 \textcolor{corange}{\texttt{copy\_n}}}
+\noindent\textcolor{corange}{12.19 \texttt{copy\_n}} \textsc{Complexity} Linear in the distance between first and last: Performs an assignment operation for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.20 \textcolor{corange}{\texttt{copy\_if}}}
+\noindent\textcolor{corange}{12.20 \texttt{copy\_if}} \textsc{Complexity} Linear in the distance between first and last: Applies pred to each element in the range and performs at most that many assignments. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.21 \textcolor{corange}{\texttt{copy\_backward}}}
+\noindent\textcolor{corange}{12.21 \texttt{copy\_backward}} \textsc{Complexity} Linear in the distance between first and last: Performs an assignment operation for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.22 \textcolor{corange}{\texttt{move}}}
+\noindent\textcolor{corange}{12.22 \texttt{move}} \textsc{Complexity} Linear in the distance between first and last: Performs a move-assignment for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.23 \textcolor{corange}{\texttt{move\_backward}}}
+\noindent\textcolor{corange}{12.23 \texttt{move\_backward}} \textsc{Complexity} Linear in the distance between first and last: Performs a move-assignment for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.24 \textcolor{corange}{\texttt{swap}}}
+\noindent\textcolor{corange}{12.24 \texttt{swap}} \textsc{Complexity} Non-array: Constant: Performs exactly one construction and two assignments (although notice that each of these operations works on its own complexity).Array: Linear in N: performs a swap operation per element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.25 \textcolor{corange}{\texttt{swap\_ranges}}}
+\noindent\textcolor{corange}{12.25 \texttt{swap\_ranges}} \textsc{Complexity} Linear in the distance between first and last: Performs a swap operation for each element in the range. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.26 \textcolor{cgreen}{\texttt{iter\_swap}}}
+\noindent\textcolor{cgreen}{12.26 \texttt{iter\_swap}} \textsc{Complexity} Constant: Calls swap once. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.27 \textcolor{corange}{\texttt{transform}}}
+\noindent\textcolor{corange}{12.27 \texttt{transform}} \textsc{Complexity} Linear in the distance between first1 and last1: Performs one assignment and one application of op (or binary\_op) per element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.28 \textcolor{corange}{\texttt{replace}}}
+\noindent\textcolor{corange}{12.28 \texttt{replace}} \textsc{Complexity} Linear in the distance between first and last: Compares each element and assigns to those matching. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.29 \textcolor{corange}{\texttt{replace\_if}}}
+\noindent\textcolor{corange}{12.29 \texttt{replace\_if}} \textsc{Complexity} Linear in the distance between first and last: Applies pred to each element and assigns to those matching. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.30 \textcolor{corange}{\texttt{replace\_copy}}}
+\noindent\textcolor{corange}{12.30 \texttt{replace\_copy}} \textsc{Complexity} Linear in the distance between first and last: Performs a comparison and an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.31 \textcolor{corange}{\texttt{replace\_copy\_if}}}
+\noindent\textcolor{corange}{12.31 \texttt{replace\_copy\_if}} \textsc{Complexity} Linear in the distance between first and last: Applies pred and performs an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.32 \textcolor{corange}{\texttt{fill}}}
+\noindent\textcolor{corange}{12.32 \texttt{fill}} \textsc{Complexity} Linear in the distance between first and last: Assigns a value to each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.33 \textcolor{corange}{\texttt{fill\_n}}}
+\noindent\textcolor{corange}{12.33 \texttt{fill\_n}} \textsc{Complexity} Linear in n: Assigns a value to each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.34 \textcolor{corange}{\texttt{generate}}}
+\noindent\textcolor{corange}{12.34 \texttt{generate}} \textsc{Complexity} Linear in the distance between first and last: Calls gen and performs an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.35 \textcolor{corange}{\texttt{generate\_n}}}
+\noindent\textcolor{corange}{12.35 \texttt{generate\_n}} \textsc{Complexity} Linear in n: Calls gen and performs an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.36 \textcolor{corange}{\texttt{remove}}}
+\noindent\textcolor{corange}{12.36 \texttt{remove}} \textsc{Complexity} Linear in the distance between first and last: Compares each element, and possibly performs assignments on some of them. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.37 \textcolor{corange}{\texttt{remove\_if}}}
+\noindent\textcolor{corange}{12.37 \texttt{remove\_if}} \textsc{Complexity} Linear in the distance between first and last: Applies pred to each element, and possibly performs assignments on some of them. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.38 \textcolor{corange}{\texttt{remove\_copy}}}
+\noindent\textcolor{corange}{12.38 \texttt{remove\_copy}} \textsc{Complexity} Linear in the distance between first and last: Compares each element, and performs an assignment operation for those not removed. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.39 \textcolor{corange}{\texttt{remove\_copy\_if}}}
+\noindent\textcolor{corange}{12.39 \texttt{remove\_copy\_if}} \textsc{Complexity} Linear in the distance between first and last: Applies pred to each element, and performs an assignment operation for those not removed. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.40 \textcolor{corange}{\texttt{unique}}}
+\noindent\textcolor{corange}{12.40 \texttt{unique}} \textsc{Complexity} For non-empty ranges, linear in one less than the distance between first and last: Compares each pair of consecutive elements, and possibly performs assignments on some of them. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.41 \textcolor{corange}{\texttt{unique\_copy}}}
+\noindent\textcolor{corange}{12.41 \texttt{unique\_copy}} \textsc{Complexity} Up to linear in the distance between first and last: Compares each pair of elements, and performs an assignment operation for those elements not matching. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.42 \textcolor{corange}{\texttt{reverse}}}
+\noindent\textcolor{corange}{12.42 \texttt{reverse}} \textsc{Complexity} Linear in half the distance between first and last: Swaps elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.43 \textcolor{corange}{\texttt{reverse\_copy}}}
+\noindent\textcolor{corange}{12.43 \texttt{reverse\_copy}} \textsc{Complexity} Linear in the distance between first and last: Performs an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.44 \textcolor{corange}{\texttt{rotate}}}
+\noindent\textcolor{corange}{12.44 \texttt{rotate}} \textsc{Complexity} Up to linear in the distance between first and last: Swaps (or moves) elements until all elements have been relocated. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.45 \textcolor{corange}{\texttt{rotate\_copy}}}
+\noindent\textcolor{corange}{12.45 \texttt{rotate\_copy}} \textsc{Complexity} Linear in the distance between first and last: Performs an assignment for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.46 \textcolor{corange}{\texttt{random\_shuffle}}}
+\noindent\textcolor{corange}{12.46 \texttt{random\_shuffle}} \textsc{Complexity} Linear in the distance between first and last minus one: Obtains random values and swaps elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.47 \textcolor{corange}{\texttt{shuffle}}}
+\noindent\textcolor{corange}{12.47 \texttt{shuffle}} \textsc{Complexity} Linear in the distance between first and last minus one: Obtains random values and swaps elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.48 \textcolor{corange}{\texttt{is\_partitioned}}}
+\noindent\textcolor{corange}{12.48 \texttt{is\_partitioned}} \textsc{Complexity} Up to linear in the distance between first and last: Calls pred for each element until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.49 \textcolor{corange}{\texttt{partition}}}
+\noindent\textcolor{corange}{12.49 \texttt{partition}} \textsc{Complexity} Linear in the distance between first and last: Applies  pred to each element, and possibly swaps some of them (if the iterator type is a bidirectional, at most half that many swaps, otherwise at most that many). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.50 \textcolor{cred}{\texttt{stable\_partition}}}
+\noindent\textcolor{cred}{12.50 \texttt{stable\_partition}} \textsc{Complexity} If enough extra memory is available, linear in the distance between first and last: Applies pred exactly once to each element, and performs up to that many element moves.Otherwise, up to linearithmic: Performs up to N*log(N) element swaps (where N is the distance above). It also applies pred exactly once to each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.51 \textcolor{corange}{\texttt{partition\_copy}}}
+\noindent\textcolor{corange}{12.51 \texttt{partition\_copy}} \textsc{Complexity} Linear in the distance between first and last: Calls pred and performs an assignment once for each element. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.52 \textcolor{corange}{\texttt{partition\_point}}}
+\noindent\textcolor{corange}{12.52 \texttt{partition\_point}} \textsc{Complexity} On average, logarithmic in the distance between first and last: Performs approximately log2(N)+2 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.53 \textcolor{cred}{\texttt{sort}}}
+\noindent\textcolor{cred}{12.53 \texttt{sort}} \textsc{Complexity} On average, linearithmic in the distance between first and last: Performs approximately N*log2(N) (where N is this distance) comparisons of elements, and up to that many element swaps (or moves). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.54 \textcolor{cred}{\texttt{stable\_sort}}}
+\noindent\textcolor{cred}{12.54 \texttt{stable\_sort}} \textsc{Complexity} If enough extra memory is available, linearithmic in the distance between first and last: Performs up to N*log2(N) element comparisons (where N is this distance), and up to that many element moves.Otherwise, polyloglinear in that distance: Performs up to N*log22(N) element comparisons, and up to that many element swaps. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.55 \textcolor{cred}{\texttt{partial\_sort}}}
+\noindent\textcolor{cred}{12.55 \texttt{partial\_sort}} \textsc{Complexity} On average, less than linearithmic in the distance between first and last: Performs approximately N*log(M) comparisons of elements (where N is this distance, and M is the distance between first and middle). It also performs up to that many element swaps (or moves). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.56 \textcolor{cred}{\texttt{partial\_sort\_copy}}}
+\noindent\textcolor{cred}{12.56 \texttt{partial\_sort\_copy}} \textsc{Complexity} On average, less than linearithmic in the distance between first and last: Performs approximately N*log(min(N,M)) comparisons of elements (where N is this distance, and M is the distance between result\_first and result\_last). It also performs up to that many element swaps (or moves) and min(N,M) assignments between ranges. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.57 \textcolor{corange}{\texttt{is\_sorted}}}
+\noindent\textcolor{corange}{12.57 \texttt{is\_sorted}} \textsc{Complexity} Up to linear in one less than the distance between first and last: Compares pairs of elements until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.58 \textcolor{corange}{\texttt{is\_sorted\_until}}}
+\noindent\textcolor{corange}{12.58 \texttt{is\_sorted\_until}} \textsc{Complexity} Up to linear in the distance between first and last: Calls comp for each element until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.59 \textcolor{corange}{\texttt{nth\_element}}}
+\noindent\textcolor{corange}{12.59 \texttt{nth\_element}} \textsc{Complexity} On average, linear in the distance between first and last: Compares elements, and possibly swaps (or moves) them, until the elements are properly rearranged. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.60 \textcolor{corange}{\texttt{lower\_bound}}}
+\noindent\textcolor{corange}{12.60 \texttt{lower\_bound}} \textsc{Complexity} On average, logarithmic in the distance between first and last: Performs approximately log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.61 \textcolor{corange}{\texttt{upper\_bound}}}
+\noindent\textcolor{corange}{12.61 \texttt{upper\_bound}} \textsc{Complexity} On average, logarithmic in the distance between first and last: Performs approximately log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.62 \textcolor{corange}{\texttt{equal\_range}}}
+\noindent\textcolor{corange}{12.62 \texttt{equal\_range}} \textsc{Complexity} On average, up to twice logarithmic in the distance between first and last: Performs approximately 2*log2(N)+1 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional up to twice linear complexity in N on average. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.63 \textcolor{corange}{\texttt{binary\_search}}}
+\noindent\textcolor{corange}{12.63 \texttt{binary\_search}} \textsc{Complexity} On average, logarithmic in the distance between first and last: Performs approximately log2(N)+2 element comparisons (where N is this distance).On non-random-access iterators, the iterator advances produce themselves an additional linear complexity in N on average. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.64 \textcolor{corange}{\texttt{merge}}}
+\noindent\textcolor{corange}{12.64 \texttt{merge}} \textsc{Complexity} Up to linear in (1+count1-count2), where countX is the distance between firstX and lastX: Compares and assigns all elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.65 \textcolor{cred}{\texttt{inplace\_merge}}}
+\noindent\textcolor{cred}{12.65 \texttt{inplace\_merge}} \textsc{Complexity} If enough extra memory is available, linear in the distance between first and last: Performs N-1 comparisons and up to twice that many element moves.Otherwise, up to linearithmic: Performs up to N*log(N) element comparisons (where N is the distance above), and up to that many element swaps. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.66 \textcolor{corange}{\texttt{includes}}}
+\noindent\textcolor{corange}{12.66 \texttt{includes}} \textsc{Complexity} Up to linear in twice the distances in both ranges: Performs up to 2*(count1+count2)-1 comparisons (where countX is the distance between firstX and lastX). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.67 \textcolor{corange}{\texttt{set\_union}}}
+\noindent\textcolor{corange}{12.67 \texttt{set\_union}} \textsc{Complexity} Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.68 \textcolor{corange}{\texttt{set\_intersection}}}
+\noindent\textcolor{corange}{12.68 \texttt{set\_intersection}} \textsc{Complexity} Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.69 \textcolor{corange}{\texttt{set\_difference}}}
+\noindent\textcolor{corange}{12.69 \texttt{set\_difference}} \textsc{Complexity} Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.70 \textcolor{corange}{\texttt{set\_symmetric\_difference}}}
+\noindent\textcolor{corange}{12.70 \texttt{set\_symmetric\_difference}} \textsc{Complexity} Up to linear in 2*(count1+count2)-1 (where countX is the distance between firstX and lastX): Compares and assigns elements. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.71 \textcolor{clime}{\texttt{push\_heap}}}
+\noindent\textcolor{clime}{12.71 \texttt{push\_heap}} \textsc{Complexity} Up to logarithmic in the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a longer heap. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.72 \textcolor{clime}{\texttt{pop\_heap}}}
+\noindent\textcolor{clime}{12.72 \texttt{pop\_heap}} \textsc{Complexity} Up to twice logarithmic in the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a shorter heap. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.73 \textcolor{corange}{\texttt{make\_heap}}}
+\noindent\textcolor{corange}{12.73 \texttt{make\_heap}} \textsc{Complexity} Up to linear in three times the distance between first and last: Compares elements and potentially swaps (or moves) them until rearranged as a heap. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.74 \textcolor{cred}{\texttt{sort\_heap}}}
+\noindent\textcolor{cred}{12.74 \texttt{sort\_heap}} \textsc{Complexity} Up to linearithmic in the distance between first and last: Performs at most N*log(N) (where N is this distance) comparisons of elements, and up to that many element swaps (or moves). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.75 \textcolor{corange}{\texttt{is\_heap}}}
+\noindent\textcolor{corange}{12.75 \texttt{is\_heap}} \textsc{Complexity} Up to linear in one less than the distance between first and last: Compares pairs of elements until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.76 \textcolor{corange}{\texttt{is\_heap\_until}}}
+\noindent\textcolor{corange}{12.76 \texttt{is\_heap\_until}} \textsc{Complexity} Up to linear in the distance between first and last: Compares elements until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.77 \textcolor{corange}{\texttt{min}}}
+\noindent\textcolor{corange}{12.77 \texttt{min}} \textsc{Complexity} Linear in one less than the number of elements compared (constant for (1) and (2)). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.78 \textcolor{corange}{\texttt{max}}}
+\noindent\textcolor{corange}{12.78 \texttt{max}} \textsc{Complexity} Linear in one less than the number of elements compared (constant for (1) and (2)). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.79 \textcolor{corange}{\texttt{minmax}}}
+\noindent\textcolor{corange}{12.79 \texttt{minmax}} \textsc{Complexity} Up to linear in one and half times the number of elements compared (constant for (1) and (2)). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.80 \textcolor{corange}{\texttt{min\_element}}}
+\noindent\textcolor{corange}{12.80 \texttt{min\_element}} \textsc{Complexity} Linear in one less than the number of elements compared. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.81 \textcolor{corange}{\texttt{max\_element}}}
+\noindent\textcolor{corange}{12.81 \texttt{max\_element}} \textsc{Complexity} Linear in one less than the number of elements compared. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.82 \textcolor{corange}{\texttt{minmax\_element}}}
+\noindent\textcolor{corange}{12.82 \texttt{minmax\_element}} \textsc{Complexity} Up to linear in 1.5 times one less than the number of elements compared. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.83 \textcolor{corange}{\texttt{lexicographical\_compare}}}
+\noindent\textcolor{corange}{12.83 \texttt{lexicographical\_compare}} \textsc{Complexity} Up to linear in 2*min(count1,count2) (where countX is the distance between firstX and lastX): Compares elements symmetrically until a mismatch is found. \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.84 \textcolor{corange}{\texttt{next\_permutation}}}
+\noindent\textcolor{corange}{12.84 \texttt{next\_permutation}} \textsc{Complexity} Up to linear in half the distance between first and last (in terms of actual swaps). \vspace{0.5em}
+
+\addcontentsline{mtd}{subsection}{12.85 \textcolor{corange}{\texttt{prev\_permutation}}}
+\noindent\textcolor{corange}{12.85 \texttt{prev\_permutation}} \textsc{Complexity} Up to linear in half the distance between first and last (in terms of actual swaps). \vspace{0.5em}
+
