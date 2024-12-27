@@ -8,5 +8,5 @@ default:
 
 # Build target: generate the PDF
 build:
-	pandoc -o $(OUTPUT) --template=$(TEMPLATE) $(MD_FILE)
+	pandoc -o $(OUTPUT) --template=$(TEMPLATE) --listings $(MD_FILE)
 

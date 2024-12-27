@@ -544,26 +544,66 @@ $endif$
 % CUSTOM MODIFICATIONS
 \usepackage{tabularx}
 
-% set verbatim font size
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},
-fontsize=\scriptsize}
+% customise listings
+\definecolor{cgray}{RGB}{75,75,75}
+\definecolor{clightgray}{RGB}{245,245,245}
+\definecolor{comment}{RGB}{135,160,190}
+\definecolor{keyword}{HTML}{1c44bc}
+\definecolor{string}{HTML}{4d8c09}
+\definecolor{decorator}{HTML}{d3c543}
+
+\lstset{
+    language=java,
+    basicstyle=\ttfamily\scriptsize\color{cgray},
+    basewidth=0.5em,
+    aboveskip=2pt,
+    belowskip=2pt,
+    tabsize=1,
+    backgroundcolor=\color{clightgray},
+    escapeinside={\%*}{*)},
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={é}{{\'e}}1,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword}\bfseries,
+    stringstyle=\color{string},
+}
 
 
 \usepackage{multicol}
 \setlength{\columnsep}{0.5cm}
-% set \paragraph vertical spacing
+% set \section
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{3}{\z@}%
+                                    {0.5ex}%
+                                    {0.5em}%
+                                    {\normalfont\Large\bfseries}}
+\makeatother
+% set \subsubsection
+\makeatletter
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+                                    {0.5ex}%
+                                    {0.5em}%
+                                    {\normalfont\footnotesize\bfseries}}
+\makeatother
+% set \paragraph
 \makeatletter
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-                                    {1.5ex}%
-                                    {-0.75em}%
-                                    {\normalfont\small\bfseries}}
+                                    {0.5ex}%
+                                    {-0.5em}%
+                                    {\normalfont\scriptsize\bfseries}}
 \makeatother
-% reduce space before \subparagraph
+% set \subparagraph
 \makeatletter
 \renewcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
-                                       {1ex}%
-                                       {-0.75em}%
-                                       {\normalfont\footnotesize\bfseries\hspace{1.25em}}}% Add \hspace{1.25em} for 1 level of indent
+                                       {0.5ex}%
+                                       {-0.5em}%
+                                       {\normalfont\scriptsize\bfseries\hspace{0.5em}}}% Add \hspace{1.25em} for 1 level of indent
 \makeatother
 
 \newcommand{\sep}{\vspace*{-1em}\noindent\rule{\linewidth}{0.4pt}}
@@ -623,9 +663,9 @@ $endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
-\begin{multicols*}{3}
-  \section*{$title$ - $subtitle$\\ \small{$author$ | $date$}}
-  \footnotesize 
+\scriptsize 
+\begin{multicols*}{4}
+  \section*{$title$ - $subtitle$\\ \scriptsize{$author$ | $date$}}
   $body$
 \end{multicols*}
 

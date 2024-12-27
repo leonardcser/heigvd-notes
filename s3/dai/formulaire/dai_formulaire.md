@@ -5,7 +5,7 @@ author: Leonard Cseres
 date: \today
 documentclass: article
 classoption: [landscape]
-geometry: [a4paper, margin=1.1cm, footskip=0.6cm]
+geometry: [a4paper, margin=1cm, footskip=0.6cm]
 ---
 
 #### GitHub
@@ -13,7 +13,7 @@ geometry: [a4paper, margin=1.1cm, footskip=0.6cm]
 Platforme et service cloud pour le dev. de logiciels et le contrôle de version
 utilisant Git, permettant aux développeurs de stocker et de gérer leur code.
 
-##### SSH
+#### SSH
 
 Plus sécurisé et il n'y a pas besoin de s'authentifier à chaque fois par rapport
 à **HTTPS**.
@@ -25,12 +25,12 @@ Plus sécurisé et il n'y a pas besoin de s'authentifier à chaque fois par rapp
 Composé de phases et de goals. Les phases chargent les goals, qui exécutent des
 tâches projet (par exemple, compiler, tester, empaqueter).
 
-##### POM
+#### POM
 
 Project Object Model, XML qui contient des infos sur le projet et configuration
 de Maven.
 
-##### MVNW
+#### MVNW
 
 Wrapper Maven, permet d'avoir une version de Maven spécifique tous les
 collaborateurs du projet et éviter des problèmes de compatibilité.
@@ -38,6 +38,8 @@ collaborateurs du projet et éviter des problèmes de compatibilité.
 \texttt{maven-jar-plugin} Plugin Maven pour créer un fichier JAR.
 \texttt{maven-shade-plugin} Plugin Maven pour créer un fichier JAR **fat**
 (contient toutes les dépendances).
+
+\sepdotted
 
 ```sh
 # Télécharge les dépendances & transitives
@@ -59,7 +61,7 @@ collaborateurs du projet et éviter des problèmes de compatibilité.
 Portable grâce à la JVM, orienté objet, multi-threadé, fortement typé, compilé
 en byte-code. (SDKMAN! utilisé pour gérer les versions)
 
-##### JAR
+#### JAR
 
 Java ARchive, contient des fichiers .class et des métadonnées.
 
@@ -86,14 +88,16 @@ UTF-8, UTF-16, UTF-32, standard pour tous les caractères.
 ```java
 import java.io.*;
 // Binary
-InputStream; OutputStream; FileInputStream; FileOutputStream;
-BufferedInputStream; BufferedOutputStream;
+InputStream; OutputStream; FileInputStream;
+FileOutputStream; BufferedInputStream;
+BufferedOutputStream;
 // Text
 Reader; Writer; FileReader; FileWriter;
 BufferedReader; BufferedWriter;
 import java.nio.charset.StandardCharsets;
 // Exception
-IOException; UnsupportedEncodingException; FileNotFoundException;
+IOException; UnsupportedEncodingException;
+FileNotFoundException;
 ```
 
 \sepdotted
@@ -135,7 +139,7 @@ try (OutputStream fos = new FileOutputStream(filename)) {
 String filename;
 
 try (InputStream fis = new FileInputStream(filename);
-    BufferedInputStream bis = new BufferedInputStream(fis)) {
+     BufferedInputStream bis = new BufferedInputStream(fis)) {
   int b;
   while ((b = bis.read()) != -1) {
     // Do nothing - simulate processing
@@ -152,7 +156,7 @@ try (InputStream fis = new FileInputStream(filename);
 String filename, int sizeInBytes;
 
 try (OutputStream fos = new FileOutputStream(filename);
-    BufferedOutputStream bos = new BufferedOutputStream(fos)) {
+     BufferedOutputStream bos = new BufferedOutputStream(fos)) {
   for (int i = 0; i < sizeInBytes; i++) {
     bos.write(1);
   }
@@ -198,8 +202,9 @@ try (Writer writer = new FileWriter(filename, StandardCharsets.UTF_8)) {
 ```java
 // Text Buffered Read
 String filename;
+
 try (Reader reader = new FileReader(filename, StandardCharsets.UTF_8);
-    BufferedReader br = new BufferedReader(reader)) {
+     BufferedReader br = new BufferedReader(reader)) {
   int b;
   while ((b = br.read()) != -1) {
     // Do nothing - simulate processing
@@ -216,7 +221,7 @@ try (Reader reader = new FileReader(filename, StandardCharsets.UTF_8);
 String filename, int sizeInBytes;
 
 try (Writer writer = new FileWriter(filename, StandardCharsets.UTF_8);
-    BufferedWriter bw = new BufferedWriter(writer)) {
+     BufferedWriter bw = new BufferedWriter(writer)) {
   for (int i = 0; i < sizeInBytes; i++) {
     bw.write('a');
   }
@@ -233,32 +238,88 @@ try (Writer writer = new FileWriter(filename, StandardCharsets.UTF_8);
 _Bare metal_ software runs directly on hardware, _virtualization_ software runs
 on a virtual machine, _containerization_ software runs in a container.
 
-##### Image
+#### Image
 
 read-only template for container creation
 
-##### Container
+#### Container
 
 runnable instance of an image
 
-##### Registry
+#### Registry
 
 service storing images
 
-\pagebreak
+\sepdotted
 
-#### DNS
+```dockerfile
+FROM eclipse-temurin:21-jre
+COPY target/app.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["goodbye"]
+```
 
-- **NS:** Name server
-- **CNAME:** Alias
-- **A:** IPv4 addr.
-- **AAA:** IPv6 addr.
+\sep
+
+### DNS
+
+```{=latex}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Record Type} & \textbf{Description} \\ \hline
+NS & Name server \\ \hline
+CNAME & Alias \\ \hline
+A & IPv4 address \\ \hline
+AAA & IPv6 address \\ \hline
+\end{tabular}
+```
 
 #### Ports
 
 Unsigned 16-bit, 0-1023 reserved
 
-#### TCP
+\sep
+
+### Paralellisme
+
+```java
+@Override
+public Integer call() {
+  try (ExecutorService executorService =
+  Executors.newFixedThreadPool(2);) {
+    executorService.submit(this::emittersWorker);
+    executorService.submit(this::operatorsWorker);
+  } catch (Exception e) {
+    System.out.println("[Receiver] Exception: " + e);
+    return 1;
+  }
+  return 0;
+}
+```
+
+\sep
+
+### Protocole Applicatif
+
+1. **Aperçu:** Quel est le but?
+2. **Protocole de transport:** Quel protocol? Quel port? Encodage? Délimiteur?
+   Messages texte ou binaire. Qui initialise la communication?
+3. **Messages:** Foncitionalité, requête et réponses.
+4. **Examples:**
+
+TODO: MORE CONCURRENCY
+
+TODO: SMTP
+
+```{=latex}
+\end{multicols*}
+\pagebreak
+\begin{multicols*}{3}
+```
+
+## Annexes
+
+\textbf{\footnotesize TCP}
 
 ```java
 public class TCPClient {
@@ -268,13 +329,9 @@ public class TCPClient {
 
     try (
       Socket socket = new Socket(serverAddr, port);
-      InputStreamReader isr =
-          new InputStreamReader(socket.getInputStream(),
-                                StandardCharsets.UTF_8);
+      InputStreamReader isr = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
       BufferedReader in = new BufferedReader(isr);
-      OutputStreamWriter osw =
-          new OutputStreamWriter(socket.getOutputStream(),
-                                 StandardCharsets.UTF_8);
+      OutputStreamWriter osw = new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8);
       BufferedWriter out = new BufferedWriter(osw)) {
       // connected
       out.write("Hello, Server!\n");
@@ -316,13 +373,9 @@ public class TCPServer {
     @Override
     public void run() {
       try (
-        InputStreamReader isr =
-            new InputStreamReader(socket.getInputStream(),
-                                  StandardCharsets.UTF_8);
+        InputStreamReader isr = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
         BufferedReader in = new BufferedReader(isr);
-        OutputStreamWriter osw =
-            new OutputStreamWriter(socket.getOutputStream(),
-                                   StandardCharsets.UTF_8);
+        OutputStreamWriter osw = new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8);
         BufferedWriter out = new BufferedWriter(osw)) {
         // client connected
         String request = in.readLine();
@@ -338,7 +391,9 @@ public class TCPServer {
 }
 ```
 
-#### UDP Unicast
+\sep
+
+\textbf{\footnotesize UDP Unicast}
 
 ```java
 public class UDPClient {
@@ -403,7 +458,9 @@ public class UDPServer {
 }
 ```
 
-#### UDP Multicast
+\sep
+
+\textbf{\footnotesize UDP Multicast}
 
 ```java
 public class UDPMulticastSender {
@@ -456,36 +513,3 @@ public class UDPMulticastReceiver {
 
 }
 ```
-
-#### Concurrency
-
-```java
-@Override
-public Integer call() {
-  try (ExecutorService executorService =
-  Executors.newFixedThreadPool(2);) {
-    executorService.submit(this::emittersWorker);
-    executorService.submit(this::operatorsWorker);
-  } catch (Exception e) {
-    System.out.println("[Receiver] Exception: " + e);
-    return 1;
-  }
-  return 0;
-}
-```
-
-#### Protocole Applicatif
-
-1. **Aperçu:** Quel est le but?
-2. **Protocole de transport:** Quel protocol? Quel port? Encodage? Délimiteur?
-   Messages texte ou binaire. Qui initialise la communication?
-3. **Messages:** Foncitionalité, requête et réponses.
-4. **Examples:**
-
-TODO: Dockerfile examples
-
-TODO: SECTIONS APPLICATION PROTOCOL DESCRIPTION
-
-TODO: MORE CONCURRENCY
-
-TODO: SMTP
