@@ -1,6 +1,6 @@
 ---
-title: DAI
-subtitle: Développement d'applications internet
+title: Développement d'applications internet
+subtitle: DAI
 author: Leonard Cseres
 date: \today
 documentclass: article
@@ -270,7 +270,9 @@ CMD ["goodbye"]
 NS & Name server \\ \hline
 CNAME & Alias \\ \hline
 A & IPv4 address \\ \hline
-AAA & IPv6 address \\ \hline
+AAAA & IPv6 address \\ \hline
+MX & Mail exchange (email server) \\ \hline
+TXT & Text record (e.g., SPF, DKIM) \\ \hline
 \end{tabular}
 ```
 
@@ -297,19 +299,138 @@ public Integer call() {
 }
 ```
 
-\sep
-
-### Protocole Applicatif
-
-1. **Aperçu:** Quel est le but?
-2. **Protocole de transport:** Quel protocol? Quel port? Encodage? Délimiteur?
-   Messages texte ou binaire. Qui initialise la communication?
-3. **Messages:** Foncitionalité, requête et réponses.
-4. **Examples:**
-
 TODO: MORE CONCURRENCY
 
-TODO: SMTP
+\sep
+
+#### Protocole Applicatif
+
+1. **Aperçu** Quel est le but?
+2. **Protocole de transport** Quel protocol? Quel port? Encodage? Délimiteur?
+   Messages texte ou binaire. Qui initialise la communication?
+3. **Messages** Foncitionalité, requête et réponses
+4. **Examples** Fonctionnel et non-fonctionnel
+
+\sep
+
+#### SMTP (Send)
+
+Send emails from client to server
+
+- 25 (unencrypted)
+- 465, 587 (encrypted; 587 recommended)
+
+  ```bash
+  EHLO <sender>  # or HELO
+  MAIL FROM: <sender email address>
+  RCPT TO: <recipient email address>
+  DATA
+  <email content>
+  .
+  QUIT
+  ```
+
+#### POP3 (Retrieve)
+
+Download emails (no sync)
+
+- 110 (unencrypted)
+- 995 (encrypted)
+
+#### IMAP (Sync)
+
+Sync emails (server-client updates)
+
+- 143 (unencrypted)
+- 993 (encrypted)
+
+\sep
+
+### SCP
+
+```bash
+scp [user@source-ip:]source [user@dest-ip:]dest
+```
+
+\sep
+
+### HTTP
+
+```bash
+# Request
+<HTTP method> <URL> HTTP/<HTTP version>
+<HTTP headers>
+<Empty line>
+<HTTP body (optional)>
+```
+
+\sepdotted
+
+```bash
+# Response
+HTTP/<HTTP version> <HTTP status code> <HTTP status message>
+<HTTP headers>
+<Empty line>
+<HTTP body>
+```
+
+\pagebreak
+
+#### HTTP Negociation
+
+A process where the client and server agree on the response format using headers
+like `Accept`, `Content-Type`, and Accept-Language`.
+
+```{=latex}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Code Category} & \textbf{Description} \\ \hline
+1xx & Informational \\ \hline
+2xx & Success \\ \hline
+3xx & Redirection \\ \hline
+4xx & Client Error \\ \hline
+5xx & Server Error \\ \hline
+\end{tabular}\\
+```
+
+\sep
+
+#### API
+
+Application Programming Interface
+
+\sepdotted
+
+#### REST APIs
+
+1. **Client/Server** Client and server are separate, communicating only through
+   the API.
+2. **Stateless** The server does not store session info; each request must be
+   self-contained.
+3. **Cacheable** Responses can be cached by the client with proper control.
+4. **Layered System** Intermediary systems (e.g., cache, load balancer) can be
+   added without affecting the client.
+5. **Uniform Interface**
+   - Use URIs/URLs to identify resources.
+   - Responses include data and links for further interaction.
+   - Standardized response formats.
+6. **Code on Demand (optional)** Servers may send executable code for client
+   customization.
+
+_Note:_ Not all APIs are REST APIs.
+
+\sep
+
+### Web Infrastructures
+
+All **load balancers** are reverse proxies, but not all **reverse proxies**
+perform load balancing.
+
+#### Host Header
+
+HTTP header sent by the client to indicate the domain being requested. Servers
+use this to differentiate between multiple websites hosted on the same IP
+address (known as virtual hosting).
 
 ```{=latex}
 \end{multicols*}

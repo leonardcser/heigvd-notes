@@ -542,7 +542,11 @@ $endif$
 $endif$
 
 % CUSTOM MODIFICATIONS
-\usepackage{tabularx}
+\usepackage{framed}
+\FrameSep5pt
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=2em}
+\setlist[itemize]{leftmargin=2em}
 
 % customise listings
 \definecolor{cgray}{RGB}{75,75,75}
@@ -582,7 +586,7 @@ $endif$
 \renewcommand{\section}{\@startsection{section}{3}{\z@}%
                                     {0.5ex}%
                                     {0.5em}%
-                                    {\normalfont\Large\bfseries}}
+                                    {\normalfont\large\bfseries}}
 \makeatother
 % set \subsubsection
 \makeatletter
@@ -594,7 +598,7 @@ $endif$
 % set \paragraph
 \makeatletter
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-                                    {0.5ex}%
+                                    {1ex}%
                                     {-0.5em}%
                                     {\normalfont\scriptsize\bfseries}}
 \makeatother
@@ -665,7 +669,9 @@ $if(has-frontmatter)$
 $endif$
 \scriptsize 
 \begin{multicols*}{4}
-  \section*{$title$ - $subtitle$\\ \scriptsize{$author$ | $date$}}
+  \begin{framed}
+    \section*{$title$ - $subtitle$\\ \scriptsize{$author$ | $date$}}
+  \end{framed}
   $body$
 \end{multicols*}
 
