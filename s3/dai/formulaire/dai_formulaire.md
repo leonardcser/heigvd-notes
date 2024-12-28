@@ -264,7 +264,7 @@ CMD ["goodbye"]
 ### DNS
 
 ```{=latex}
-\begin{tabular}{|l|l|}
+\begin{tabularx}{\linewidth}{|c|X|}
 \hline
 \textbf{Record Type} & \textbf{Description} \\ \hline
 NS & Name server \\ \hline
@@ -273,7 +273,7 @@ A & IPv4 address \\ \hline
 AAAA & IPv6 address \\ \hline
 MX & Mail exchange (email server) \\ \hline
 TXT & Text record (e.g., SPF, DKIM) \\ \hline
-\end{tabular}
+\end{tabularx}
 ```
 
 #### Ports
@@ -379,10 +379,10 @@ HTTP/<HTTP version> <HTTP status code> <HTTP status message>
 #### HTTP Negociation
 
 A process where the client and server agree on the response format using headers
-like `Accept`, `Content-Type`, and Accept-Language`.
+like `Accept`, `Content-Type`, and `Accept-Language`.
 
 ```{=latex}
-\begin{tabular}{|c|l|}
+\begin{tabularx}{\linewidth}{|c|X|}
 \hline
 \textbf{Code Category} & \textbf{Description} \\ \hline
 1xx & Informational \\ \hline
@@ -390,7 +390,7 @@ like `Accept`, `Content-Type`, and Accept-Language`.
 3xx & Redirection \\ \hline
 4xx & Client Error \\ \hline
 5xx & Server Error \\ \hline
-\end{tabular}\\
+\end{tabularx}\\
 ```
 
 \sep
@@ -398,8 +398,6 @@ like `Accept`, `Content-Type`, and Accept-Language`.
 #### API
 
 Application Programming Interface
-
-\sepdotted
 
 #### REST APIs
 
@@ -423,14 +421,49 @@ _Note:_ Not all APIs are REST APIs.
 
 ### Web Infrastructures
 
-All **load balancers** are reverse proxies, but not all **reverse proxies**
-perform load balancing.
+All _load balancers_ are reverse proxies, but not all _reverse proxies_ perform
+load balancing.
 
 #### Host Header
 
 HTTP header sent by the client to indicate the domain being requested. Servers
 use this to differentiate between multiple websites hosted on the same IP
 address (known as virtual hosting).
+
+\sep
+
+### Caching
+
+#### Client-side (Private)
+
+Cache stored on the client after receiving a server response; reused for future
+requests.
+
+#### Server-side (Shared)
+
+Cache stored on the server via reverse proxy or app; reused for similar incoming
+requests.
+
+#### Expiration model
+
+The cache is valid for a certain amount of time.
+`Cache-Control: max-age=<number of seconds>`
+
+#### Validation model
+
+The cache is valid until the data is modified.
+
+##### Last-Modified
+
+- `Last-Modified`: Timestamp of the last resource update.
+- `If-Modified-Since`: 304 if unchanged (cache hit).
+- `If-Unmodified-Since`: 412 if changed (cache miss) on update/delete.
+
+##### ETag
+
+- `ETag`: Hash/version of the resource.
+- `If-None-Match`: 304 if unchanged (cache hit).
+- `If-Match`: 412 if changed (cache miss) on update/delete.
 
 ```{=latex}
 \end{multicols*}
