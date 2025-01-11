@@ -424,11 +424,55 @@ _Note:_ Not all APIs are REST APIs.
 All _load balancers_ are reverse proxies, but not all _reverse proxies_ perform
 load balancing.
 
+```{=latex}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline
+\textbf{Routing} & \textbf{Example} \\ \hline
+Host based & app1.example.com \\ \hline
+Path based & example.com/app1 \\ \hline
+\end{tabularx}\\
+```
+
 #### Host Header
 
 HTTP header sent by the client to indicate the domain being requested. Servers
 use this to differentiate between multiple websites hosted on the same IP
 address (known as virtual hosting).
+
+```yml
+networks:
+  traefik_network:
+    external: true
+
+services:
+  proxy:
+    image: traefik/whoami:latest
+    networks:
+      - traefik_network
+    expose:
+      - 80
+    labels:
+      # Traefik
+      - traefik.enable=true
+      - traefik.docker.network=traefik_network
+      # Routers
+      - traefik.http.routers .proxy.entrypoints=https
+      # We use Host and PathPrefix rules at the same time
+      - traefik.http.routers.proxy. rule=Host(`whoami.DOMAIN`) &&
+        PathPrefix(`/whoami`)
+      # Stipprefix (https://example.com/foo -> /foo)
+      - traefik.http.routers.proxy. middlewares=whoami-stripprefix
+```
+
+**Sticky Sessions** (Round-robin LB)
+
+```yml
+# We add the sticky session configuration
+- traefik.http.services.proxy.loadbalancer. sticky=true
+# We can also configure the cookie name and its options (useful for multiple services)
+- traefik.http.services.proxy.loadbalancer. sticky.cookie.name=whoami_cookie
+- traefik.http.services.proxy.loadbalancer. sticky.cookie.httpOnly=true
+```
 
 \sep
 
