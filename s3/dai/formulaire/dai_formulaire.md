@@ -282,7 +282,7 @@ Unsigned 16-bit, 0-1023 reserved
 
 \sep
 
-**Paralellisme**
+**Concurrency**
 
 ```java
 @Override
@@ -371,12 +371,12 @@ scp [user@source-ip:]source [user@dest-ip:]dest
 ```
 
 ```bash
-# Copy the file from the local machine to the remote machine
+# Copy the file from the local to the remote
 scp local.txt <username>@<vm public ip>:~/local.txt
 ```
 
 ```bash
-# Copy the file from the remote machine to the local machine
+# Copy the file from the remote to the local
 scp <username>@<vm public ip>:~/remote.txt remote.txt
 ```
 
@@ -385,9 +385,10 @@ scp <username>@<vm public ip>:~/remote.txt remote.txt
 #### HTTP
 
 Hyper Text Transfer Protocol used to transfer data over the web based on TCP. It
-is a client-server protocol based on the request-response pattern: a client
-(called user agent in the HTTP specification) sends a request to a server, the
-server processes the request and sends a response to the client.
+is a client-server protocol based on the request-response pattern (_stateless
+protocol_): a client (called user agent in the HTTP specification) sends a
+request to a server, the server processes the request and sends a response to
+the client.
 
 ```{=latex}
 \begin{tabularx}{\linewidth}{|X|X|X|}
@@ -514,11 +515,54 @@ like `Accept`, `Content-Type`, and `Accept-Language`.
 \end{tabularx}\\
 ```
 
+\sepdotted
+
+```bash
+curl -i \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{}' \
+  http://localhost:8080/users
+```
+
+```bash
+curl -i \
+  -X GET \
+  -H 'Cookie: user=1;' \
+  http://localhost:8080/profile
+```
+
+\sepdotted
+
+### HTTP Sessions
+
+**Query parameter**
+
+```bash
+C -> S: POST /login
+S -> C: 302 Found (redirect to /profile?token=1234567890)
+C -> S: GET /profile?token=1234567890
+S -> C: 200 OK (profile page)
+```
+
+**Cookie**
+
+```bash
+C -> S: POST /login
+S -> C: 302 Found (redirect to /profile and set a cookie with the token)
+C -> S: GET /profile (the cookie is sent by the client)
+S -> C: 200 OK (profile page)
+```
+
 \sep
 
 #### API
 
 Application Programming Interface
+
+#### CRUD
+
+Create, Read, Update, Delete
 
 #### REST APIs
 
@@ -852,32 +896,27 @@ public class Main {
   public static void main(String[] args) {
     Javalin app = Javalin.create();
 
-    app.get(
-        "/",
+    app.get("/",
         ctx ->
             ctx.result(
                 "Hello, world from a GET request method with a `HttpStatus.OK` response status!"));
-    app.post(
-        "/",
+    app.post("/",
         ctx ->
             ctx.result(
                     "Hello, world from a POST request method with a `HttpStatus.CREATED` response status!")
                 .status(HttpStatus.CREATED));
-    app.patch(
-        "/",
+    app.patch("/",
         ctx ->
             ctx.result(
                     "Hello, world from a PATCH request method with a `HttpStatus.OK` response status!")
                 .status(HttpStatus.OK));
-    app.delete(
-        "/",
+    app.delete("/",
         ctx ->
             ctx.result(
                     "Hello, world from a DELETE request method with a `HttpStatus.NO_CONTENT` response status!")
                 .status(HttpStatus.NO_CONTENT));
 
-    app.get(
-        "/path-parameter-demo/{path-parameter}",
+    app.get("/path-parameter-demo/{path-parameter}",
         ctx -> {
           String pathParameter = ctx.pathParam("path-parameter");
 
@@ -887,8 +926,7 @@ public class Main {
                   + "'!");
         });
 
-    app.get(
-        "/query-parameters-demo",
+    app.get("/query-parameters-demo",
         ctx -> {
           String firstName = ctx.queryParam("firstName");
           String lastName = ctx.queryParam("lastName");
@@ -900,24 +938,14 @@ public class Main {
           ctx.result("Hello, " + firstName + " " + lastName + "!");
         });
 
-    app.post(
-        "/body-demo",
+    app.post("/body-demo",
         ctx -> {
           String data = ctx.body();
 
           ctx.result("You just called `/body-demo` with data '" + data + "'!");
         });
 
-    app.post(
-        "/body-demo",
-        ctx -> {
-          String data = ctx.body();
-
-          ctx.result("You just called `/body-demo` with data '" + data + "'!");
-        });
-
-    app.get(
-        "/content-negotiation-demo",
+    app.get("/content-negotiation-demo",
         ctx -> {
           String acceptHeader = ctx.header("Accept");
 
@@ -936,8 +964,7 @@ public class Main {
           }
         });
 
-    app.get(
-        "/cookie-demo",
+    app.get("/cookie-demo",
         ctx -> {
           String cookie = ctx.cookie("cookie");
 
