@@ -282,7 +282,7 @@ Unsigned 16-bit, 0-1023 reserved
 
 \sep
 
-### Paralellisme
+**Paralellisme**
 
 ```java
 @Override
@@ -346,15 +346,109 @@ Sync emails (server-client updates)
 
 \sep
 
-### SCP
+#### SSH
+
+Protocol that allows you to connect to a remote machine. It is a replacement for
+the Telnet protocol. Most common supported algorithms: _RSA, DSA, ECDSA,
+Ed25519_.
+
+_Ed25519_ and _ECDSA_ are the most recent and are considered as more secure than
+_RSA_ and _DSA_.
+
+#### Fingerprints
+
+Hash of the public key. It is used to identify the public key. Helps detect
+man-in-the-middle attacks.
+
+Public keys are stored in the `~/.ssh/known_hosts file`.
+
+\pagebreak
+
+**SCP**
 
 ```bash
 scp [user@source-ip:]source [user@dest-ip:]dest
 ```
 
+```bash
+# Copy the file from the local machine to the remote machine
+scp local.txt <username>@<vm public ip>:~/local.txt
+```
+
+```bash
+# Copy the file from the remote machine to the local machine
+scp <username>@<vm public ip>:~/remote.txt remote.txt
+```
+
 \sep
 
-### HTTP
+#### HTTP
+
+Hyper Text Transfer Protocol used to transfer data over the web based on TCP. It
+is a client-server protocol based on the request-response pattern: a client
+(called user agent in the HTTP specification) sends a request to a server, the
+server processes the request and sends a response to the client.
+
+```{=latex}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{HTTP Semantics}} \\
+    \hline
+    HTTP/1.1 & HTTP/2 & HTTP/3 \\
+    \hline
+    TLS/SSL (optional) & TLS 1.2+ & TLS 1.3 \\
+    \hline
+    TCP & TCP & QUIC \\
+    & & UDP \\
+    \hline
+    \multicolumn{3}{|c|}{IPv4 / IPv6} \\
+    \hline
+\end{tabularx}
+```
+
+```{=latex}
+\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Part} & \textbf{Name} \\
+    \hline
+    Protocol & http or https \\
+    \hline
+    Host & Domain or FQDN (gaps.heig-vd.ch) \\
+    \hline
+    Domain Name & (heig-vd) \\
+    \hline
+    Top Domain & (ch) \\
+    \hline
+    Subdomain & Optional (gaps) \\
+    \hline
+    Port & Optional (:80, :443) \\
+    \hline
+    Path & Resource location (/consultation/fiches/uv/uv.php) \\
+    \hline
+    Query & Optional parameters (?id=6573) \\
+    \hline
+    Path Params & Optional (/users/{user-id}/view) \\
+    \hline
+\end{tabularx}
+```
+
+```{=latex}
+\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Method} & \textbf{Status Codes} \\
+    \hline
+    \texttt{GET} & 200 (OK), 404 (Not Found) \\
+    \hline
+    \texttt{POST} & 201 (Created), 400 (Bad Request), 500 (Internal Server Error) \\
+    \hline
+    \texttt{PATCH} & 200 (OK), 204 (No Content), 400 (Bad Request) \\
+    \hline
+    \texttt{PUT} & 200 (OK), 201 (Created), 204 (No Content) \\
+    \hline
+    \texttt{DELETE} & 200 (OK), 204 (No Content), 404 (Not Found) \\
+    \hline
+\end{tabularx}
+```
 
 ```bash
 # Request
@@ -362,6 +456,23 @@ scp [user@source-ip:]source [user@dest-ip:]dest
 <HTTP headers>
 <Empty line>
 <HTTP body (optional)>
+```
+
+```bash
+GET /api/resource HTTP/1.1
+Host: api.example.com
+User-Agent: curl/8.1.2
+Accept: application/json
+<Empty line>
+```
+
+```bash
+POST /api/resource HTTP/1.1
+Host: api.example.com
+User-Agent: curl/8.1.2
+Content-Type: application/json
+Accept: application/json
+<Empty line>
 ```
 
 \sepdotted
@@ -374,7 +485,17 @@ HTTP/<HTTP version> <HTTP status code> <HTTP status message>
 <HTTP body>
 ```
 
-\pagebreak
+```bash
+HTTP/1.1 200 OK
+Date: Wed, 06 Dec 2023 18:01:17 GMT
+Server: Apache
+Content-Type: text/html; charset=UTF-8
+Content-Length: 0
+Connection: keep-alive
+<Empty line>
+```
+
+\sepdotted
 
 #### HTTP Negociation
 
@@ -464,7 +585,10 @@ services:
       - traefik.http.routers.proxy. middlewares=whoami-stripprefix
 ```
 
-**Sticky Sessions** (Round-robin LB)
+#### Sticky Sessions
+
+Round-robin LB by default but we redirect a user to the same server using a
+cookie.
 
 ```yml
 # We add the sticky session configuration
@@ -517,7 +641,7 @@ The cache is valid until the data is modified.
 
 ## Annexes
 
-\textbf{\footnotesize TCP}
+**TCP**
 
 ```java
 public class TCPClient {
@@ -591,7 +715,7 @@ public class TCPServer {
 
 \sep
 
-\textbf{\footnotesize UDP Unicast}
+**UDP Unicast**
 
 ```java
 public class UDPClient {
@@ -658,7 +782,7 @@ public class UDPServer {
 
 \sep
 
-\textbf{\footnotesize UDP Multicast}
+**UDP**
 
 ```java
 public class UDPMulticastSender {
@@ -709,5 +833,125 @@ public class UDPMulticastReceiver {
       e.printStackTrace();
     }
 
+}
+```
+
+\newpage
+
+**Javalin**
+
+```java
+package ch.heigvd.dai;
+
+import io.javalin.Javalin;
+import io.javalin.http.HttpStatus;
+
+public class Main {
+  public static final int PORT = 8080;
+
+  public static void main(String[] args) {
+    Javalin app = Javalin.create();
+
+    app.get(
+        "/",
+        ctx ->
+            ctx.result(
+                "Hello, world from a GET request method with a `HttpStatus.OK` response status!"));
+    app.post(
+        "/",
+        ctx ->
+            ctx.result(
+                    "Hello, world from a POST request method with a `HttpStatus.CREATED` response status!")
+                .status(HttpStatus.CREATED));
+    app.patch(
+        "/",
+        ctx ->
+            ctx.result(
+                    "Hello, world from a PATCH request method with a `HttpStatus.OK` response status!")
+                .status(HttpStatus.OK));
+    app.delete(
+        "/",
+        ctx ->
+            ctx.result(
+                    "Hello, world from a DELETE request method with a `HttpStatus.NO_CONTENT` response status!")
+                .status(HttpStatus.NO_CONTENT));
+
+    app.get(
+        "/path-parameter-demo/{path-parameter}",
+        ctx -> {
+          String pathParameter = ctx.pathParam("path-parameter");
+
+          ctx.result(
+              "You just called `/path-parameter-demo` with path parameter '"
+                  + pathParameter
+                  + "'!");
+        });
+
+    app.get(
+        "/query-parameters-demo",
+        ctx -> {
+          String firstName = ctx.queryParam("firstName");
+          String lastName = ctx.queryParam("lastName");
+
+          if (firstName == null || lastName == null) {
+            throw new BadRequestResponse();
+          }
+
+          ctx.result("Hello, " + firstName + " " + lastName + "!");
+        });
+
+    app.post(
+        "/body-demo",
+        ctx -> {
+          String data = ctx.body();
+
+          ctx.result("You just called `/body-demo` with data '" + data + "'!");
+        });
+
+    app.post(
+        "/body-demo",
+        ctx -> {
+          String data = ctx.body();
+
+          ctx.result("You just called `/body-demo` with data '" + data + "'!");
+        });
+
+    app.get(
+        "/content-negotiation-demo",
+        ctx -> {
+          String acceptHeader = ctx.header("Accept");
+
+          if (acceptHeader == null) {
+            throw new BadRequestResponse();
+          }
+
+          if (acceptHeader.contains("text/html")) {
+            ctx.contentType("text/html");
+            ctx.result("<h1>Hello, world!</h1>");
+          } else if (acceptHeader.contains("text/plain")) {
+            ctx.contentType("text/plain");
+            ctx.result("Hello, world!");
+          } else {
+            throw new NotAcceptableResponse();
+          }
+        });
+
+    app.get(
+        "/cookie-demo",
+        ctx -> {
+          String cookie = ctx.cookie("cookie");
+
+          if (cookie == null) {
+            ctx.cookie("cookie", "cookie-demo");
+
+            ctx.result("You just called `/cookie-demo` without a cookie. A cookie is now set!");
+          } else {
+            ctx.result(
+                "You just called `/cookie-demo` with a cookie. Its value is '" + cookie + "'!");
+          }
+        });
+
+    app.start(PORT);
+  }
 }
 ```
