@@ -982,3 +982,86 @@ public class Main {
   }
 }
 ```
+
+\sep
+
+**Application Protocol**
+
+```md
+# Section 1 - Overview
+
+This section defines the purpose of the protocol:
+
+- What is the goal of the protocol?
+- What is the problem that it tries to solve?
+- What the application protocol is used for?
+
+# Section 2 - Transport protocol
+
+- What protocol(s) is/are involved? On which port(s)?
+- How are messages/actions encoded?
+- How are messages/actions delimited?
+- How are messages/actions treated (text or binary)?
+- Who initiates/closes the communication?
+- What happens on an unknown message/action/exception?
+
+# Section 3 - Messages
+
+- What are the messages/actions?
+- What are the parameters?
+- What are the return values?
+- What are the exceptions?
+
+# Section 4 - Examples
+
+- What are the examples of messages/actions?
+- What are the examples of exceptions?
+```
+
+\sep
+
+**API Documentation**
+
+```md
+# Section 1 - Overview
+
+- What is the API used for?
+- Who is the intended audience?
+- What are the main features of the API?
+- How is the API accessed (authentication, base URL, versioning)?
+
+# Section 2 - Authentication
+
+- What authentication method(s) is/are used (e.g., API keys, OAuth, JWT)?
+- How is the authentication implemented (headers, tokens, etc.)?
+- What are the steps for obtaining authentication credentials?
+
+# Section 3 - Endpoints
+
+## General Structure
+
+- What is the base URL of the API?
+- How are endpoints formatted (RESTful paths, query strings)?
+
+## Endpoint Details
+
+### Endpoint: [Name or Purpose]
+
+- **URL**: `/path/to/resource`
+- **Method**: GET | POST | PUT | DELETE
+- **Headers**: List of required/optional headers.
+- **Request Parameters**:
+  - Query Parameters: Name, Type, Required, Description
+  - Body Parameters: Name, Type, Required, Description (for POST/PUT)
+- **Responses**:
+  - **Status Codes**:
+    - 200: Success
+    - 400: Bad Request
+    - 401: Unauthorized
+    - 404: Not Found
+    - 500: Server Error
+  - **Response Body**:
+    - Example of the returned data.
+- **Errors/Exceptions**:
+  - List of common errors for this endpoint and their meanings.
+```
