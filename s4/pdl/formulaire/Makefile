@@ -1,12 +1,15 @@
-MD_FILE = pdl_formulaire.md
+MD_FILES = pdl_formulaire_1.md pdl_formulaire_2.md
 TEMPLATE = templates/template.tex
-OUTPUT = pdl_formulaire.pdf
+OUTPUTS = $(patsubst %.md,%.pdf,$(MD_FILES))
 
 # Default target: watch for changes
-default:
-	@echo "$(MD_FILE)\n$(TEMPLATE)" | entr -cs 'make build'
+default: $(OUTPUTS)
+	@printf "%s\n" $(MD_FILES) $(TEMPLATE) | entr -cs 'make build'
 
 # Build target: generate the PDF
-build:
-	pandoc -o $(OUTPUT) --template=$(TEMPLATE) --listings $(MD_FILE)
+build: $(OUTPUTS)
+
+# Pattern rule to build a PDF from a Markdown file
+%.pdf: %.md
+	pandoc -o $@ --template=$(TEMPLATE) --listings $<
 
