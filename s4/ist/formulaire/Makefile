@@ -1,4 +1,4 @@
-MD_FILES = ist_formulaire_1.md ist_formulaire_2.md
+MD_FILES = ist_formulaire.md
 TEMPLATE = templates/template.tex
 OUTPUTS = $(patsubst %.md,%.pdf,$(MD_FILES))
 

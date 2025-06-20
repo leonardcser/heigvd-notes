@@ -548,6 +548,9 @@ $endif$
 \usepackage{enumitem}
 \setlist[enumerate]{leftmargin=2em}
 \setlist[itemize]{leftmargin=2em}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parskip}{1ex}
 \usepackage{tikz}
 \usetikzlibrary{positioning, shapes.multipart, fit}
 
@@ -584,7 +587,7 @@ $endif$
 
 
 \usepackage{multicol}
-\setlength{\columnsep}{0.5cm}
+\setlength{\columnsep}{0.25cm}
 % set \section
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{3}{\z@}%
@@ -596,26 +599,28 @@ $endif$
 \makeatletter
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
                                     {0.5ex}%
-                                    {0.5em}%
+                                    {-0.5em}%
                                     {\normalfont\footnotesize\bfseries}}
 \makeatother
 % set \paragraph
 \makeatletter
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-                                    {1ex}%
+                                    {0.25ex}%
                                     {-0.5em}%
                                     {\normalfont\scriptsize\bfseries}}
 \makeatother
 % set \subparagraph
 \makeatletter
 \renewcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
-                                       {0.5ex}%
+                                       {0.25ex}%
                                        {-0.5em}%
                                        {\normalfont\scriptsize\bfseries\hspace{0.5em}}}% Add \hspace{1.25em} for 1 level of indent
 \makeatother
 
 \newcommand{\sep}{\vspace*{-1em}\noindent\rule{\linewidth}{0.4pt}}
 \newcommand{\sepdotted}{\vspace*{-1em}\noindent\makebox[\linewidth]{\dotfill}}
+\definecolor{sky}{RGB}{90, 120, 190}
+\newcommand{\highlight}[2][sky!30]{\setlength{\fboxsep}{0pt}\colorbox{#1}{#2}}
 
 \begin{document}
 $if(has-frontmatter)$
