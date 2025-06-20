@@ -550,7 +550,7 @@ $endif$
 \setlist[itemize]{leftmargin=2em}
 \setlength{\topsep}{0pt}
 \setlength{\partopsep}{0pt}
-\setlength{\parskip}{1ex}
+\setlength{\parskip}{0.5ex}
 \usepackage{tikz}
 \usetikzlibrary{positioning, shapes.multipart, fit}
 
@@ -600,12 +600,12 @@ $endif$
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
                                     {0.5ex}%
                                     {-0.5em}%
-                                    {\normalfont\footnotesize\bfseries}}
+                                    {\normalfont\scriptsize\bfseries}}
 \makeatother
 % set \paragraph
 \makeatletter
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-                                    {0.25ex}%
+                                    {0.5ex}%
                                     {-0.5em}%
                                     {\normalfont\scriptsize\bfseries}}
 \makeatother
@@ -617,8 +617,8 @@ $endif$
                                        {\normalfont\scriptsize\bfseries\hspace{0.5em}}}% Add \hspace{1.25em} for 1 level of indent
 \makeatother
 
-\newcommand{\sep}{\vspace*{-1em}\noindent\rule{\linewidth}{0.4pt}}
-\newcommand{\sepdotted}{\vspace*{-1em}\noindent\makebox[\linewidth]{\dotfill}}
+\newcommand{\sep}{\vspace*{-0.5em}\noindent\rule{\linewidth}{0.4pt}}
+\newcommand{\sepdotted}{\vspace*{-0.5em}\noindent\makebox[\linewidth]{\dotfill}}
 \definecolor{sky}{RGB}{90, 120, 190}
 \newcommand{\highlight}[2][sky!30]{\setlength{\fboxsep}{0pt}\colorbox{#1}{#2}}
 

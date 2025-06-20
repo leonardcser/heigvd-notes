@@ -9,7 +9,7 @@ geometry: [a4paper, margin=0.5cm]
 pagestyle: empty
 ---
 
-#### Block level storage
+### Block level storage
 
 Provides low-level persistent storage. Most are $\highlight{random access}$,
 some for backup are $\highlight{serial access}$ (magnetic tape).
@@ -63,7 +63,7 @@ Memory cells with floating gates store electrical charge
 
 \sep
 
-#### File Systems
+### File Systems
 
 Layer on top of block storage, provides abstraction of files, directories,
 metadata, links. Ex.: _ext2, ext3 (deprecated), ext4 (standard Linux), Btrfs,
@@ -117,7 +117,7 @@ span file systems.
 
 \sep
 
-#### Virtual Storage
+### Virtual Storage
 
 Blocks replaced by pointers in an $\highlight{index (table)}$ to physical
 blocks. Physical disks can be local (LVM) or remote (SAN).
@@ -169,7 +169,7 @@ pvdisplay /dev/sda1
 
 ```{=latex}
 \end{multicols}
-\vspace{-1em}
+\vspace{-2em}
 ```
 
 \sep
@@ -302,7 +302,7 @@ Allow or Deny. $\highlight{Explicit Deny}$ overrides any Allows.
 
 \sep
 
-#### Serverless
+### Serverless
 
 Zero server ops (auto-scaling, no provisioning). No compute costs when idle.
 Stateless. Asynchronous, concurrent, easy to parallelize.
@@ -361,7 +361,12 @@ Statement:
 
 Alias for a bucket with custom permissions
 
-\includegraphics[width=\linewidth]{images/function-invocation-types.png}
+<!-- TODO -->
+
+- Sync Req/Res
+- Async Message Queue
+- Message Stream
+- Job (master/worker)
 
 #### S3 Object Lambda Access Point
 
@@ -377,14 +382,12 @@ Configured with:
 
 #### Cold Start Problem Mitigations
 
-- Not only in FaaS, also in auto-scaling
-- Reduce dependencies and optimize function initialization
-- Fixed allocation of a set of VMs to run the function
+Reduce dependencies and optimize function initialization. Fixed allocation of a
+set of VMs to run the function
 
 ### FaaS platform
 
-- Control plane: developer-facing API
-- Data plane: underlying infrastructure
+_Control plane_: developer-facing API. _Data plane_: underlying infrastructure.
 
 1. Call hits the LB
 2. Frontend Invoke (entrypoint, retrieves metadata)
@@ -422,7 +425,7 @@ Hundreds or thousands of Guest OS's may run on a physical host
 
 \sep
 
-## Data
+### Data
 
 - **OLAP**: Online analytical processing
 - **OLTP**: Online transaction processing
