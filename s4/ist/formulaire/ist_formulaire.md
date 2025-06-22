@@ -425,10 +425,13 @@ Hundreds or thousands of Guest OS's may run on a physical host
 
 \sep
 
-### Data
+#### OLAP
 
-- **OLAP**: Online analytical processing
-- **OLTP**: Online transaction processing
+Online analytical processing
+
+#### OLTP
+
+Online transaction processing
 
 #### Data Warehouse (1990s)
 
@@ -588,7 +591,6 @@ CREATE TABLE table_name (
   id INT,
   name STRING
 );
-
 -- Create an external table with CSV format
 CREATE EXTERNAL TABLE table_name (
   col1 INT,
@@ -613,10 +615,8 @@ TBLPROPERTIES ('classification' = 'parquet');
 
 -- Select data
 SELECT * FROM table_name;
-
 -- Filter data
 SELECT * FROM table_name WHERE col1 = 'value';
-
 -- Insert data
 INSERT INTO table_name VALUES (1, 'example');
 
