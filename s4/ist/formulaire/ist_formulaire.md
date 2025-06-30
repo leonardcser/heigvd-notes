@@ -16,7 +16,7 @@ some for backup are $\highlight{serial access}$ (magnetic tape).
 $\highlight{Block level}$ abstraction of fixed size (typically 4 kiB). Ex.:
 _Hard disk (SSD or magnetic), floppy disk, tape, CD, DVD, Blu-ray._
 
-#### Magnetic Disk / Hard Drive
+### Magnetic Disk / Hard Drive
 
 Spindle rotates platters at 5'400 - 12'000 rounds per minute. Data stored as
 magnetic orientation on surfaces. Lifespan $\highlight{3-6 years}$.
