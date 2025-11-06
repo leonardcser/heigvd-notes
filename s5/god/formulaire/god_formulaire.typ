@@ -17,7 +17,7 @@
 )
 
 // Params
-#let title = "Forulaire - GOD"
+#let title = "Formulaire - GOD"
 #let author = "Leonard Cseres"
 #let today = datetime.today().display("[month repr:long] [day], [year]")
 
